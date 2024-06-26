@@ -26,7 +26,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class SysUserAuthService {
+public class LanBaseSysUserAuthService {
     private final LanBaseJpaEntityManager lanBaseJpaEntityManager;
     private final EntityManager entityManager;
 

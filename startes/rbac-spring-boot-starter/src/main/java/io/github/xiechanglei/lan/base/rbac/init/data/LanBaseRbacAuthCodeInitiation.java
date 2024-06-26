@@ -4,7 +4,7 @@ package io.github.xiechanglei.lan.base.rbac.init.data;
 import io.github.xiechanglei.lan.base.rbac.annotation.AuthCode;
 import io.github.xiechanglei.lan.base.rbac.annotation.AuthModule;
 import io.github.xiechanglei.lan.base.rbac.entity.SysAuthCode;
-import io.github.xiechanglei.lan.base.rbac.repo.SysAuthCodeRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysAuthCodeRepository;
 import io.github.xiechanglei.lan.base.rbac.util.DataUpdaterUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -30,7 +30,7 @@ import java.util.Map;
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacAuthCodeInitiation {
 
-    private final SysAuthCodeRepository sysAuthCodeRepository;
+    private final LanBaseSysAuthCodeRepository lanBaseSysAuthCodeRepository;
 
     /**
      * 初始化authCode
@@ -40,7 +40,7 @@ public class LanBaseRbacAuthCodeInitiation {
     public void initData(ApplicationContext applicationContext) {
         log.info("更新权限字符字典表...");
         List<SysAuthCode> allAuthCode = getAllAuthCode(applicationContext);
-        DataUpdaterUtil.update(sysAuthCodeRepository, allAuthCode);
+        DataUpdaterUtil.update(lanBaseSysAuthCodeRepository, allAuthCode);
     }
 
     /**

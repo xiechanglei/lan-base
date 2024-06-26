@@ -66,6 +66,10 @@ public class LanBaseRbacConfigProperties {
      */
     private String icon_sys_manager_menu = "";
     /**
+     * 内置系统管理模块的日志图标
+     */
+    private String icon_sys_manager_log = "";
+    /**
      * 密码设定规则 非空6-20位
      */
     private String passwordRule = "\\S{6,20}";

@@ -8,10 +8,10 @@ import io.github.xiechanglei.lan.base.rbac.annotation.Password;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.base.rbac.properties.LanBaseRbacConfigProperties;
-import io.github.xiechanglei.lan.base.rbac.service.SysMenuFcService;
-import io.github.xiechanglei.lan.base.rbac.service.SysMenuService;
-import io.github.xiechanglei.lan.base.rbac.service.SysRoleService;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuFcService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import io.github.xiechanglei.lan.base.rbac.token.TokenHandler;
 import io.github.xiechanglei.lan.base.rbac.token.TokenInfoManager;
 import lombok.RequiredArgsConstructor;
@@ -30,11 +30,11 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseCurrentUserController {
-    private final SysUserAuthService sysUserAuthService;
+    private final LanBaseSysUserAuthService sysUserAuthService;
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
-    private final SysRoleService sysRoleService;
-    private final SysMenuService sysMenuService;
-    private final SysMenuFcService sysMenuFcService;
+    private final LanBaseSysRoleService lanBaseSysRoleService;
+    private final LanBaseSysMenuService lanBaseSysMenuService;
+    private final LanBaseSysMenuFcService lanBaseSysMenuFcService;
 
     /**
      * 用户登录
@@ -85,11 +85,11 @@ public class LanBaseCurrentUserController {
      */
     @RequestMapping("/rbac/user/current/get")
     public DataFit getCurrentUserInfo(@CurrentUser SysUserAuth user) {
-        DataFit result = DataFit.of("user", user).fit("roles", sysRoleService.findByUserId(user.getId()));
-        if (sysRoleService.hasAdminRole(user.getId())) {
-            return result.fit("menus", sysMenuService.getMenuAll()).fit("fcs", sysMenuFcService.getMenuFcAll());
+        DataFit result = DataFit.of("user", user).fit("roles", lanBaseSysRoleService.findByUserId(user.getId()));
+        if (lanBaseSysRoleService.hasAdminRole(user.getId())) {
+            return result.fit("menus", lanBaseSysMenuService.getMenuAll()).fit("fcs", lanBaseSysMenuFcService.getMenuFcAll());
         }
-        return result.fit("menus", sysMenuService.findByUserId(user.getId())).fit("fcs", sysMenuFcService.findByUserId(user.getId()));
+        return result.fit("menus", lanBaseSysMenuService.findByUserId(user.getId())).fit("fcs", lanBaseSysMenuFcService.findByUserId(user.getId()));
     }
 
     /**

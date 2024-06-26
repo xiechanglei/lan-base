@@ -4,7 +4,7 @@ import io.github.xiechanglei.lan.base.rbac.entity.SysAuthCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * SysAuthCodeRepository  权限字符字典表
+ * LanBaseSysAuthCodeRepository  权限字符字典表
  */
-public interface SysAuthCodeRepository extends JpaRepository<SysAuthCode, String>{
+public interface LanBaseSysAuthCodeRepository extends JpaRepository<SysAuthCode, String>{
 }

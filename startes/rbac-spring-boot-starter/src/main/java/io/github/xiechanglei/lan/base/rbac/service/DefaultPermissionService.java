@@ -5,7 +5,7 @@ import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.base.rbac.provide.UserContextHolder;
-import io.github.xiechanglei.lan.base.rbac.repo.SysResourceCodeRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysResourceCodeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
@@ -14,8 +14,8 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public final class DefaultPermissionService {
-    private final SysResourceCodeRepository sysResourceCodeRepository;
-    private final SysRoleService sysRoleService;
+    private final LanBaseSysResourceCodeRepository lanBaseSysResourceCodeRepository;
+    private final LanBaseSysRoleService sysRoleService;
     private final UserContextHolder userContextHolder;
 
 
@@ -34,7 +34,7 @@ public final class DefaultPermissionService {
      */
     public void hasPermission(SysUserAuth user, String[] permissions) {
         // 判断当前用户是否为超级管理员
-        if (sysResourceCodeRepository.findUserAuthCodeIn(user.getId(), permissions).size() != permissions.length) {
+        if (lanBaseSysResourceCodeRepository.findUserAuthCodeIn(user.getId(), permissions).size() != permissions.length) {
             throw BusinessError.USER.USER_NO_PERMISSION;
         }
     }

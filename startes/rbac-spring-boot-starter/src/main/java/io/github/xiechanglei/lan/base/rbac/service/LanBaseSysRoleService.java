@@ -4,10 +4,10 @@ import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.entity.SysRole;
 import io.github.xiechanglei.lan.base.rbac.entity.SysRoleAuth;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.base.rbac.repo.SysResourceCodeRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysRoleAuthRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysRoleRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysUserRoleRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysResourceCodeRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysRoleAuthRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysRoleRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysUserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,14 +19,14 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class SysRoleService {
-    private final SysUserRoleRepository sysUserRoleRepository;
-    private final SysRoleRepository sysRoleRepository;
-    private final SysRoleAuthRepository sysRoleAuthRepository;
-    private final SysResourceCodeRepository sysResourceCodeRepository;
+public class LanBaseSysRoleService {
+    private final LanBaseSysUserRoleRepository lanBaseSysUserRoleRepository;
+    private final LanBaseSysRoleRepository lanBaseSysRoleRepository;
+    private final LanBaseSysRoleAuthRepository lanBaseSysRoleAuthRepository;
+    private final LanBaseSysResourceCodeRepository lanBaseSysResourceCodeRepository;
 
     public List<SysRole> findByUserId(String id) {
-        return sysRoleRepository.findByUserId(id);
+        return lanBaseSysRoleRepository.findByUserId(id);
     }
 
 
@@ -38,17 +38,17 @@ public class SysRoleService {
      * @return 角色
      */
     public Page<SysRole> searchRole(PageRequest pageRequest, String roleName) {
-        return sysRoleRepository.findAllByRoleName(pageRequest, roleName);
+        return lanBaseSysRoleRepository.findAllByRoleName(pageRequest, roleName);
     }
 
     /**
      * 创建角色
      */
     public void createRole(String roleName) {
-        if (sysRoleRepository.existsByRoleName(roleName)) {
+        if (lanBaseSysRoleRepository.existsByRoleName(roleName)) {
             throw BusinessError.ROLE.ROLE_EXISTS;
         }
-        sysRoleRepository.save(SysRole.creatRole(roleName));
+        lanBaseSysRoleRepository.save(SysRole.creatRole(roleName));
     }
 
     /**
@@ -57,7 +57,7 @@ public class SysRoleService {
      * @param roleId 角色id
      */
     public SysRole getRoleById(String roleId) {
-        return sysRoleRepository.findById(roleId).orElseThrow(() -> BusinessError.ROLE.ROLE_NOT_EXISTS);
+        return lanBaseSysRoleRepository.findById(roleId).orElseThrow(() -> BusinessError.ROLE.ROLE_NOT_EXISTS);
     }
 
     /**
@@ -69,7 +69,7 @@ public class SysRoleService {
      * @throws BusinessException 如果角色不存在或者不能编辑则抛出异常
      */
     private SysRole getRoleIfCanEdit(String roleId) throws BusinessException {
-        SysRole rbacAuthRole = sysRoleRepository.findById(roleId).orElseThrow(() -> BusinessError.ROLE.ROLE_NOT_EXISTS);
+        SysRole rbacAuthRole = lanBaseSysRoleRepository.findById(roleId).orElseThrow(() -> BusinessError.ROLE.ROLE_NOT_EXISTS);
         if (rbacAuthRole.isAdmin()) {
             throw BusinessError.ROLE.ROLE_CAN_NOT_OPERATE;
         }
@@ -83,12 +83,12 @@ public class SysRoleService {
         // id查询角色是否可编辑，非空
         SysRole sysRole = getRoleIfCanEdit(roleId);
         // 判断修改的名字是否存在
-        if (sysRoleRepository.existsByRoleNameAndIdNot(roleName, roleId)) {
+        if (lanBaseSysRoleRepository.existsByRoleNameAndIdNot(roleName, roleId)) {
             throw BusinessError.ROLE.ROLE_EXISTS;
         }
         sysRole.setRoleName(roleName);
         sysRole.setRoleRemark(roleRemark);
-        sysRoleRepository.save(sysRole);
+        lanBaseSysRoleRepository.save(sysRole);
     }
 
     /**
@@ -99,7 +99,7 @@ public class SysRoleService {
     public void changeRoleStatus(String roleId, SysRole.RoleStatus roleStatus) {
         SysRole sysRole = getRoleIfCanEdit(roleId);
         sysRole.setRoleStatus(roleStatus);
-        sysRoleRepository.save(sysRole);
+        lanBaseSysRoleRepository.save(sysRole);
     }
 
 
@@ -110,13 +110,13 @@ public class SysRoleService {
      */
     public void deleteRole(String roleId) {
         //查询角色是否被授权
-        if (sysUserRoleRepository.existsByRoleId(roleId)) {
+        if (lanBaseSysUserRoleRepository.existsByRoleId(roleId)) {
             throw BusinessError.ROLE.ROLE_CAN_NOT_DELETE;
         }
         //删除角色信息
-        sysRoleRepository.delete(getRoleIfCanEdit(roleId));
+        lanBaseSysRoleRepository.delete(getRoleIfCanEdit(roleId));
         //删除角色授权的资源信息
-        sysRoleAuthRepository.deleteByRoleId(roleId);
+        lanBaseSysRoleAuthRepository.deleteByRoleId(roleId);
     }
 
     /**
@@ -126,7 +126,7 @@ public class SysRoleService {
      * @param roleId 角色id
      */
     public List<String> loadRoleResource(String roleId) {
-        return sysResourceCodeRepository.findAllResourceByRoleId(roleId);
+        return lanBaseSysResourceCodeRepository.findAllResourceByRoleId(roleId);
     }
 
 
@@ -135,10 +135,10 @@ public class SysRoleService {
      */
     public void grantResource(String roleId, String[] resourceIds) {
         getRoleIfCanEdit(roleId);
-        sysRoleAuthRepository.deleteByRoleId(roleId);
+        lanBaseSysRoleAuthRepository.deleteByRoleId(roleId);
         List<SysRoleAuth> roleAuths = Arrays.stream(resourceIds)
                 .map(resourceId -> SysRoleAuth.createRoleAuth(roleId, resourceId)).collect(Collectors.toList());
-        sysRoleAuthRepository.saveAll(roleAuths);
+        lanBaseSysRoleAuthRepository.saveAll(roleAuths);
     }
 
 
@@ -148,7 +148,7 @@ public class SysRoleService {
      * @param userId 用户id
      */
     public boolean hasAdminRole(String userId) {
-        return sysRoleRepository.countAdminRoleByUserId(userId) > 0;
+        return lanBaseSysRoleRepository.countAdminRoleByUserId(userId) > 0;
     }
 
 }

@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.base.rbac.service;
 import io.github.xiechanglei.lan.base.rbac.dsl.SysMenuDsl;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenu;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.base.rbac.repo.SysMenuRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,8 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SysMenuService {
-    private final SysMenuRepository sysMenuRepository;
+public class LanBaseSysMenuService {
+    private final LanBaseSysMenuRepository lanBaseSysMenuRepository;
     private final SysMenuDsl sysMenuDsl;
 
     /**
@@ -25,7 +25,7 @@ public class SysMenuService {
     public void changeMenuStatus(String menuCode, SysMenu.MenuStatus menuStatus) {
         SysMenu sysMenu = getMenuInfo(menuCode);
         sysMenu.setMenuStatus(menuStatus);
-        sysMenuRepository.save(sysMenu);
+        lanBaseSysMenuRepository.save(sysMenu);
     }
 
     /**
@@ -38,14 +38,14 @@ public class SysMenuService {
      */
     public void updateMenu(String menuCode, String menuTitle, String menuIcon, Float menuOlder) {
         // 判断菜单名称是否存在
-        if (sysMenuRepository.existsByMenuTitleAndMenuCodeNot(menuTitle, menuCode)) {
+        if (lanBaseSysMenuRepository.existsByMenuTitleAndMenuCodeNot(menuTitle, menuCode)) {
             throw BusinessError.MENU.MENU_TITLE_EXISTS;
         }
         SysMenu menu = getMenuInfo(menuCode);
         menu.setMenuTitle(menuTitle);
         menu.setMenuIcon(menuIcon);
         menu.setMenuOrder(menuOlder);
-        sysMenuRepository.save(menu);
+        lanBaseSysMenuRepository.save(menu);
     }
 
     /**
@@ -54,7 +54,7 @@ public class SysMenuService {
      * @param menuCode 菜单编码
      */
     public SysMenu getMenuInfo(String menuCode) {
-        return sysMenuRepository.findById(menuCode).orElseThrow(() -> BusinessError.MENU.MENU_NOT_FOUND);
+        return lanBaseSysMenuRepository.findById(menuCode).orElseThrow(() -> BusinessError.MENU.MENU_NOT_FOUND);
     }
 
     /**
@@ -70,7 +70,7 @@ public class SysMenuService {
      * 获取所有菜单并且排序
      */
     public List<SysMenu> getMenuAll() {
-        return sysMenuRepository.findAll(Sort.by(Sort.Direction.ASC, "menuOrder"));
+        return lanBaseSysMenuRepository.findAll(Sort.by(Sort.Direction.ASC, "menuOrder"));
     }
 
 

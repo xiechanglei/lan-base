@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 /**
- * SysRoleRepository  角色表
+ * LanBaseSysRoleRepository  角色表
  */
-public interface SysRoleRepository extends JpaRepository<SysRole, String> {
+public interface LanBaseSysRoleRepository extends JpaRepository<SysRole, String> {
 
     /**
      * 根据角色名查询角色 是否存在

@@ -5,12 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 /**
- * SysMenuFcRepository  菜单功能表
+ * LanBaseSysMenuFcRepository  菜单功能表
  */
 
-public interface SysMenuFcRepository extends JpaRepository<SysMenuFc, String> {
-
-
-
-
+public interface LanBaseSysMenuFcRepository extends JpaRepository<SysMenuFc, String> {
 }

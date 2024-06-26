@@ -2,7 +2,7 @@ package io.github.xiechanglei.lan.base.rbac.service;
 
 import io.github.xiechanglei.lan.base.rbac.dsl.SysMenuFcDsl;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenuFc;
-import io.github.xiechanglei.lan.base.rbac.repo.SysMenuFcRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuFcRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SysMenuFcService {
+public class LanBaseSysMenuFcService {
 
-    private final SysMenuFcRepository sysMenuFcRepository;
+    private final LanBaseSysMenuFcRepository lanBaseSysMenuFcRepository;
     private final SysMenuFcDsl sysMenuFcDsl;
 
     /**
@@ -29,7 +29,7 @@ public class SysMenuFcService {
      * 、
      */
     public List<SysMenuFc> getMenuFcAll() {
-        return sysMenuFcRepository.findAll();
+        return lanBaseSysMenuFcRepository.findAll();
     }
 
     /**
@@ -39,9 +39,9 @@ public class SysMenuFcService {
      * @param funcStatus 功能状态
      */
     public void changeFuncStatus(String funcCode, SysMenuFc.FuncStatus funcStatus) {
-        sysMenuFcRepository.findById(funcCode).ifPresent(sysMenuFc -> {
+        lanBaseSysMenuFcRepository.findById(funcCode).ifPresent(sysMenuFc -> {
             sysMenuFc.setFcStatus(funcStatus);
-            sysMenuFcRepository.save(sysMenuFc);
+            lanBaseSysMenuFcRepository.save(sysMenuFc);
         });
     }
 }

@@ -10,9 +10,9 @@ import io.github.xiechanglei.lan.base.rbac.annotation.User;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalUserAuthCodeManager;
-import io.github.xiechanglei.lan.base.rbac.service.SysRoleService;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserRoleService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -25,9 +25,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseUserController {
-    private final SysUserAuthService sysUserAuthService;
-    private final SysUserRoleService sysUserRoleService;
-    private final SysRoleService sysRoleService;
+    private final LanBaseSysUserAuthService lanBaseSysUserAuthService;
+    private final LanBaseSysUserRoleService lanBaseSysUserRoleService;
+    private final LanBaseSysRoleService lanBaseSysRoleService;
 
     /**
      * 修改用户的密码
@@ -35,7 +35,7 @@ public class LanBaseUserController {
     @RequestMapping("/rbac/user/changePass")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void changePass(@Password String newPass, @User SysUserAuth user) {
-        sysUserAuthService.updatePassword(user, newPass);
+        lanBaseSysUserAuthService.updatePassword(user, newPass);
     }
 
 
@@ -45,7 +45,7 @@ public class LanBaseUserController {
     @RequestMapping("/rbac/user/get")
     @NeedAuth(InternalUserAuthCodeManager.QUERY)
     public DataFit getUserInfo(@User SysUserAuth user) {
-        return DataFit.of("user", user).fit("roles", sysRoleService.findByUserId(user.getId()));
+        return DataFit.of("user", user).fit("roles", lanBaseSysRoleService.findByUserId(user.getId()));
 
     }
 
@@ -58,7 +58,7 @@ public class LanBaseUserController {
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void updateUser(@User SysUserAuth user, @ParameterUser SysUserAuth newUser) {
         BeanUtils.copyProperties(newUser, user, "id", "userName", "userPassword", "userStatus", "userSerial", "createTime", "updateTime");
-        sysUserAuthService.update(user);
+        lanBaseSysUserAuthService.update(user);
     }
 
 
@@ -69,10 +69,10 @@ public class LanBaseUserController {
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void disable(String id) {
         // 管理员用户不能禁用
-        if (sysRoleService.hasAdminRole(id)) {
+        if (lanBaseSysRoleService.hasAdminRole(id)) {
             throw BusinessError.USER.USER_CAN_NOT_OPERATE;
         }
-        sysUserAuthService.disableUser(id);
+        lanBaseSysUserAuthService.disableUser(id);
     }
 
     /**
@@ -81,7 +81,7 @@ public class LanBaseUserController {
     @RequestMapping("/rbac/user/enable")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void enable(String id) {
-        sysUserAuthService.enableUser(id);
+        lanBaseSysUserAuthService.enableUser(id);
     }
 
     /**
@@ -93,7 +93,7 @@ public class LanBaseUserController {
     @RequestMapping("/rbac/user/query")
     @NeedAuth({InternalUserAuthCodeManager.QUERY})
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
-        return sysUserAuthService.searchUser(word, pageRequest);
+        return lanBaseSysUserAuthService.searchUser(word, pageRequest);
     }
 
 
@@ -104,14 +104,14 @@ public class LanBaseUserController {
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void addUser(@ParameterUser SysUserAuth user, @Password String password) {
         StringOptional.of(user.getUserName()).ifNotPresentThrow(BusinessError.USER.USER_NAME_IS_EMPTY);
-        if (sysUserAuthService.existsByUsername(user.getUserName())) {
+        if (lanBaseSysUserAuthService.existsByUsername(user.getUserName())) {
             throw BusinessError.USER.USER_EXISTS;
         }
         user.setUserPassword(password);
         user.setId(null);
         user.setUserSerial(SysUserAuth.DEFAULT_USER_SERIAL);
         user.setUserStatus(SysUserAuth.UserStatus.ENABLE);
-        sysUserAuthService.add(user);
+        lanBaseSysUserAuthService.add(user);
     }
 
     /**
@@ -123,6 +123,6 @@ public class LanBaseUserController {
     @RequestMapping("/rbac/user/grantRole")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void grantRoleToUser(@User SysUserAuth user, String[] roleIds) {
-        sysUserRoleService.grantRoles(user.getId(), roleIds);
+        lanBaseSysUserRoleService.grantRoles(user.getId(), roleIds);
     }
 }

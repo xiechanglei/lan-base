@@ -3,10 +3,10 @@ package io.github.xiechanglei.lan.base.rbac.init.data;
 import io.github.xiechanglei.lan.base.rbac.entity.SysRole;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.properties.LanBaseRbacConfigProperties;
-import io.github.xiechanglei.lan.base.rbac.repo.SysResourceCodeRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysRoleRepository;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserRoleService;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysResourceCodeRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysRoleRepository;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -29,10 +29,10 @@ import java.util.List;
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacRoleInitiation {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
-    private final SysRoleRepository sysRoleRepository;
-    private final SysUserAuthService sysUserAuthService;
-    private final SysUserRoleService sysUserRoleService;
-    private final SysResourceCodeRepository sysResourceCodeRepository;
+    private final LanBaseSysRoleRepository sysRoleRepository;
+    private final LanBaseSysUserAuthService sysUserAuthService;
+    private final LanBaseSysUserRoleService sysUserRoleService;
+    private final LanBaseSysResourceCodeRepository sysResourceCodeRepository;
 
     /**
      * 初始化角色与用户的数据

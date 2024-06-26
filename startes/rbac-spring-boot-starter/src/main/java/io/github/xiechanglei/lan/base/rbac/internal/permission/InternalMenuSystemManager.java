@@ -19,7 +19,7 @@ public class InternalMenuSystemManager {
     }
 
     @Menu(title = "角色管理", code = "rbac:menu:role:manager", icon = "pro://lan.base.rbac.icon-sys-manager-role", order = 2)
-    @Function(code = "rbac:role:edit", title = "角色编辑", authCode = {InternalRoleAuthCodeManager.CREATE, InternalRoleAuthCodeManager.DELETE, InternalRoleAuthCodeManager.GRANT, InternalRoleAuthCodeManager.ENABLE,InternalRoleAuthCodeManager.UPDATE})
+    @Function(code = "rbac:role:edit", title = "角色编辑", authCode = {InternalRoleAuthCodeManager.CREATE, InternalRoleAuthCodeManager.DELETE, InternalRoleAuthCodeManager.GRANT, InternalRoleAuthCodeManager.ENABLE, InternalRoleAuthCodeManager.UPDATE})
     @Function(code = "rbac:role:select", title = "角色查询", authCode = InternalRoleAuthCodeManager.QUERY)
     public static class InternalRoleModelManager {
     }
@@ -28,6 +28,12 @@ public class InternalMenuSystemManager {
     @Function(code = "rbac:menu:select", title = "菜单查询", authCode = InternalMenuAuthCodeManager.QUERY)
     @Function(code = "rbac:menu:edit", title = "菜单编辑", authCode = {InternalMenuAuthCodeManager.UPDATE, InternalMenuAuthCodeManager.ENABLE})
     public static class InternalMenuModelManager {
+    }
+
+    @Menu(title = "日志管理", code = "rbac:menu:log:manager", icon = "pro://lan.base.rbac.icon-sys-manager-log", order = 4)
+    @Function(code = "rbac:log:edit", title = "日志编辑", authCode = {InternalLogAuthCodeManager.DELETE})
+    @Function(code = "rbac:log:select", title = "日志查询", authCode = InternalLogAuthCodeManager.QUERY)
+    public static class InternalLogModelManager {
     }
 }
 

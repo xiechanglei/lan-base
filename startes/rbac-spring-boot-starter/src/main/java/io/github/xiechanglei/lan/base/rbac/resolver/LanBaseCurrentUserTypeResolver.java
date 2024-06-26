@@ -7,7 +7,7 @@ import io.github.xiechanglei.lan.base.rbac.annotation.CurrentUserId;
 import io.github.xiechanglei.lan.base.rbac.annotation.ParameterUser;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.provide.UserContextHolder;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.MethodParameter;
@@ -31,7 +31,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseCurrentUserTypeResolver implements HandlerMethodArgumentResolver {
-    private final SysUserAuthService sysUserAuthService;
+    private final LanBaseSysUserAuthService sysUserAuthService;
     private final UserContextHolder userContextHolder;
 
     @Override

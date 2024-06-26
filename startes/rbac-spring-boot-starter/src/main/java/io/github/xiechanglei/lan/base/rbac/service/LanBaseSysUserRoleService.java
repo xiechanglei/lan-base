@@ -4,8 +4,8 @@ import io.github.xiechanglei.lan.base.rbac.dsl.SysUserRoleDsl;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUser;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserRole;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.base.rbac.repo.SysRoleRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysUserRoleRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysRoleRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysUserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class SysUserRoleService {
-    private final SysUserRoleRepository sysUserRoleRepository;
+public class LanBaseSysUserRoleService {
+    private final LanBaseSysUserRoleRepository lanBaseSysUserRoleRepository;
     private final SysUserRoleDsl sysUserRoleDsl;
-    private final SysRoleRepository sysRoleRepository;
+    private final LanBaseSysRoleRepository lanBaseSysRoleRepository;
 
 
     /**
@@ -30,8 +30,8 @@ public class SysUserRoleService {
      * @param roleId 角色id
      */
     public void bindRole(String userId, String roleId) {
-        if (!sysUserRoleRepository.existsByUserIdAndRoleId(userId, roleId)) {
-            sysUserRoleRepository.save(SysUserRole.createAuthUserRole(userId, roleId));
+        if (!lanBaseSysUserRoleRepository.existsByUserIdAndRoleId(userId, roleId)) {
+            lanBaseSysUserRoleRepository.save(SysUserRole.createAuthUserRole(userId, roleId));
         }
     }
 
@@ -42,7 +42,7 @@ public class SysUserRoleService {
      * @return 是否存在
      */
     public boolean existsByRoleId(String roleId) {
-        return sysUserRoleRepository.existsByRoleId(roleId);
+        return lanBaseSysUserRoleRepository.existsByRoleId(roleId);
     }
 
 
@@ -62,12 +62,12 @@ public class SysUserRoleService {
         // 系统仅仅只有当前一个管理员
         if (allAdminUserId.size() == 1 && allAdminUserId.contains(userId)) {
             // 传入的角色中没有管理员角色
-            sysRoleRepository.findAllAdminRole().stream()
+            lanBaseSysRoleRepository.findAllAdminRole().stream()
                     .filter(role -> roleIdList.contains(role.getId())).findAny().orElseThrow(() -> BusinessError.USER.USER_ADMIN_ROLE);
         }
 
         // 删除之前的依赖关系
-        sysUserRoleRepository.deleteByUserId(userId);
+        lanBaseSysUserRoleRepository.deleteByUserId(userId);
 
         // 构建新的用户角色列表
         List<SysUserRole> userRoles = roleIdList.stream()
@@ -75,7 +75,7 @@ public class SysUserRoleService {
                 .collect(Collectors.toList());
 
         // 批量保存用户角色
-        sysUserRoleRepository.saveAll(userRoles);
+        lanBaseSysUserRoleRepository.saveAll(userRoles);
     }
 
     /**
@@ -85,6 +85,6 @@ public class SysUserRoleService {
      * @return 用户
      */
     public Page<SysUser> getUserByRoleId(PageRequest pageRequest, String roleId) {
-        return sysUserRoleRepository.findByRoleId(pageRequest, roleId);
+        return lanBaseSysUserRoleRepository.findByRoleId(pageRequest, roleId);
     }
 }

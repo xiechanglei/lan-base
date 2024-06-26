@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 /**
- * SysResourceCodeRepository  资源权限字符字典表
+ * LanBaseSysResourceCodeRepository  资源权限字符字典表
  */
-public interface SysResourceCodeRepository extends JpaRepository<SysResourceCode, String> {
+public interface LanBaseSysResourceCodeRepository extends JpaRepository<SysResourceCode, String> {
 
     /**
      * 校验用户访问权限

@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.base.rbac.provide;
 import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -13,11 +13,11 @@ import java.util.Objects;
 
 @Component
 public class UserContextHolder {
-    private static SysUserAuthService sysUserAuthService;
+    private static LanBaseSysUserAuthService sysUserAuthService;
 
     public static final String REQUEST_ATTR_USER_KEY = "BASE_AUTH_USER_INFO";// 存放在request中的用户信息的key
 
-    public UserContextHolder(SysUserAuthService sysUserAuthService) {
+    public UserContextHolder(LanBaseSysUserAuthService sysUserAuthService) {
         UserContextHolder.sysUserAuthService = sysUserAuthService;
     }
 

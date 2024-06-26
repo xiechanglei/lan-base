@@ -1,15 +1,15 @@
 package io.github.xiechanglei.lan.base.rbac.init.data;
 
 import io.github.xiechanglei.lan.base.beans.func.ThreeConsumer;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuRepository;
 import io.github.xiechanglei.lan.base.utils.collections.ArrayHelper;
 import io.github.xiechanglei.lan.base.rbac.annotation.Function;
 import io.github.xiechanglei.lan.base.rbac.annotation.Menu;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenu;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenuFc;
 import io.github.xiechanglei.lan.base.rbac.entity.SysResourceCode;
-import io.github.xiechanglei.lan.base.rbac.repo.SysMenuFcRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysMenuRepository;
-import io.github.xiechanglei.lan.base.rbac.repo.SysResourceCodeRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuFcRepository;
+import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysResourceCodeRepository;
 import io.github.xiechanglei.lan.base.rbac.util.DataUpdaterUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -50,9 +50,9 @@ import static io.github.xiechanglei.lan.base.rbac.entity.SysMenu.MenuType.PAGE;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacMenuAndFuncInitiation {
-    private final SysMenuRepository sysMenuRepository;
-    private final SysMenuFcRepository sysMenuFcRepository;
-    private final SysResourceCodeRepository sysResourceCodeRepository;
+    private final LanBaseSysMenuRepository lanBaseSysMenuRepository;
+    private final LanBaseSysMenuFcRepository lanBaseSysMenuFcRepository;
+    private final LanBaseSysResourceCodeRepository sysResourceCodeRepository;
     private final Environment env; //获取配置文件中的值
 
     public List<String> initData(ApplicationContext applicationContext) {
@@ -67,9 +67,9 @@ public class LanBaseRbacMenuAndFuncInitiation {
             allResourceCode.addAll(resCodes);
         }));
         //菜单
-        DataUpdaterUtil.update(sysMenuRepository, allMenus);
+        DataUpdaterUtil.update(lanBaseSysMenuRepository, allMenus);
         //功能、
-        DataUpdaterUtil.update(sysMenuFcRepository, allMenuFc);
+        DataUpdaterUtil.update(lanBaseSysMenuFcRepository, allMenuFc);
         // 资源权限字符字典
         DataUpdaterUtil.update(sysResourceCodeRepository, allResourceCode);
         List<String> allResourceIds = new ArrayList<>();

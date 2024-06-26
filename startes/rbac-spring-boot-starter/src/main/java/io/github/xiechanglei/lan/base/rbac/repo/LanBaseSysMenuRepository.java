@@ -4,9 +4,9 @@ import io.github.xiechanglei.lan.base.rbac.entity.SysMenu;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * SysMenuRepository  菜单表
+ * LanBaseSysMenuRepository  菜单表
  */
-public interface SysMenuRepository extends JpaRepository<SysMenu, String> {
+public interface LanBaseSysMenuRepository extends JpaRepository<SysMenu, String> {
 
 
     /**

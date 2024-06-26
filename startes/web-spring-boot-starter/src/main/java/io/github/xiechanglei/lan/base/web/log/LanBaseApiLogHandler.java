@@ -13,5 +13,5 @@ public interface LanBaseApiLogHandler {
      * @param path   接口路径
      * @param params 标记的参数
      */
-    void handle(String name, String path, Map<String, Object> params);
+    void handle(String name, String ip, String path, Map<String, Object> params) throws Exception;
 }

@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.base.rbac.resolver;
 
 import io.github.xiechanglei.lan.base.rbac.annotation.User;
 import io.github.xiechanglei.lan.base.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserAuthService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.MethodParameter;
@@ -20,7 +20,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseUserTypeResolver implements HandlerMethodArgumentResolver {
-    private final SysUserAuthService sysUserAuthService;
+    private final LanBaseSysUserAuthService lanBaseSysUserAuthService;
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
@@ -30,6 +30,6 @@ public class LanBaseUserTypeResolver implements HandlerMethodArgumentResolver {
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, @NonNull NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
         String id = webRequest.getParameter(Objects.requireNonNull(parameter.getParameterAnnotation(User.class)).value());
-        return sysUserAuthService.findById(id).orElseThrow(() -> BusinessError.USER.USER_NOT_FOUND);
+        return lanBaseSysUserAuthService.findById(id).orElseThrow(() -> BusinessError.USER.USER_NOT_FOUND);
     }
 }

@@ -8,9 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import javax.transaction.Transactional;
 
 
-public interface SysRoleAuthRepository extends JpaRepository<SysRoleAuth, String> {
-
-
+public interface LanBaseSysRoleAuthRepository extends JpaRepository<SysRoleAuth, String> {
     @Transactional
     @Modifying
     @Query("delete from SysRoleAuth where roleId=?1")

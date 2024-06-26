@@ -5,8 +5,8 @@ import io.github.xiechanglei.lan.base.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenu;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenuFc;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalMenuAuthCodeManager;
-import io.github.xiechanglei.lan.base.rbac.service.SysMenuFcService;
-import io.github.xiechanglei.lan.base.rbac.service.SysMenuService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuFcService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.validation.annotation.Validated;
@@ -21,8 +21,8 @@ import javax.validation.constraints.NotBlank;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseMenuController {
-    private final SysMenuService sysMenuService;
-    private final SysMenuFcService sysMenuFcService;
+    private final LanBaseSysMenuService lanBaseSysMenuService;
+    private final LanBaseSysMenuFcService lanBaseSysMenuFcService;
 
     /**
      * 获取全权限树形结构
@@ -30,8 +30,8 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.QUERY)
     @RequestMapping("/rbac/menu/list")
     public DataFit getMenuAll() {
-        return DataFit.of("menus", sysMenuService.getMenuAll())  //全部菜单
-                .fit("fcs", sysMenuFcService.getMenuFcAll()); //全部功能
+        return DataFit.of("menus", lanBaseSysMenuService.getMenuAll())  //全部菜单
+                .fit("fcs", lanBaseSysMenuFcService.getMenuFcAll()); //全部功能
     }
 
 
@@ -45,7 +45,7 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.UPDATE)
     @RequestMapping("/rbac/menu/update")
     public void updateMenu(@NotBlank(message = "菜单标题不能为空") String menuTitle, String menuCode, String menuIcon, @RequestParam(required = false, defaultValue = "0") Float menuOlder) {
-        sysMenuService.updateMenu(menuCode, menuTitle, menuIcon, menuOlder);
+        lanBaseSysMenuService.updateMenu(menuCode, menuTitle, menuIcon, menuOlder);
 
     }
 
@@ -55,7 +55,7 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/disableMenu")
     public void disableMenu(String menuCode) {
-        sysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.DISABLE);
+        lanBaseSysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.DISABLE);
     }
 
     /**
@@ -64,7 +64,7 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/enableMenu")
     public void enableMenu(String menuCode) {
-        sysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.ENABLE);
+        lanBaseSysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.ENABLE);
     }
 
     /**
@@ -73,7 +73,7 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/disableFunc")
     public void disableFunc(String funcCode) {
-        sysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.DISABLE);
+        lanBaseSysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.DISABLE);
     }
 
     /**
@@ -82,7 +82,7 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/enableFunc")
     public void enableFunc(String funcCode) {
-        sysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.ENABLE);
+        lanBaseSysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.ENABLE);
     }
 
     /**
@@ -91,6 +91,6 @@ public class LanBaseMenuController {
     @NeedAuth(InternalMenuAuthCodeManager.QUERY)
     @RequestMapping("/rbac/menu/get")
     public SysMenu getMenuInfo(String menuCode) {
-        return sysMenuService.getMenuInfo(menuCode);
+        return lanBaseSysMenuService.getMenuInfo(menuCode);
     }
 }

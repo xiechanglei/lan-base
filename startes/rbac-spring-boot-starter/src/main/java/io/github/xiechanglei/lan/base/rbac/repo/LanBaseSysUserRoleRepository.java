@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
-public interface SysUserRoleRepository extends JpaRepository<SysUserRole, String> {
+public interface LanBaseSysUserRoleRepository extends JpaRepository<SysUserRole, String> {
 
     /**
      * 判断用户是否拥有某个角色

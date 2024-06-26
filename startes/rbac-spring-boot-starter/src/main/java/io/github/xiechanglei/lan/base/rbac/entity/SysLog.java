@@ -1,0 +1,57 @@
+package io.github.xiechanglei.lan.base.rbac.entity;
+
+import io.github.xiechanglei.lan.base.jpa.baseentity.SnowFlakeIdEntity;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Table;
+import java.util.Date;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "sys_log")
+@EntityListeners(AuditingEntityListener.class)
+public class SysLog extends SnowFlakeIdEntity {
+    /**
+     * 用户ID
+     */
+    @Column(name = "user_id", length = 100)
+    private String userId;
+
+    /**
+     * 日志标题
+     */
+    @Column(name = "log_title", length = 100, nullable = false)
+    private String logTitle;
+
+    /**
+     * 请求路径
+     */
+    @Column(name = "log_path", length = 100, nullable = false)
+    private String logPath;
+
+    /**
+     * 请求IP地址
+     */
+    @Column(name = "log_address", length = 100, nullable = false)
+    private String logAddress;
+
+    /**
+     * 创建时间
+     */
+    @CreatedDate
+    @Column(nullable = false, updatable = false, columnDefinition = "datetime comment '创建时间'")
+    private Date logTime;
+
+    /**
+     * 日志类型
+     */
+    @Column(name = "params", length = 100, nullable = false)
+    private String params;
+}

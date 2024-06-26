@@ -6,8 +6,8 @@ import io.github.xiechanglei.lan.base.rbac.entity.SysUser;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalMenuAuthCodeManager;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalRoleAuthCodeManager;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalUserAuthCodeManager;
-import io.github.xiechanglei.lan.base.rbac.service.SysRoleService;
-import io.github.xiechanglei.lan.base.rbac.service.SysUserRoleService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
+import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
@@ -28,8 +28,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseRoleController {
-    private final SysRoleService sysRoleService;
-    private final SysUserRoleService sysUserRoleService;
+    private final LanBaseSysRoleService sysRoleService;
+    private final LanBaseSysUserRoleService lanBaseSysUserRoleService;
 
     /**
      * 查询所有角色
@@ -128,6 +128,6 @@ public class LanBaseRoleController {
     @NeedAuth({InternalRoleAuthCodeManager.QUERY, InternalUserAuthCodeManager.QUERY})
     @RequestMapping("/rbac/role/getUserByRoleId")
     public Page<SysUser> getUserByRoleId(PageRequest pageRequest, String roleId) {
-        return sysUserRoleService.getUserByRoleId(pageRequest, roleId);
+        return lanBaseSysUserRoleService.getUserByRoleId(pageRequest, roleId);
     }
 }
