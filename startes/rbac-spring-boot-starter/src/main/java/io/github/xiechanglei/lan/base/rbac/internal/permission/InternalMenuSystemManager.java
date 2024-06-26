@@ -31,8 +31,7 @@ public class InternalMenuSystemManager {
     }
 
     @Menu(title = "日志管理", code = "rbac:menu:log:manager", icon = "pro://lan.base.rbac.icon-sys-manager-log", order = 4)
-    @Function(code = "rbac:log:edit", title = "日志编辑", authCode = {InternalLogAuthCodeManager.DELETE})
-    @Function(code = "rbac:log:select", title = "日志查询", authCode = InternalLogAuthCodeManager.QUERY)
+    @Function(code = "rbac:log:select", title = "日志查询", authCode = {InternalLogAuthCodeManager.QUERY, InternalUserAuthCodeManager.QUERY})
     public static class InternalLogModelManager {
     }
 }
