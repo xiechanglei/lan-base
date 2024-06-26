@@ -4,12 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.entity.SysLog;
-import io.github.xiechanglei.lan.base.rbac.provide.UserContextHolder;
+import io.github.xiechanglei.lan.base.rbac.provide.TokenContextHolder;
 import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysLogRepository;
+import io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -17,10 +16,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Log4j2
-@Component
 @RequiredArgsConstructor
-@ConditionalOnBean(io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler.class)
-public class LanBaseApiLogHandler implements io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler {
+public class LanBaseApiLogDataBaseStoreHandler implements LanBaseApiLogHandler {
     private final LanBaseSysLogRepository lanBaseSysLogRepository;
     private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
@@ -42,10 +39,9 @@ public class LanBaseApiLogHandler implements io.github.xiechanglei.lan.base.web.
                 throw BusinessException.of("params 长度超过限制");
             }
             sysLog.setParams(jsonString);
-            if ((UserContextHolder.getCurrentUser().getId() != null)) {
-                sysLog.setUserId(UserContextHolder.getCurrentUser().getId());
-            } else {
-                sysLog.setUserId("");
+            TokenInfo tokenInfo = TokenContextHolder.getCurrentTokenInfo();
+            if (tokenInfo != null) {
+                sysLog.setUserId(tokenInfo.getUserId());
             }
             // 延时5秒存数据库
             executor.schedule(() -> {

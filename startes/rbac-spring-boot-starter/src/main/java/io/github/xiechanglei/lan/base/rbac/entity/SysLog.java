@@ -1,6 +1,7 @@
 package io.github.xiechanglei.lan.base.rbac.entity;
 
 import io.github.xiechanglei.lan.base.jpa.baseentity.SnowFlakeIdEntity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -54,4 +55,7 @@ public class SysLog extends SnowFlakeIdEntity {
      */
     @Column(name = "log_params", length = 200, nullable = false)
     private String params;
+
+    public SysLog() {
+    }
 }

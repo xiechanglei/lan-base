@@ -1,29 +1,22 @@
 package io.github.xiechanglei.lan.base.rbac.provide;
 
-import io.github.xiechanglei.lan.base.utils.md5.Md5Helper;
 import io.github.xiechanglei.lan.base.rbac.custorm.RbacEncodeStrategy;
-
-import java.util.ServiceLoader;
+import org.springframework.stereotype.Service;
 
 /**
  * 自定义密码加密策略，使用SPI机制，实现CustomRbacEncodeStrategy接口即可
  */
+@Service
 public class RbacEncodeProcessor {
 
-    private static RbacEncodeStrategy customRbacEncodeStrategy;
+    private static RbacEncodeStrategy rbacEncodeStrategy;
 
-    static {
-        ServiceLoader<RbacEncodeStrategy> serviceLoader = ServiceLoader.load(RbacEncodeStrategy.class);
-        for (RbacEncodeStrategy strategy : serviceLoader) {
-            customRbacEncodeStrategy = strategy;
-        }
-        if (customRbacEncodeStrategy == null) {
-            customRbacEncodeStrategy = Md5Helper::encode;
-        }
+    public RbacEncodeProcessor(RbacEncodeStrategy rbacEncodeStrategy) {
+        RbacEncodeProcessor.rbacEncodeStrategy = rbacEncodeStrategy;
     }
 
     public static String encode(String pass) {
-        return customRbacEncodeStrategy.encode(pass);
+        return rbacEncodeStrategy.encode(pass);
     }
 
 }

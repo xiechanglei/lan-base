@@ -21,7 +21,7 @@ public class TokenContextHolder {
 
     /**
      * 设置当前登录用户的token
-     * @param tokenInfo
+     * @param tokenInfo token信息
      */
     public static void setCurrentTokenInfo(TokenInfo tokenInfo) {
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
