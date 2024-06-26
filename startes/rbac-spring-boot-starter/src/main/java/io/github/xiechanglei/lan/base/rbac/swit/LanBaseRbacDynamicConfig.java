@@ -11,11 +11,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.annotation.Resource;
 
 @Configuration
 @EnableJpaAuditing
+@EnableScheduling
 @EntityScan("io.github.xiechanglei.lan.base.rbac")
 @EnableJpaRepositories("io.github.xiechanglei.lan.base.rbac")
 @ComponentScan("io.github.xiechanglei.lan.base.rbac")

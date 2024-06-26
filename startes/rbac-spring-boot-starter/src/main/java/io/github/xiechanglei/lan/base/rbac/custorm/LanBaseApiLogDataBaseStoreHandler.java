@@ -9,22 +9,35 @@ import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysLogRepository;
 import io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.scheduling.annotation.Scheduled;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 @Log4j2
 @RequiredArgsConstructor
 public class LanBaseApiLogDataBaseStoreHandler implements LanBaseApiLogHandler {
     private final LanBaseSysLogRepository lanBaseSysLogRepository;
-    private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+    private List<SysLog> cacheLogList = new LinkedList<>();
 
-    // params json 去存， 字段长度设计问题 ，200，字段长度过长，就不存了
-    // 延迟的批量存储
-    // 如何让子系统接管流程，
-    // TODO 优化
+    @Scheduled(fixedRate = 5000)
+    public void startSaveTask() {
+        if (!cacheLogList.isEmpty()) {
+            lanBaseSysLogRepository.saveAll(getAllLogs());
+        }
+    }
+
+    public List<SysLog> getAllLogs() {
+        List<SysLog> allLogs = cacheLogList;
+        cacheLogList = new LinkedList<>();
+        return allLogs;
+    }
+
+    public void addLog(SysLog sysLog) {
+        cacheLogList.add(sysLog);
+    }
+
     @Override
     public void handle(String name, String ip, String path, Map<String, Object> params) {
         try {
@@ -43,10 +56,7 @@ public class LanBaseApiLogDataBaseStoreHandler implements LanBaseApiLogHandler {
             if (tokenInfo != null) {
                 sysLog.setUserId(tokenInfo.getUserId());
             }
-            // 延时5秒存数据库
-            executor.schedule(() -> {
-                lanBaseSysLogRepository.save(sysLog);
-            }, 5000, TimeUnit.MILLISECONDS);
+            addLog(sysLog);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
