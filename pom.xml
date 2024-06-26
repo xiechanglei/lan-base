@@ -92,32 +92,17 @@
         <spring-framework.version>5.3.36</spring-framework.version>
         <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
         <snakeyaml.version>2.2</snakeyaml.version>
+        <javax.interceptor.version>1.2.2</javax.interceptor.version>
     </properties>
 
 
-    <!--    licenses -->
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version2.0</name>
-            <url>https://www.apache.org/licenses/</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <!--    developers-->
+
     <developers>
         <developer>
             <name>xiechanglei</name>
             <email>709955748@qq.com</email>
         </developer>
     </developers>
-
-    <!--    scm-->
-    <scm>
-        <connection>scm:git:https://github.com/xiechanglei/lan-base.git</connection>
-        <developerConnection>https://github.com/xiechanglei/lan-base</developerConnection>
-        <url>https://github.com/xiechanglei/lan-base.git</url>
-        <tag>v${project.version}</tag>
-    </scm>
 
     <distributionManagement>
         <snapshotRepository>
@@ -130,6 +115,24 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version2.0</name>
+            <url>https://www.apache.org/licenses/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <!--    scm-->
+    <scm>
+        <connection>scm:git:https://github.com/xiechanglei/lan-base.git</connection>
+        <developerConnection>https://github.com/xiechanglei/lan-base</developerConnection>
+        <url>https://github.com/xiechanglei/lan-base.git</url>
+        <tag>v${project.version}</tag>
+    </scm>
+
 
     <build>
         <pluginManagement>

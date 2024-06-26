@@ -28,6 +28,12 @@
             <artifactId>querydsl-apt</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>javax.interceptor</groupId>
+            <artifactId>javax.interceptor-api</artifactId>
+            <version>${javax.interceptor.version}</version>
+        </dependency>
+
         <!-- 配置参数提示生成，如果不需要可以删除 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

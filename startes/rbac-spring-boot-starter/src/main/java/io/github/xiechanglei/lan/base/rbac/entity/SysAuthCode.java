@@ -54,7 +54,7 @@ public class SysAuthCode implements ComparedEntity {
     /**
      * 对比是否相同，如果不相同，则将对应的字段更新
      *
-     * @param sysAuthCode 新的权限字符
+     * @param comparedEntity 对比的实体
      * @return 是否变化
      */
     @Override

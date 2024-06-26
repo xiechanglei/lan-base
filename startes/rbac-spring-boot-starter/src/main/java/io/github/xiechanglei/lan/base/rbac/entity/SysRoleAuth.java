@@ -37,7 +37,7 @@ public class SysRoleAuth extends UUIDIdEntity {
      *
      * @param roleId     角色id
      * @param resourceId 资源id
-     * @return
+     * @return 角色资源关联
      */
     public static SysRoleAuth createRoleAuth(String roleId, String resourceId) {
         SysRoleAuth sysRoleAuth = new SysRoleAuth();
