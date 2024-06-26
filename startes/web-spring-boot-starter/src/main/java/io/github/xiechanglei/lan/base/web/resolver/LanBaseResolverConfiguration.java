@@ -14,7 +14,7 @@ import java.util.List;
 @Log4j2
 @Configuration
 @RequiredArgsConstructor
-public class WangjiBaseResolverConfiguration implements WebMvcConfigurer {
+public class LanBaseResolverConfiguration implements WebMvcConfigurer {
     private final LanBaseResolverConfigProperties lanBaseResolverConfigProperties;
     private final LanBaseDateResolver lanBaseDateResolver;
 
