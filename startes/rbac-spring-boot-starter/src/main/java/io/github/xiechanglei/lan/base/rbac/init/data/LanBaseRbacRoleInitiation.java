@@ -9,7 +9,6 @@ import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -26,7 +25,6 @@ import java.util.List;
 @Component
 @Log4j2
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacRoleInitiation {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
     private final LanBaseSysRoleRepository sysRoleRepository;

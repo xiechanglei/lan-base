@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseUserController {
     private final LanBaseSysUserAuthService lanBaseSysUserAuthService;
     private final LanBaseSysUserRoleService lanBaseSysUserRoleService;

@@ -8,7 +8,6 @@ import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysAuthCodeRepository;
 import io.github.xiechanglei.lan.base.rbac.util.DataUpdaterUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +26,6 @@ import java.util.Map;
 @Component
 @Log4j2
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacAuthCodeInitiation {
 
     private final LanBaseSysAuthCodeRepository lanBaseSysAuthCodeRepository;

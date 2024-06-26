@@ -22,7 +22,7 @@ public class LanBaseRbacConfigProperties {
     private boolean filterAuth = true;
 
     /**
-     * 书否开启数据权限拦截,默认为true
+     * 是否拦截数据,默认为true
      */
     private boolean filterData = true;
 

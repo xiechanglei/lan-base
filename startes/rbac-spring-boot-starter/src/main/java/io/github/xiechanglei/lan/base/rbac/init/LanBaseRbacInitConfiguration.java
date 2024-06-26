@@ -26,7 +26,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Configuration
 @Log4j2
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacInitConfiguration implements ApplicationContextAware, WebMvcConfigurer {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
     private final LanBaseRbacTableInitiation lanBaseRbacTableInitiation;

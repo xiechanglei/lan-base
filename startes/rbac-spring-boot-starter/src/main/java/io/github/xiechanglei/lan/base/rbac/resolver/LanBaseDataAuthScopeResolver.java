@@ -4,7 +4,6 @@ import io.github.xiechanglei.lan.base.rbac.annotation.AuthScope;
 import io.github.xiechanglei.lan.base.rbac.custorm.DataAuthScope;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeansException;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.MethodParameter;
@@ -18,9 +17,11 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * todo 缺少数据检查的拦截实现
+ */
 @Log4j2
 @Component
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseDataAuthScopeResolver implements HandlerMethodArgumentResolver, ApplicationContextAware {
 
     private final Map<String, DataAuthScope> dataAuthScopeMap = new HashMap<>();

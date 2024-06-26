@@ -24,7 +24,6 @@ import java.util.List;
 @Component
 @Log4j2
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacDataInitiation {
     private final LanBaseRbacAuthCodeInitiation lanBaseRbacAuthCodeInitiation;
     private final LanBaseRbacMenuAndFuncInitiation lanBaseRbacMenuAndFuncInitiation;

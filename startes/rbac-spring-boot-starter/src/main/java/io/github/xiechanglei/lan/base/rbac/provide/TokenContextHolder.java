@@ -1,7 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.provide;
 
 import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -9,7 +8,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
-@RequiredArgsConstructor
 @Component
 public class TokenContextHolder {
     public static final String REQUEST_ATTR_TOKEN_KEY = "BASE_AUTH_TOKEN_INFO";// 存放在request中的token信息的key

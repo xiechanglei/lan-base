@@ -15,7 +15,6 @@ import static io.github.xiechanglei.lan.base.rbac.entity.QSysUserRole.sysUserRol
 
 @Service
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class SysMenuDsl {
     private final JPAQueryFactory jpaQueryFactory;
 

@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
  */
 @Component
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBasePasswordTypeResolver implements HandlerMethodArgumentResolver {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
     private Pattern passwordPattern = null;

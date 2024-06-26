@@ -23,7 +23,6 @@ import java.util.Map;
 @Component
 @RequiredArgsConstructor
 @Log4j2
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseRbacTableInitiation {
     private final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean;
     private final List<String> managedClassNamesCache = new ArrayList<>();

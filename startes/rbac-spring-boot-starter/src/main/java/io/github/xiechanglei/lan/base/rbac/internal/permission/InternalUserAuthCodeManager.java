@@ -13,9 +13,6 @@ public class InternalUserAuthCodeManager {
     @AuthCode("用户创建")
     public static final String CREATE = "rbac:user:create";
 
-    //@AuthCode("用户删除")
-    //public static final String DELETE = "rbac:user:delete";
-
     @AuthCode("用户查询")
     public static final String QUERY= "rbac:user:query";
 

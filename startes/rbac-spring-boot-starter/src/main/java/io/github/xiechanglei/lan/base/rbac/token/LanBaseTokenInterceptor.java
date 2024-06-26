@@ -1,12 +1,11 @@
 package io.github.xiechanglei.lan.base.rbac.token;
 
-import io.github.xiechanglei.lan.base.utils.string.StringOptional;
 import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
 import io.github.xiechanglei.lan.base.rbac.properties.LanBaseRbacConfigProperties;
 import io.github.xiechanglei.lan.base.rbac.provide.TokenContextHolder;
+import io.github.xiechanglei.lan.base.utils.string.StringOptional;
 import io.github.xiechanglei.lan.base.web.util.CookieHelper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -20,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseTokenInterceptor implements HandlerInterceptor, WebMvcConfigurer {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
 

@@ -26,7 +26,6 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseNeedAuthAop {
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
     private final PermissionService permissionService;

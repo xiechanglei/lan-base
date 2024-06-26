@@ -20,7 +20,7 @@ import javax.validation.constraints.NotBlank;
 @RestController
 @Validated
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseMenuController {
     private final LanBaseSysMenuService lanBaseSysMenuService;
     private final LanBaseSysMenuFcService lanBaseSysMenuFcService;

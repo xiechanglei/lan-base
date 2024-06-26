@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public final class DefaultPermissionService {
     private final LanBaseSysResourceCodeRepository lanBaseSysResourceCodeRepository;
     private final LanBaseSysRoleService sysRoleService;

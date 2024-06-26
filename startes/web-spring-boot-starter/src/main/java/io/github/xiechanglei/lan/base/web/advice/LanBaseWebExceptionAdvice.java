@@ -40,8 +40,6 @@ public class LanBaseWebExceptionAdvice {
 
     /**
      * 处理方法参数校验失败异常（如 @Valid 和 @NotBlank）
-     * todo 未测试
-     *
      * @param e 方法参数校验失败异常
      * @return WebResult结构化返回结果
      */

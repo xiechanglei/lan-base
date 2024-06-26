@@ -27,7 +27,7 @@ import java.util.List;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanBaseRoleController {
     private final LanBaseSysRoleService sysRoleService;
     private final LanBaseSysUserRoleService lanBaseSysUserRoleService;

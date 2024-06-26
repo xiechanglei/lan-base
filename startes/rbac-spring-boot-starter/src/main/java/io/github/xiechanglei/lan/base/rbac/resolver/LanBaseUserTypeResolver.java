@@ -18,7 +18,6 @@ import java.util.Objects;
 
 @Component
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class LanBaseUserTypeResolver implements HandlerMethodArgumentResolver {
     private final LanBaseSysUserAuthService lanBaseSysUserAuthService;
 
