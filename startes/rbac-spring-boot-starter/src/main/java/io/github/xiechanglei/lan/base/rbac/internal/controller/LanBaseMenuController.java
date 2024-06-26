@@ -7,6 +7,7 @@ import io.github.xiechanglei.lan.base.rbac.entity.SysMenuFc;
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalMenuAuthCodeManager;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuFcService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysMenuService;
+import io.github.xiechanglei.lan.base.web.log.ApiLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.validation.annotation.Validated;
@@ -19,7 +20,7 @@ import javax.validation.constraints.NotBlank;
 @RestController
 @Validated
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
 public class LanBaseMenuController {
     private final LanBaseSysMenuService lanBaseSysMenuService;
     private final LanBaseSysMenuFcService lanBaseSysMenuFcService;
@@ -27,6 +28,7 @@ public class LanBaseMenuController {
     /**
      * 获取全权限树形结构
      */
+    @ApiLog(value = "获取菜单列表")
     @NeedAuth(InternalMenuAuthCodeManager.QUERY)
     @RequestMapping("/rbac/menu/list")
     public DataFit getMenuAll() {
@@ -42,6 +44,7 @@ public class LanBaseMenuController {
      * @param menuTitle 菜单名称
      * @param menuIcon  菜单图标
      */
+    @ApiLog(value = "编辑菜单", params = {"menuCode", "menuTitle", "menuIcon", "menuOlder"})
     @NeedAuth(InternalMenuAuthCodeManager.UPDATE)
     @RequestMapping("/rbac/menu/update")
     public void updateMenu(@NotBlank(message = "菜单标题不能为空") String menuTitle, String menuCode, String menuIcon, @RequestParam(required = false, defaultValue = "0") Float menuOlder) {
@@ -52,6 +55,7 @@ public class LanBaseMenuController {
     /**
      * 禁用菜单
      */
+    @ApiLog(value = "禁用菜单", params = {"menuCode"})
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/disableMenu")
     public void disableMenu(String menuCode) {
@@ -61,6 +65,7 @@ public class LanBaseMenuController {
     /**
      * 启用菜单
      */
+    @ApiLog(value = "启用菜单", params = {"menuCode"})
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/enableMenu")
     public void enableMenu(String menuCode) {
@@ -70,6 +75,7 @@ public class LanBaseMenuController {
     /**
      * 禁用功能
      */
+    @ApiLog(value = "禁用功能", params = {"funcCode"})
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/disableFunc")
     public void disableFunc(String funcCode) {
@@ -79,6 +85,7 @@ public class LanBaseMenuController {
     /**
      * 启用功能
      */
+    @ApiLog(value = "启用功能", params = {"funcCode"})
     @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/menu/enableFunc")
     public void enableFunc(String funcCode) {
@@ -88,6 +95,7 @@ public class LanBaseMenuController {
     /**
      * 获取菜单的信息
      */
+    @ApiLog(value = "获取菜单的信息")
     @NeedAuth(InternalMenuAuthCodeManager.QUERY)
     @RequestMapping("/rbac/menu/get")
     public SysMenu getMenuInfo(String menuCode) {

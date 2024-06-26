@@ -13,6 +13,7 @@ import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalUserAuthC
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
+import io.github.xiechanglei.lan.base.web.log.ApiLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
 public class LanBaseUserController {
     private final LanBaseSysUserAuthService lanBaseSysUserAuthService;
     private final LanBaseSysUserRoleService lanBaseSysUserRoleService;
@@ -32,6 +33,7 @@ public class LanBaseUserController {
     /**
      * 修改用户的密码
      */
+    @ApiLog(value = "修改用户密码", params = {"id"})
     @RequestMapping("/rbac/user/changePass")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void changePass(@Password String newPass, @User SysUserAuth user) {
@@ -42,6 +44,7 @@ public class LanBaseUserController {
     /**
      * 获取用户信息,只包含角色信息
      */
+    @ApiLog(value = "获取用户信息", params = {"id"})
     @RequestMapping("/rbac/user/get")
     @NeedAuth(InternalUserAuthCodeManager.QUERY)
     public DataFit getUserInfo(@User SysUserAuth user) {
@@ -54,6 +57,7 @@ public class LanBaseUserController {
      *
      * @param user 指定用户
      */
+    @ApiLog(value = "更新用户信息", params = {"id"})
     @RequestMapping("/rbac/user/update")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void updateUser(@User SysUserAuth user, @ParameterUser SysUserAuth newUser) {
@@ -65,6 +69,7 @@ public class LanBaseUserController {
     /**
      * 禁用用户
      */
+    @ApiLog(value = "禁用用户", params = {"id"})
     @RequestMapping("/rbac/user/disable")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void disable(String id) {
@@ -78,6 +83,7 @@ public class LanBaseUserController {
     /**
      * 启用用户
      */
+    @ApiLog(value = "启用用户", params = {"id"})
     @RequestMapping("/rbac/user/enable")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void enable(String id) {
@@ -90,6 +96,7 @@ public class LanBaseUserController {
      * @param word        查询关键字
      * @param pageRequest 分页信息
      */
+    @ApiLog(value = "查询用户", params = {"word"})
     @RequestMapping("/rbac/user/query")
     @NeedAuth({InternalUserAuthCodeManager.QUERY})
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
@@ -100,6 +107,7 @@ public class LanBaseUserController {
     /**
      * 添加用户
      */
+    @ApiLog(value = "添加用户", params = {"userName"})
     @RequestMapping("/rbac/user/add")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void addUser(@ParameterUser SysUserAuth user, @Password String password) {
@@ -120,6 +128,7 @@ public class LanBaseUserController {
      * @param user    用户
      * @param roleIds 角色id数组
      */
+    @ApiLog(value = "给用户授予角色", params = {"id", "roleIds"})
     @RequestMapping("/rbac/user/grantRole")
     @NeedAuth(InternalUserAuthCodeManager.UPDATE)
     public void grantRoleToUser(@User SysUserAuth user, String[] roleIds) {

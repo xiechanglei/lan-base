@@ -3,6 +3,7 @@ package io.github.xiechanglei.lan.base.rbac.dsl;
 import io.github.xiechanglei.lan.base.rbac.entity.*;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import static io.github.xiechanglei.lan.base.rbac.entity.QSysUserRole.sysUserRol
 
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 public class SysMenuFcDsl {
     private final JPAQueryFactory jpaQueryFactory;
 

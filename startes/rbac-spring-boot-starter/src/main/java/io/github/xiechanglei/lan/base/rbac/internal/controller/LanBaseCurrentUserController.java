@@ -14,6 +14,7 @@ import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
 import io.github.xiechanglei.lan.base.rbac.token.TokenHandler;
 import io.github.xiechanglei.lan.base.rbac.token.TokenInfoManager;
+import io.github.xiechanglei.lan.base.web.log.ApiLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -28,7 +29,7 @@ import java.util.Objects;
 
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
 public class LanBaseCurrentUserController {
     private final LanBaseSysUserAuthService sysUserAuthService;
     private final LanBaseRbacConfigProperties lanBaseRbacConfigProperties;
@@ -44,6 +45,7 @@ public class LanBaseCurrentUserController {
      * @param injectCookie 是否注入cookie
      * @return token
      */
+    @ApiLog(value = "用户登录", params = {"userName", "userPassword"})
     @RequestMapping("/rbac/user/current/login")
     public String login(String userName, @Password String userPassword, @RequestParam(required = false, defaultValue = "false") Boolean injectCookie) {
         SysUserAuth loginUser = sysUserAuthService.findByUserNameAndUserPassword(userName, userPassword);
@@ -71,6 +73,7 @@ public class LanBaseCurrentUserController {
      * @param newPass 新密码
      * @param oldPass 旧密码
      */
+    @ApiLog(value = "修改当前用户的密码")
     @RequestMapping("/rbac/user/current/changePass")
     public String changeMyPass(@Password String newPass, @Password(check = false) String oldPass, @CurrentUser SysUserAuth user) {
         if (!user.getUserPassword().equals(oldPass)) {
@@ -83,6 +86,7 @@ public class LanBaseCurrentUserController {
     /**
      * 获取当前用户的信息，包含菜单权限，角色列表，功能
      */
+    @ApiLog(value = "获取当前用户的信息")
     @RequestMapping("/rbac/user/current/get")
     public DataFit getCurrentUserInfo(@CurrentUser SysUserAuth user) {
         DataFit result = DataFit.of("user", user).fit("roles", lanBaseSysRoleService.findByUserId(user.getId()));
@@ -95,6 +99,7 @@ public class LanBaseCurrentUserController {
     /**
      * 更新当前用户信息
      */
+    @ApiLog(value = "更新当前用户信息")
     @RequestMapping("/rbac/user/current/update")
     public void updateCurrentUserInfo(@CurrentUser SysUserAuth user, @ParameterUser SysUserAuth newUser) {
         BeanUtils.copyProperties(newUser, user, "id", "userName", "userPassword", "userStatus", "userSerial", "createTime", "updateTime");

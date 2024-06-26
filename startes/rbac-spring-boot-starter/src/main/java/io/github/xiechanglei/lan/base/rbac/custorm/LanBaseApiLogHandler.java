@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.base.rbac.service;
+package io.github.xiechanglei.lan.base.rbac.custorm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,7 +6,6 @@ import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.entity.SysLog;
 import io.github.xiechanglei.lan.base.rbac.provide.UserContextHolder;
 import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysLogRepository;
-import io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -20,15 +19,15 @@ import java.util.concurrent.TimeUnit;
 @Log4j2
 @Component
 @RequiredArgsConstructor
-@ConditionalOnBean(LanBaseApiLogHandler.class)// 子项目如果有WangjiApiLogService类，则此类不加载。类名需要相同
-public class LanBaseApiLogService implements LanBaseApiLogHandler {
+@ConditionalOnBean(io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler.class)
+public class LanBaseApiLogHandler implements io.github.xiechanglei.lan.base.web.log.LanBaseApiLogHandler {
     private final LanBaseSysLogRepository lanBaseSysLogRepository;
     private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
     // params json 去存， 字段长度设计问题 ，200，字段长度过长，就不存了
     // 延迟的批量存储
     // 如何让子系统接管流程，
-    // TODO
+    // TODO 优化
     @Override
     public void handle(String name, String ip, String path, Map<String, Object> params) {
         try {

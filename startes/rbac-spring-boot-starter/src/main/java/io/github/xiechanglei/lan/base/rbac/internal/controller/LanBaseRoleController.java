@@ -8,6 +8,7 @@ import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalRoleAuthC
 import io.github.xiechanglei.lan.base.rbac.internal.permission.InternalUserAuthCodeManager;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysRoleService;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserRoleService;
+import io.github.xiechanglei.lan.base.web.log.ApiLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
@@ -26,7 +27,7 @@ import java.util.List;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.base.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.base.rbac", name = {"internal-api", "enable"}, havingValue = "true", matchIfMissing = true)
 public class LanBaseRoleController {
     private final LanBaseSysRoleService sysRoleService;
     private final LanBaseSysUserRoleService lanBaseSysUserRoleService;
@@ -34,6 +35,7 @@ public class LanBaseRoleController {
     /**
      * 查询所有角色
      */
+    @ApiLog(value = "查询所有角色", params = {"roleName"})
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/query")
     public Page<SysRole> searchRole(PageRequest pageRequest, @RequestParam(required = false, defaultValue = "") String roleName) {
@@ -43,6 +45,7 @@ public class LanBaseRoleController {
     /**
      * 创建角色
      */
+    @ApiLog(value = "创建角色", params = {"roleName"})
     @NeedAuth(InternalRoleAuthCodeManager.CREATE)
     @RequestMapping("/rbac/role/add")
     public void createRole(@Size(min = 1, max = 20, message = "角色名称长度必须在1-20个字符") String roleName) {
@@ -54,6 +57,7 @@ public class LanBaseRoleController {
      *
      * @param roleId 角色id
      */
+    @ApiLog(value = "查询角色详情", params = {"roleId"})
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/get")
     public SysRole searchRoleById(String roleId) {
@@ -63,6 +67,7 @@ public class LanBaseRoleController {
     /**
      * 更新角色
      */
+    @ApiLog(value = "更新角色", params = {"roleName", "roleId", "roleRemark"})
     @NeedAuth(InternalRoleAuthCodeManager.UPDATE)
     @RequestMapping("/rbac/role/update")
     public void editRole(String roleName, String roleId, String roleRemark) {
@@ -74,6 +79,7 @@ public class LanBaseRoleController {
      *
      * @param roleId 角色id
      */
+    @ApiLog(value = "禁用角色", params = {"roleId"})
     @NeedAuth(InternalRoleAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/role/disable")
     public void disableRole(String roleId) {
@@ -85,6 +91,7 @@ public class LanBaseRoleController {
      *
      * @param roleId 角色id
      */
+    @ApiLog(value = "启用角色", params = {"roleId"})
     @NeedAuth(InternalRoleAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/role/enable")
     public void enableRole(String roleId) {
@@ -96,6 +103,7 @@ public class LanBaseRoleController {
      *
      * @param roleId 角色id
      */
+    @ApiLog(value = "删除角色", params = {"roleId"})
     @NeedAuth(InternalRoleAuthCodeManager.DELETE)
     @RequestMapping("/rbac/role/remove")
     public void deleteRole(String roleId) {
@@ -107,6 +115,7 @@ public class LanBaseRoleController {
      *
      * @param roleId 角色id
      */
+    @ApiLog(value = "查询角色权限", params = {"roleId"})
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/loadResource")
     public List<String> loadRoleResource(String roleId) {
@@ -116,6 +125,7 @@ public class LanBaseRoleController {
     /**
      * 设置角色权限
      */
+    @ApiLog(value = "设置角色权限", params = {"roleId"})
     @NeedAuth({InternalRoleAuthCodeManager.GRANT, InternalMenuAuthCodeManager.QUERY})
     @RequestMapping("/rbac/role/grantResource")
     public void grantResource(String roleId, String[] resourceIds) {
@@ -125,6 +135,7 @@ public class LanBaseRoleController {
     /**
      * 根据角色ID查询关联的所有用户
      */
+    @ApiLog(value = "根据角色ID查询关联的所有用户", params = {"roleId"})
     @NeedAuth({InternalRoleAuthCodeManager.QUERY, InternalUserAuthCodeManager.QUERY})
     @RequestMapping("/rbac/role/getUserByRoleId")
     public Page<SysUser> getUserByRoleId(PageRequest pageRequest, String roleId) {

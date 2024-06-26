@@ -1,13 +1,13 @@
 package io.github.xiechanglei.lan.base.rbac;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
 
-@EntityScan
-@EnableJpaRepositories
-@EnableJpaAuditing
-@ComponentScan("io.github.xiechanglei.lan.base.rbac")
 public class LanBaseRbacAutoConfiguration {
+
+    @Bean
+    @ConditionalOnProperty(prefix = "lan.base.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
+    public LanBaseRbacDynamicConfig lanBaseRbacDynamicConfig() {
+        return new LanBaseRbacDynamicConfig();
+    }
 }
