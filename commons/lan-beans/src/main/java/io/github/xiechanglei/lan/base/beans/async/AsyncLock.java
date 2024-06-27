@@ -19,7 +19,9 @@ public class AsyncLock {
     }
 
     /**
-     * @return is timout
+     * 阻塞等待，直到超时
+     * @param waitTime 等待时间，单位毫秒
+     * @return 是否超时等待
      */
     public boolean lock(long waitTime) {
         lock.lock();

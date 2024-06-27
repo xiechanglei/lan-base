@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.utils.net;
 
-import io.github.xiechanglei.base.common.net.vo.LocalIpAddressInfo;
+import io.github.xiechanglei.lan.base.utils.net.vo.LocalIpAddressInfo;
 
 import java.io.IOException;
 import java.net.InetAddress;

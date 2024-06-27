@@ -37,7 +37,7 @@
         <!-- 公共bean -->
         <dependency>
             <groupId>io.github.xiechanglei</groupId>
-            <artifactId>lan-base-beans</artifactId>
+            <artifactId>lan-beans</artifactId>
         </dependency>
 
         <!-- utils -->

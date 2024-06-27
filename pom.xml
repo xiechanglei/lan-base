@@ -14,8 +14,36 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+
+    <!--    项目基础参数-->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 定义一个全局的版本号码，减少维护版本号码的成本,
+        版本号的规则为: springboot的版本号 + . + 项目的版本号
+        如:2.7.18.1 表示springboot的版本号为2.7.18, 项目的版本号为1
+        -->
+        <revision>2.7.18.1</revision>
+        <!--#######################CE FIX######################-->
+        <!--spring boot 基础版本更迭之后需要检查一遍-->
+        <!-- fix CE(CVE-2023-6378) -->
+        <logback.version>1.2.13</logback.version>
+        <!-- json path -->
+        <json-path.version>2.9.0</json-path.version>
+        <!-- fix CE(CVE-2024-22233)-->
+        <spring-framework.version>5.3.36</spring-framework.version>
+        <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <javax.interceptor.version>1.2.2</javax.interceptor.version>
+        <!--        json path-->
+        <json-path.version>2.9.0</json-path.version>
+        <!--        jsonp -->
+        <jsoup.version>1.17.2</jsoup.version>
+    </properties>
+
     <modules>
-        <module>commons/lan-base-beans</module>
+        <module>commons/lan-beans</module>
         <module>commons/lan-base-digest</module>
         <module>commons/lan-base-http</module>
         <module>commons/lan-base-jpa-beans</module>
@@ -31,7 +59,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.github.xiechanglei</groupId>
-                <artifactId>lan-base-beans</artifactId>
+                <artifactId>lan-beans</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
@@ -89,34 +117,12 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
-    <!--    项目基础参数-->
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 定义一个全局的版本号码，减少维护版本号码的成本,
-        版本号的规则为: springboot的版本号 + . + 项目的版本号
-        如:2.7.18.1 表示springboot的版本号为2.7.18, 项目的版本号为1
-        -->
-        <revision>2.7.18.1</revision>
-        <!--#######################CE FIX######################-->
-        <!--spring boot 基础版本更迭之后需要检查一遍-->
-        <!-- fix CE(CVE-2023-6378) -->
-        <logback.version>1.2.13</logback.version>
-        <!-- json path -->
-        <json-path.version>2.9.0</json-path.version>
-        <!-- fix CE(CVE-2024-22233)-->
-        <spring-framework.version>5.3.36</spring-framework.version>
-        <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
-        <snakeyaml.version>2.2</snakeyaml.version>
-        <javax.interceptor.version>1.2.2</javax.interceptor.version>
-        <!--        json path-->
-        <json-path.version>2.9.0</json-path.version>
-        <!--        jsonp -->
-        <jsoup.version>1.17.2</jsoup.version>
-    </properties>
 
 
     <developers>
