@@ -16,7 +16,10 @@
 
     <modules>
         <module>commons/lan-base-beans</module>
+        <module>commons/lan-base-digest</module>
+        <module>commons/lan-base-http</module>
         <module>commons/lan-base-jpa-beans</module>
+        <module>commons/lan-base-json</module>
         <module>commons/lan-base-utils</module>
         <module>startes/jpa-spring-boot-starter</module>
         <module>startes/rbac-spring-boot-starter</module>
@@ -33,9 +36,25 @@
             </dependency>
             <dependency>
                 <groupId>io.github.xiechanglei</groupId>
+                <artifactId>lan-base-digest</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.xiechanglei</groupId>
+                <artifactId>lan-base-http</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.xiechanglei</groupId>
                 <artifactId>lan-base-jpa-beans</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.xiechanglei</groupId>
+                <artifactId>lan-base-json</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
             <dependency>
                 <groupId>io.github.xiechanglei</groupId>
                 <artifactId>lan-base-utils</artifactId>
@@ -93,8 +112,11 @@
         <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
         <snakeyaml.version>2.2</snakeyaml.version>
         <javax.interceptor.version>1.2.2</javax.interceptor.version>
+        <!--        json path-->
+        <json-path.version>2.9.0</json-path.version>
+        <!--        jsonp -->
+        <jsoup.version>1.17.2</jsoup.version>
     </properties>
-
 
 
     <developers>

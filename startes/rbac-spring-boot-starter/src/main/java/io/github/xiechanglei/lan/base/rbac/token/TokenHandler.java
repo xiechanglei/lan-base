@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.token;
 
-import io.github.xiechanglei.lan.base.utils.aes.AESHelper;
+import io.github.xiechanglei.lan.base.digest.aes.AESHelper;
 import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -1,10 +1,12 @@
-package io.github.xiechanglei.lan.base.utils.md5;
+package io.github.xiechanglei.lan.base.digest.md5;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-//Md5 加密工具类
+/**
+ * Md5 加密工具类
+ */
 public class Md5Helper {
     /**
      * MD5加密
@@ -13,9 +15,16 @@ public class Md5Helper {
      * @return 加密后的字符串
      */
     public static String encode(String str) {
+        return encode(str.getBytes(StandardCharsets.UTF_8));
+    }
+
+    /**
+     * 获取字节数组的md5
+     */
+    public static String encode(byte[] data) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] md5 = md.digest(str.getBytes(StandardCharsets.UTF_8));
+            byte[] md5 = md.digest(data);
             StringBuilder sb = new StringBuilder();
             for (byte b : md5) {
                 int val = b & 0xff;
@@ -29,4 +38,6 @@ public class Md5Helper {
             return null;
         }
     }
+
+
 }

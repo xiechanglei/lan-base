@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.base.utils.aes;
+package io.github.xiechanglei.lan.base.digest.aes;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
