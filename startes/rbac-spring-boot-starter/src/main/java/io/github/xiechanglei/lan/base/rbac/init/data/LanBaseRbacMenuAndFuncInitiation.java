@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.init.data;
 
-import io.github.xiechanglei.lan.base.beans.func.ThreeConsumer;
+import io.github.xiechanglei.lan.beans.func.ThreeConsumer;
 import io.github.xiechanglei.lan.base.rbac.annotation.Function;
 import io.github.xiechanglei.lan.base.rbac.annotation.Menu;
 import io.github.xiechanglei.lan.base.rbac.entity.SysMenu;
@@ -10,7 +10,7 @@ import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuFcRepository;
 import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysMenuRepository;
 import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysResourceCodeRepository;
 import io.github.xiechanglei.lan.base.rbac.util.DataUpdaterUtil;
-import io.github.xiechanglei.lan.base.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.ApplicationContext;

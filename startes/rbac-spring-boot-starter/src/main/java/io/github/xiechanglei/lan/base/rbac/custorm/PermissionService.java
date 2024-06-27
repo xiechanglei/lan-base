@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.custorm;
 
-import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
+import io.github.xiechanglei.lan.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 
 /**

@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.base.rbac.aop;
 
 import io.github.xiechanglei.lan.base.rbac.properties.LanBaseRbacConfigProperties;
-import io.github.xiechanglei.lan.base.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
 import io.github.xiechanglei.lan.base.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.base.rbac.custorm.PermissionService;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
@@ -13,7 +13,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**

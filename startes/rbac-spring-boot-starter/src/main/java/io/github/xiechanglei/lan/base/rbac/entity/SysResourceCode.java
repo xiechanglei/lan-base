@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.entity;
 
-import io.github.xiechanglei.lan.base.jpa.baseentity.UUIDIdEntity;
+import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdEntity;
 import io.github.xiechanglei.lan.base.rbac.util.ComparedEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;

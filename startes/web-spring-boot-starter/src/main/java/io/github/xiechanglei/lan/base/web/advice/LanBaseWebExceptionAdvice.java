@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.base.web.advice;
 
-import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
-import io.github.xiechanglei.lan.base.beans.message.WebResult;
+import io.github.xiechanglei.lan.beans.exception.BusinessException;
+import io.github.xiechanglei.lan.beans.message.WebResult;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.ExceptionHandler;

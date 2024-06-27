@@ -2,7 +2,7 @@ package io.github.xiechanglei.lan.base.rbac.custorm;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
+import io.github.xiechanglei.lan.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.entity.SysLog;
 import io.github.xiechanglei.lan.base.rbac.provide.TokenContextHolder;
 import io.github.xiechanglei.lan.base.rbac.repo.LanBaseSysLogRepository;

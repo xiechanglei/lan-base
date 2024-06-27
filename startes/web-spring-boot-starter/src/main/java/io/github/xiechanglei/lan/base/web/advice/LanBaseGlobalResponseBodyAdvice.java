@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.web.advice;
 
-import io.github.xiechanglei.lan.base.beans.message.WebResult;
+import io.github.xiechanglei.lan.beans.message.WebResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.base.rbac.service;
 
 
-import io.github.xiechanglei.lan.base.utils.string.StringOptional;
+import io.github.xiechanglei.lan.utils.string.StringOptional;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUser;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.init.LanBaseJpaEntityManager;

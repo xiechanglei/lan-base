@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.entity;
 
-import io.github.xiechanglei.lan.base.utils.string.StringOptional;
+import io.github.xiechanglei.lan.utils.string.StringOptional;
 import io.github.xiechanglei.lan.base.rbac.util.ComparedEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;

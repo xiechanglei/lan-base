@@ -1,7 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.entity;
 
-import io.github.xiechanglei.lan.base.jpa.baseentity.SnowFlakeIdEntity;
-import lombok.Builder;
+import io.github.xiechanglei.lan.jpa.baseentity.SnowFlakeIdEntity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;

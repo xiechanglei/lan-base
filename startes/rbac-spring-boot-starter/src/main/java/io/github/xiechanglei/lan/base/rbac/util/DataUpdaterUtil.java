@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.base.rbac.util;
 
-import io.github.xiechanglei.lan.base.utils.collections.ListFilterHandler;
-import io.github.xiechanglei.lan.base.utils.collections.ListFilterHandlerBuilder;
+import io.github.xiechanglei.lan.utils.collections.ListFilterHandler;
+import io.github.xiechanglei.lan.utils.collections.ListFilterHandlerBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

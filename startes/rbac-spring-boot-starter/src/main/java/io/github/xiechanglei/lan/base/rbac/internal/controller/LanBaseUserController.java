@@ -1,8 +1,8 @@
 package io.github.xiechanglei.lan.base.rbac.internal.controller;
 
 
-import io.github.xiechanglei.lan.base.beans.message.DataFit;
-import io.github.xiechanglei.lan.base.utils.string.StringOptional;
+import io.github.xiechanglei.lan.beans.message.DataFit;
+import io.github.xiechanglei.lan.utils.string.StringOptional;
 import io.github.xiechanglei.lan.base.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.base.rbac.annotation.ParameterUser;
 import io.github.xiechanglei.lan.base.rbac.annotation.Password;

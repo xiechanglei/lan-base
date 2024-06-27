@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/commons/lan-base-digest/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/commons/lan-base-http/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/commons/lan-base-jpa-beans/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/commons/lan-base-json/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/commons/lan-base-utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/lan-beans/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/lan-digest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/lan-http/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/lan-json/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/lan-utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/startes/jpa-spring-boot-starter/src/main/java" charset="UTF-8" />

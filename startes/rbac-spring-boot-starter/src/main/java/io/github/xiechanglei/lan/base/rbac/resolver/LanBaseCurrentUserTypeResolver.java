@@ -7,7 +7,7 @@ import io.github.xiechanglei.lan.base.rbac.annotation.ParameterUser;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import io.github.xiechanglei.lan.base.rbac.provide.UserContextHolder;
 import io.github.xiechanglei.lan.base.rbac.service.LanBaseSysUserAuthService;
-import io.github.xiechanglei.lan.base.utils.string.StringHelper;
+import io.github.xiechanglei.lan.utils.string.StringHelper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.lang.NonNull;

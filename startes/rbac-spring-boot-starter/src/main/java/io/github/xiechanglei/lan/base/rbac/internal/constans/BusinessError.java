@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.internal.constans;
 
-import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
+import io.github.xiechanglei.lan.beans.exception.BusinessException;
 
 /**
  * 业务异常处理

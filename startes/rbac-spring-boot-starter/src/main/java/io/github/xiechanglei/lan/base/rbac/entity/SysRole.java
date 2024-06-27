@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.entity;
 
-import io.github.xiechanglei.lan.base.jpa.baseentity.UUIDIdAndTimeFieldEntity;
+import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdAndTimeFieldEntity;
 import lombok.Getter;
 import lombok.Setter;
 

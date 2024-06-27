@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.base.rbac.token;
 
-import io.github.xiechanglei.lan.base.beans.exception.BusinessException;
+import io.github.xiechanglei.lan.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.base.rbac.custorm.TokenInfo;
 import io.github.xiechanglei.lan.base.rbac.entity.SysUserAuth;
 import lombok.Getter;
