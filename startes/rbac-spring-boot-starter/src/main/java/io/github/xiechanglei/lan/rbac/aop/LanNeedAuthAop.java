@@ -44,7 +44,7 @@ public class LanNeedAuthAop {
      * 2. 获取需要过滤的最小权限单元
      * 3. 检查当前用户是否拥有该权限单元
      */
-    @Around("@annotation(io.github.xiechanglei.lan.base.rbac.annotation.NeedAuth)")
+    @Around("@annotation(io.github.xiechanglei.lan.rbac.annotation.NeedAuth)")
     public Object needAuth(ProceedingJoinPoint joinPoint) throws Throwable {
         if (lanRbacConfigProperties.isFilterAuth()) {
             MethodSignature signature = (MethodSignature) joinPoint.getSignature();
