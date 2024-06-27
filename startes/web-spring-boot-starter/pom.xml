@@ -46,6 +46,13 @@
             <artifactId>lan-utils</artifactId>
         </dependency>
 
+        <!-- auto service-->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>${auto.service.version}</version>
+        </dependency>
+
         <!-- 配置参数提示生成 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

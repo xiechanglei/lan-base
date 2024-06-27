@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.base.rbac;
+package io.github.xiechanglei.lan.rbac;
 
 import org.springframework.context.annotation.ComponentScan;
 

@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.github.xiechanglei.lan.base.rbac.LanBaseRbacAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.github.xiechanglei.lan.rbac.LanRbacAutoConfiguration
