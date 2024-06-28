@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/aop/LanNeedAuthAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/aop/LanNeedAuthAop.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714015591825</updated>
       <workItem from="1719455013684" duration="10016000" />
-      <workItem from="1719481776961" duration="56000" />
+      <workItem from="1719481776961" duration="123000" />
     </task>
     <servers />
   </component>
