@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="" />
+    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-beans/src/test/java/io/github/xiechanglei/lan/beans/async/AsyncLockTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-beans/src/test/java/io/github/xiechanglei/lan/beans/async/AsyncLockTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-beans/src/test/java/io/github/xiechanglei/lan/beans/async/AsyncTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-beans/src/test/java/io/github/xiechanglei/lan/beans/async/AsyncTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/string/StringOptional.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/string/StringOptional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/LanTokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/LanTokenInterceptor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,30 +48,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.lan-base [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.lan-base [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.TestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.StringOptionalTest.executor": "Run",
+    "JUnit.StringOptionalTest.testIfNotPresent.executor": "Run",
+    "JUnit.StringOptionalTest.testIfNotPresentThrow.executor": "Run",
+    "JUnit.StringOptionalTest.testIfPresent.executor": "Run",
+    "JUnit.StringOptionalTest.testOf.executor": "Run",
+    "JUnit.StringOptionalTest.testOfElse.executor": "Run",
+    "Maven.lan-base [clean].executor": "Run",
+    "Maven.lan-base [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.TestApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="io.github.xiechanglei.lan.rbac" />
@@ -76,7 +89,86 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestApplication">
+  <component name="RunManager" selected="JUnit.StringOptionalTest">
+    <configuration name="StringOptionalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringOptionalTest.testIfNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="METHOD_NAME" value="testIfNotPresent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringOptionalTest.testIfNotPresentThrow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="METHOD_NAME" value="testIfNotPresentThrow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringOptionalTest.testIfPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="METHOD_NAME" value="testIfPresent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringOptionalTest.testOfElse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="METHOD_NAME" value="testOfElse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="lan-base-test" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.xiechanglei.lan.test.TestApplication" />
@@ -91,6 +183,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StringOptionalTest" />
+        <item itemvalue="JUnit.StringOptionalTest.testIfNotPresentThrow" />
+        <item itemvalue="JUnit.StringOptionalTest.testIfNotPresent" />
+        <item itemvalue="JUnit.StringOptionalTest.testOfElse" />
+        <item itemvalue="JUnit.StringOptionalTest.testIfPresent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,10 +211,15 @@
       <updated>1714015591825</updated>
       <workItem from="1719455013684" duration="10016000" />
       <workItem from="1719481776961" duration="123000" />
+      <workItem from="1719555405889" duration="3627000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

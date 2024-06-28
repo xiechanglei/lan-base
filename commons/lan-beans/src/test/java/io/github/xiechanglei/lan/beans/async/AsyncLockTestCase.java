@@ -1,9 +1,7 @@
 package io.github.xiechanglei.lan.beans.async;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = AsyncLock.class)
 public class AsyncLockTestCase {
     @Test
     public void test() {

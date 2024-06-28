@@ -107,7 +107,7 @@ public class SysMenu implements ComparedEntity {
         this.setMenuIcon(icon);
         this.setMenuOrder(order);
         this.setMenuStatus(MenuStatus.ENABLE);
-        this.parentId = StringOptional.of(parentId).orFill(null).get();
+        this.parentId = StringOptional.of(parentId).or(null).get();
     }
 
 }

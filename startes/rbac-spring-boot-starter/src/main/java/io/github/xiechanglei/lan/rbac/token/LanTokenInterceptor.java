@@ -39,8 +39,8 @@ public class LanTokenInterceptor implements HandlerInterceptor, WebMvcConfigurer
     private String getTokenStrFromRequest(HttpServletRequest request) {
         String REQUEST_KEY = lanRbacConfigProperties.getTokenName();//默认为auth-token
         return StringOptional.of(request.getParameter(REQUEST_KEY))
-                .orFillProduce(() -> CookieHelper.getCookie(request, REQUEST_KEY))
-                .orFillProduce(() -> request.getHeader(REQUEST_KEY)).get();
+                .orGet(() -> CookieHelper.getCookie(request, REQUEST_KEY))
+                .orGet(() -> request.getHeader(REQUEST_KEY)).get();
     }
 
     /**
