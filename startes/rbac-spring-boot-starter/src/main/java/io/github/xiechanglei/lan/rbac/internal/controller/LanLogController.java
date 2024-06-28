@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * 角色相关的接口
  */
@@ -24,14 +26,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class LanLogController {
     private final LanSysLogService lanSysLogService;
 
-    /**
-     * 查询日志
-     */
-    @ApiLog(value = "查询日志", params = {"word"})
-    @NeedAuth(InternalLogAuthCodeManager.QUERY)
-    @RequestMapping("/rbac/log/query")
-    public Page<SysLog> searchLog(PageRequest pageRequest, @RequestParam(required = false, defaultValue = "") String word) {
-        return lanSysLogService.searchLog(pageRequest, word);
-    }
 
+    /**
+     * 分页查询所有日志, 支持时间范围查询,value日志标题,logPath请求路径,请求IP地址logAddress
+     */
+    @NeedAuth(InternalLogAuthCodeManager.QUERY)
+    @RequestMapping("/rbac/log/search")
+    public Page<SysLog> searchLog(PageRequest pageRequest, String ip, String title, Date startTime, Date endTime) {
+        return lanSysLogService.searchLog(pageRequest, ip, title, startTime, endTime);
+    }
 }
