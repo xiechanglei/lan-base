@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/string/StringHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/string/StringHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-utils/src/test/java/io/github/xiechanglei/lan/utils/string/StringOptionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-utils/src/test/java/io/github/xiechanglei/lan/utils/string/StringOptionalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +47,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.StringHelperTest.executor": "Run",
+    "JUnit.StringHelperTest.testConvert.executor": "Run",
+    "JUnit.StringHelperTest.testConvertBoolean.executor": "Run",
+    "JUnit.StringHelperTest.testConvertCharacter.executor": "Run",
+    "JUnit.StringHelperTest.testConvertDouble.executor": "Run",
+    "JUnit.StringHelperTest.testConvertEnum.executor": "Run",
+    "JUnit.StringHelperTest.testConvertInteger.executor": "Run",
+    "JUnit.StringHelperTest.testConvertLong.executor": "Run",
+    "JUnit.StringHelperTest.testConvertShort.executor": "Run",
+    "JUnit.StringHelperTest.testIsNotSame.executor": "Run",
     "JUnit.StringOptionalTest.executor": "Run",
     "JUnit.StringOptionalTest.testIfNotPresent.executor": "Run",
     "JUnit.StringOptionalTest.testIfNotPresentThrow.executor": "Run",
@@ -79,15 +89,18 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="io.github.xiechanglei.lan.rbac" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.xiechanglei.lan.utils.string" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean" />
       <command value="mvn compile" />
+      <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StringOptionalTest">
-    <configuration name="StringOptionalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StringHelperTest.testIsNotSame">
+    <configuration name="StringHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-utils" />
       <extension name="coverage">
         <pattern>
@@ -96,13 +109,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringOptionalTest.testIfNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringHelperTest.testConvertBoolean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-utils" />
       <extension name="coverage">
         <pattern>
@@ -111,14 +124,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
-      <option name="METHOD_NAME" value="testIfNotPresent" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
+      <option name="METHOD_NAME" value="testConvertBoolean" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringOptionalTest.testIfNotPresentThrow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringHelperTest.testConvertCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-utils" />
       <extension name="coverage">
         <pattern>
@@ -127,14 +140,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
-      <option name="METHOD_NAME" value="testIfNotPresentThrow" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
+      <option name="METHOD_NAME" value="testConvertCharacter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringOptionalTest.testIfPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringHelperTest.testConvertEnum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-utils" />
       <extension name="coverage">
         <pattern>
@@ -143,14 +156,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
-      <option name="METHOD_NAME" value="testIfPresent" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
+      <option name="METHOD_NAME" value="testConvertEnum" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringOptionalTest.testOfElse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringHelperTest.testIsNotSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-utils" />
       <extension name="coverage">
         <pattern>
@@ -159,8 +172,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringOptionalTest" />
-      <option name="METHOD_NAME" value="testOfElse" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
+      <option name="METHOD_NAME" value="testIsNotSame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringOptionalTest" />
-        <item itemvalue="JUnit.StringOptionalTest.testIfNotPresentThrow" />
-        <item itemvalue="JUnit.StringOptionalTest.testIfNotPresent" />
-        <item itemvalue="JUnit.StringOptionalTest.testOfElse" />
-        <item itemvalue="JUnit.StringOptionalTest.testIfPresent" />
+        <item itemvalue="JUnit.StringHelperTest.testIsNotSame" />
+        <item itemvalue="JUnit.StringHelperTest.testConvertEnum" />
+        <item itemvalue="JUnit.StringHelperTest.testConvertBoolean" />
+        <item itemvalue="JUnit.StringHelperTest.testConvertCharacter" />
+        <item itemvalue="JUnit.StringHelperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +221,7 @@
       <updated>1714015591825</updated>
       <workItem from="1719455013684" duration="10016000" />
       <workItem from="1719481776961" duration="123000" />
-      <workItem from="1719555405889" duration="3839000" />
+      <workItem from="1719555405889" duration="7661000" />
     </task>
     <servers />
   </component>

@@ -47,9 +47,10 @@ public class StringOptionalTest {
         StringOptional.of("foo").ifPresent(value::set);
         // if the value is not null, the consumer will be executed
         assert "foo".equals(value.get());
+
         value.set(null);
-        // if the value is empty, the consumer will not be executed
         StringOptional.of("").ifPresent(value::set);
+        // if the value is empty, the consumer will not be executed
         assert value.get() == null;
     }
 
