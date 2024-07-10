@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ArrayHelper {
     /**
-     * 合并数组,
+     * 合并数组
      */
     @SafeVarargs
     public static <T> T[] concat(T[]... arrays) {

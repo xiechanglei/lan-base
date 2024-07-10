@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.repo;
 
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

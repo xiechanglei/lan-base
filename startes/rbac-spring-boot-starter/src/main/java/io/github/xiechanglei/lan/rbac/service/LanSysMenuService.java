@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.service;
 
 import io.github.xiechanglei.lan.rbac.dsl.SysMenuDsl;
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.repo.LanSysMenuRepository;
 import lombok.RequiredArgsConstructor;

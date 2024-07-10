@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.provide;
 
 import io.github.xiechanglei.lan.rbac.custorm.TokenInfo;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.service.LanSysUserAuthService;
 import org.springframework.stereotype.Component;
@@ -13,12 +13,12 @@ import java.util.Objects;
 
 @Component
 public class UserContextHolder {
-    private static LanSysUserAuthService sysUserAuthService;
+    private static LanSysUserAuthService lanSysUserAuthService;
 
     public static final String REQUEST_ATTR_USER_KEY = "BASE_AUTH_USER_INFO";// 存放在request中的用户信息的key
 
     public UserContextHolder(LanSysUserAuthService sysUserAuthService) {
-        UserContextHolder.sysUserAuthService = sysUserAuthService;
+        UserContextHolder.lanSysUserAuthService = sysUserAuthService;
     }
 
     /**
@@ -33,7 +33,7 @@ public class UserContextHolder {
                 throw BusinessError.USER.USER_NOT_LOGIN;
             }
             // Optional在Java 8中引入，目的是解决  NullPointerExceptions的问题
-            user = sysUserAuthService.findById(tokenInfo.getUserId()).orElseThrow(() -> BusinessError.USER.USER_NOT_LOGIN);
+            user = lanSysUserAuthService.findById(tokenInfo.getUserId()).orElseThrow(() -> BusinessError.USER.USER_NOT_LOGIN);
             // 校验用户序列号与token中的序列号是否一致，不一致表示密码更改，登录过期
             if (!Objects.equals(user.getUserSerial(), tokenInfo.getSerialNumber())) {
                 throw BusinessError.USER.USER_LOGIN_EXPIRED;

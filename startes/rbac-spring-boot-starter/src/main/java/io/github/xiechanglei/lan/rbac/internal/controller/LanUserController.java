@@ -7,7 +7,7 @@ import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.rbac.annotation.ParameterUser;
 import io.github.xiechanglei.lan.rbac.annotation.Password;
 import io.github.xiechanglei.lan.rbac.annotation.User;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCodeManager;
 import io.github.xiechanglei.lan.rbac.service.LanSysRoleService;

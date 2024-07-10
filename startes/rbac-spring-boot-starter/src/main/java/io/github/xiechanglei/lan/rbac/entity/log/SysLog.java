@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.rbac.entity;
+package io.github.xiechanglei.lan.rbac.entity.log;
 
 import io.github.xiechanglei.lan.jpa.baseentity.SnowFlakeIdEntity;
 import lombok.Getter;

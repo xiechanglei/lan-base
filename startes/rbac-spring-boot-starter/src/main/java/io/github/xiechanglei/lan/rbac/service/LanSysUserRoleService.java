@@ -1,16 +1,19 @@
 package io.github.xiechanglei.lan.rbac.service;
 
 import io.github.xiechanglei.lan.rbac.dsl.SysUserRoleDsl;
-import io.github.xiechanglei.lan.rbac.entity.SysUser;
-import io.github.xiechanglei.lan.rbac.entity.SysUserRole;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserRole;
+import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.repo.LanSysRoleRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysUserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +24,8 @@ public class LanSysUserRoleService {
     private final LanSysUserRoleRepository lanSysUserRoleRepository;
     private final SysUserRoleDsl sysUserRoleDsl;
     private final LanSysRoleRepository lanSysRoleRepository;
+    private final LanJpaEntityManager lanJpaEntityManager;
+    private final EntityManager entityManager;
 
 
     /**
@@ -77,14 +82,21 @@ public class LanSysUserRoleService {
         // 批量保存用户角色
         lanSysUserRoleRepository.saveAll(userRoles);
     }
-
     /**
-     * 根据角色id查询关联的所有用户
-     * @param pageRequest 分页参数
+     * 根据角色id查询用户
+     *
      * @param roleId 角色id
-     * @return 用户
      */
-    public Page<SysUser> getUserByRoleId(PageRequest pageRequest, String roleId) {
-        return lanSysUserRoleRepository.findByRoleId(pageRequest, roleId);
+    @SuppressWarnings("all")
+    public Page<SysUserAuth> getUserByRoleId(String roleId,PageRequest pageRequest) {
+        String hql = "select u from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u,SysUserRole ur where u.id = ur.userId and ur.roleId = :roleId";
+        String countSql = "select count(u) from SysUser u,SysUserRole ur where u.id = ur.userId and ur.roleId = :roleId";
+        List users = entityManager.createQuery(hql)
+                .setParameter("roleId", roleId)
+                .setMaxResults(pageRequest.getPageSize())
+                .setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize())
+                .getResultList();
+        Long total = (Long) entityManager.createQuery(countSql).setParameter("roleId", roleId).getSingleResult();
+        return new PageImpl<>(users, pageRequest, total);
     }
 }

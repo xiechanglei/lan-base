@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.service;
 
 import io.github.xiechanglei.lan.rbac.dsl.SysMenuFcDsl;
-import io.github.xiechanglei.lan.rbac.entity.SysMenuFc;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenuFc;
 import io.github.xiechanglei.lan.rbac.repo.LanSysMenuFcRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -47,6 +47,11 @@ public class LanRbacConfigProperties {
     private boolean internalApi = true;
 
     /**
+     * 是否开启系统日志
+     */
+    private boolean enableLog = true;
+
+    /**
      * 内置系统管理模块的图标
      */
     private String icon_sys_manager = "";

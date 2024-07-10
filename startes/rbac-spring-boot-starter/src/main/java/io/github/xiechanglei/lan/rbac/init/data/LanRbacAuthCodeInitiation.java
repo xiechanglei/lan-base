@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.rbac.init.data;
 
 import io.github.xiechanglei.lan.rbac.annotation.AuthCode;
 import io.github.xiechanglei.lan.rbac.annotation.AuthModule;
-import io.github.xiechanglei.lan.rbac.entity.SysAuthCode;
+import io.github.xiechanglei.lan.rbac.entity.base.SysAuthCode;
 import io.github.xiechanglei.lan.rbac.repo.LanSysAuthCodeRepository;
 import io.github.xiechanglei.lan.rbac.util.DataUpdaterUtil;
 import lombok.RequiredArgsConstructor;

@@ -5,7 +5,7 @@ import io.github.xiechanglei.lan.beans.message.DataFit;
 import io.github.xiechanglei.lan.rbac.annotation.CurrentUser;
 import io.github.xiechanglei.lan.rbac.annotation.ParameterUser;
 import io.github.xiechanglei.lan.rbac.annotation.Password;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.rbac.service.LanSysMenuFcService;
@@ -31,7 +31,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanCurrentUserController {
-    private final LanSysUserAuthService sysUserAuthService;
+    private final LanSysUserAuthService lanSysUserAuthService;
     private final LanRbacConfigProperties lanRbacConfigProperties;
     private final LanSysRoleService lanSysRoleService;
     private final LanSysMenuService lanSysMenuService;
@@ -48,7 +48,7 @@ public class LanCurrentUserController {
     @ApiLog(value = "用户登录", params = {"userName", "userPassword"})
     @RequestMapping("/rbac/user/current/login")
     public String login(String userName, @Password String userPassword, @RequestParam(required = false, defaultValue = "false") Boolean injectCookie) {
-        SysUserAuth loginUser = sysUserAuthService.findByUserNameAndUserPassword(userName, userPassword);
+        SysUserAuth loginUser = lanSysUserAuthService.findByUserNameAndUserPassword(userName, userPassword);
         if (loginUser == null) {
             throw BusinessError.USER.USER_LOGIN_FAILED;
         }
@@ -79,7 +79,7 @@ public class LanCurrentUserController {
         if (!user.getUserPassword().equals(oldPass)) {
             throw BusinessError.USER.USER_PASSWORD_ERROR;
         }
-        sysUserAuthService.updatePassword(user, newPass);
+        lanSysUserAuthService.updatePassword(user, newPass);
         return TokenHandler.encode(TokenInfoManager.buildTokenInfo(user));
     }
 
@@ -103,7 +103,7 @@ public class LanCurrentUserController {
     @RequestMapping("/rbac/user/current/update")
     public void updateCurrentUserInfo(@CurrentUser SysUserAuth user, @ParameterUser SysUserAuth newUser) {
         BeanUtils.copyProperties(newUser, user, "id", "userName", "userPassword", "userStatus", "userSerial", "createTime", "updateTime");
-        sysUserAuthService.update(user);
+        lanSysUserAuthService.update(user);
     }
 
 }

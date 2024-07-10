@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.repo;
 
-import io.github.xiechanglei.lan.rbac.entity.SysRoleAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRoleAuth;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

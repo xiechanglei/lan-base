@@ -1,9 +1,10 @@
 package io.github.xiechanglei.lan.rbac.custorm;
 
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 
 /**
  * 用户自定义token信息,可以根据自己的业务需求来定义，实现这个接口即可
+ * 注意，需要使用spi的形式来加载这个类 @AutoService(TokenInfo.class)
  */
 public interface TokenInfo {
 

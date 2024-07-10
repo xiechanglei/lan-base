@@ -4,7 +4,7 @@ import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.rbac.custorm.PermissionService;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.provide.TokenContextHolder;
 import io.github.xiechanglei.lan.rbac.provide.UserContextHolder;
 import io.github.xiechanglei.lan.rbac.service.DefaultPermissionService;

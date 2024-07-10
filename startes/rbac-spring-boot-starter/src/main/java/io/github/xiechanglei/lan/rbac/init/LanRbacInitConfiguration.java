@@ -1,12 +1,11 @@
 package io.github.xiechanglei.lan.rbac.init;
 
 import io.github.xiechanglei.lan.rbac.init.data.LanRbacDataInitiation;
-import io.github.xiechanglei.lan.rbac.init.table.LanRbacTableInitiation;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.rbac.resolver.LanCurrentUserTypeResolver;
+import io.github.xiechanglei.lan.rbac.resolver.LanDataAuthScopeResolver;
 import io.github.xiechanglei.lan.rbac.resolver.LanPasswordTypeResolver;
 import io.github.xiechanglei.lan.rbac.resolver.LanUserTypeResolver;
-import io.github.xiechanglei.lan.rbac.resolver.LanDataAuthScopeResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeansException;
@@ -21,13 +20,13 @@ import java.util.List;
 
 /**
  * 数据初始化配置
+ * TODO init 流程优化,大部分情况下不需要初始化流程
  */
 @RequiredArgsConstructor
 @Configuration
 @Log4j2
 public class LanRbacInitConfiguration implements ApplicationContextAware, WebMvcConfigurer {
     private final LanRbacConfigProperties lanRbacConfigProperties;
-    private final LanRbacTableInitiation lanRbacTableInitiation;
     private final LanRbacDataInitiation lanRbacDataInitiation;
 
     private final LanPasswordTypeResolver lanPasswordTypeResolver;
@@ -40,7 +39,6 @@ public class LanRbacInitConfiguration implements ApplicationContextAware, WebMvc
     public void setApplicationContext(@NonNull ApplicationContext applicationContext) throws BeansException {
         log.info("开启RBAC权限控制");
         if (lanRbacConfigProperties.isEnable()) {
-            lanRbacTableInitiation.createTableIfNotExist();
             lanRbacDataInitiation.initData(applicationContext);
         }
     }

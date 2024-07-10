@@ -1,8 +1,8 @@
 package io.github.xiechanglei.lan.rbac.internal.controller;
 
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
-import io.github.xiechanglei.lan.rbac.entity.SysRole;
-import io.github.xiechanglei.lan.rbac.entity.SysUser;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRole;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalMenuAuthCodeManager;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalRoleAuthCodeManager;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCodeManager;
@@ -29,7 +29,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @ConditionalOnProperty(prefix = "lan.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
 public class LanRoleController {
-    private final LanSysRoleService sysRoleService;
+    private final LanSysRoleService lanSysRoleService;
     private final LanSysUserRoleService lanSysUserRoleService;
 
     /**
@@ -39,7 +39,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/query")
     public Page<SysRole> searchRole(PageRequest pageRequest, @RequestParam(required = false, defaultValue = "") String roleName) {
-        return sysRoleService.searchRole(pageRequest, roleName);
+        return lanSysRoleService.searchRole(pageRequest, roleName);
     }
 
     /**
@@ -49,7 +49,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.CREATE)
     @RequestMapping("/rbac/role/add")
     public void createRole(@Size(min = 1, max = 20, message = "角色名称长度必须在1-20个字符") String roleName) {
-        sysRoleService.createRole(roleName);
+        lanSysRoleService.createRole(roleName);
     }
 
     /**
@@ -61,7 +61,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/get")
     public SysRole searchRoleById(String roleId) {
-        return sysRoleService.getRoleById(roleId);
+        return lanSysRoleService.getRoleById(roleId);
     }
 
     /**
@@ -71,7 +71,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.UPDATE)
     @RequestMapping("/rbac/role/update")
     public void editRole(String roleName, String roleId, String roleRemark) {
-        sysRoleService.editRole(roleName, roleId, roleRemark);
+        lanSysRoleService.editRole(roleName, roleId, roleRemark);
     }
 
     /**
@@ -83,7 +83,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/role/disable")
     public void disableRole(String roleId) {
-        sysRoleService.changeRoleStatus(roleId, SysRole.RoleStatus.DISABLE);
+        lanSysRoleService.changeRoleStatus(roleId, SysRole.RoleStatus.DISABLE);
     }
 
     /**
@@ -95,7 +95,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.ENABLE)
     @RequestMapping("/rbac/role/enable")
     public void enableRole(String roleId) {
-        sysRoleService.changeRoleStatus(roleId, SysRole.RoleStatus.ENABLE);
+        lanSysRoleService.changeRoleStatus(roleId, SysRole.RoleStatus.ENABLE);
     }
 
     /**
@@ -107,7 +107,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.DELETE)
     @RequestMapping("/rbac/role/remove")
     public void deleteRole(String roleId) {
-        sysRoleService.deleteRole(roleId);
+        lanSysRoleService.deleteRole(roleId);
     }
 
     /**
@@ -119,7 +119,7 @@ public class LanRoleController {
     @NeedAuth(InternalRoleAuthCodeManager.QUERY)
     @RequestMapping("/rbac/role/loadResource")
     public List<String> loadRoleResource(String roleId) {
-        return sysRoleService.loadRoleResource(roleId);
+        return lanSysRoleService.loadRoleResource(roleId);
     }
 
     /**
@@ -129,7 +129,7 @@ public class LanRoleController {
     @NeedAuth({InternalRoleAuthCodeManager.GRANT, InternalMenuAuthCodeManager.QUERY})
     @RequestMapping("/rbac/role/grantResource")
     public void grantResource(String roleId, String[] resourceIds) {
-        sysRoleService.grantResource(roleId, resourceIds);
+        lanSysRoleService.grantResource(roleId, resourceIds);
     }
 
     /**
@@ -138,7 +138,7 @@ public class LanRoleController {
     @ApiLog(value = "根据角色ID查询关联的所有用户", params = {"roleId"})
     @NeedAuth({InternalRoleAuthCodeManager.QUERY, InternalUserAuthCodeManager.QUERY})
     @RequestMapping("/rbac/role/getUserByRoleId")
-    public Page<SysUser> getUserByRoleId(PageRequest pageRequest, String roleId) {
-        return lanSysUserRoleService.getUserByRoleId(pageRequest, roleId);
+    public Page<SysUserAuth> getUserByRoleId(PageRequest pageRequest, String roleId) {
+        return lanSysUserRoleService.getUserByRoleId(roleId, pageRequest);
     }
 }

@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.repo;
 
-import io.github.xiechanglei.lan.rbac.entity.SysRole;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRole;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;

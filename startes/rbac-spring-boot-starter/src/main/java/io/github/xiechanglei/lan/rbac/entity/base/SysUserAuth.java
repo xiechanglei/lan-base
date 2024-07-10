@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.rbac.entity;
+package io.github.xiechanglei.lan.rbac.entity.base;
 
 import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdAndTimeFieldEntity;
 import io.github.xiechanglei.lan.rbac.provide.RbacEncodeProcessor;
@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Setter
 @MappedSuperclass// 继承该类的子类不需要再写@Entity注解
 @EntityListeners(AuditingEntityListener.class)//监听JPA实体持久化
-public class SysUserAuth extends UUIDIdAndTimeFieldEntity {
+public abstract class SysUserAuth extends UUIDIdAndTimeFieldEntity {
 
     // 默认用户序列号
     public static Short DEFAULT_USER_SERIAL = 1;
@@ -75,6 +75,12 @@ public class SysUserAuth extends UUIDIdAndTimeFieldEntity {
         this.nickName = "admin";
         this.userName = "admin";
         this.userPassword = RbacEncodeProcessor.encode("123456");
+        configAdmin();
         return this;
     }
+
+    /**
+     * 自定义配置管理员对应的字段
+     */
+    public abstract void configAdmin();
 }

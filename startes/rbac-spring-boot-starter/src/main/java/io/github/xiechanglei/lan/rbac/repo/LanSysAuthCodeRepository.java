@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.repo;
 
-import io.github.xiechanglei.lan.rbac.entity.SysAuthCode;
+import io.github.xiechanglei.lan.rbac.entity.base.SysAuthCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

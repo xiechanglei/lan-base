@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.custorm;
 
 import io.github.xiechanglei.lan.beans.exception.BusinessException;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 
 /**
  * 可以自己重写权限校验逻辑
@@ -17,6 +17,7 @@ import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
  * 默认实现：
  *
  * @see io.github.xiechanglei.lan.rbac.service.DefaultPermissionService
+ * 使用spring bean的形式加载
  */
 public interface PermissionService {
 

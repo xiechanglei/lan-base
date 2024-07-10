@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.rbac.internal.permission;
 
 import io.github.xiechanglei.lan.rbac.annotation.Function;
 import io.github.xiechanglei.lan.rbac.annotation.Menu;
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
 
 
 /**

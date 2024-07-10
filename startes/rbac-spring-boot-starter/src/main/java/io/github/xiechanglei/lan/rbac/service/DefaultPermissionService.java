@@ -2,7 +2,7 @@ package io.github.xiechanglei.lan.rbac.service;
 
 
 import io.github.xiechanglei.lan.rbac.custorm.TokenInfo;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.provide.UserContextHolder;
 import io.github.xiechanglei.lan.rbac.repo.LanSysResourceCodeRepository;

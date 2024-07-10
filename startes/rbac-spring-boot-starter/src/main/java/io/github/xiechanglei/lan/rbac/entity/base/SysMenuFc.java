@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.rbac.entity;
+package io.github.xiechanglei.lan.rbac.entity.base;
 
 import io.github.xiechanglei.lan.rbac.util.ComparedEntity;
 import lombok.AllArgsConstructor;

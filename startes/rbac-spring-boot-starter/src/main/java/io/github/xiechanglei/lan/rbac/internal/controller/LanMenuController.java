@@ -2,8 +2,8 @@ package io.github.xiechanglei.lan.rbac.internal.controller;
 
 import io.github.xiechanglei.lan.beans.message.DataFit;
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
-import io.github.xiechanglei.lan.rbac.entity.SysMenuFc;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenuFc;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalMenuAuthCodeManager;
 import io.github.xiechanglei.lan.rbac.service.LanSysMenuFcService;
 import io.github.xiechanglei.lan.rbac.service.LanSysMenuService;

@@ -4,7 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="" />
+    <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/collections/ArrayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-utils/src/main/java/io/github/xiechanglei/lan/utils/collections/ArrayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/jpa-spring-boot-starter/src/main/resources/lan.jpa.properties" beforeDir="false" afterPath="$PROJECT_DIR$/startes/jpa-spring-boot-starter/src/main/resources/lan.jpa.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/annotation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/annotation/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/aop/LanNeedAuthAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/aop/LanNeedAuthAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/LanApiLogDataStoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/LanApiLogDataStoreHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/RbacEncodeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/RbacEncodeStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/TokenInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/custorm/TokenInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysMenuDsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysMenuDsl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysMenuFcDsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysMenuFcDsl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysUserRoleDsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/dsl/SysUserRoleDsl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysAuthCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysAuthCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/log/SysLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysMenuFc.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysMenuFc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysResourceCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysResourceCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysRoleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysRoleAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/user/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysUserAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysUserAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/SysUserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysUserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/LanJpaEntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/LanJpaEntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/LanRbacInitConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/LanRbacInitConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacAuthCodeInitiation.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacAuthCodeInitiation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacMenuAndFuncInitiation.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacMenuAndFuncInitiation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacRoleInitiation.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/data/LanRbacRoleInitiation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/init/table/LanRbacTableInitiation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanCurrentUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanCurrentUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/controller/LanUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/permission/InternalMenuSystemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/internal/permission/InternalMenuSystemManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/properties/LanRbacConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/properties/LanRbacConfigProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/provide/UserContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/provide/UserContextHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysAuthCodeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysAuthCodeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysLogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysMenuFcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysMenuFcRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysMenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysMenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysResourceCodeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysResourceCodeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysRoleAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysRoleAuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysUserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/repo/LanSysUserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/resolver/LanCurrentUserTypeResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/resolver/LanCurrentUserTypeResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/DefaultPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/DefaultPermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysMenuFcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysMenuFcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysUserAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysUserAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysUserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysUserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/swit/LanRbacDynamicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/swit/LanRbacDynamicConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/LanDefaultTokenInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/LanDefaultTokenInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/TokenInfoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/token/TokenInfoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/log/LanApiLogAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/log/LanApiLogAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startes/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/log/LanApiLogHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/startes/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/log/LanApiLogHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lan-base-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/base/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +104,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HttpTest.executor": "Run",
+    "Application.SqlBuilder (1).executor": "Run",
+    "Application.SqlBuilder (2).executor": "Run",
+    "Application.SqlBuilder (3).executor": "Debug",
+    "Application.SqlBuilder (4).executor": "Run",
+    "Application.SqlBuilder.executor": "Run",
     "JUnit.StringHelperTest.executor": "Run",
     "JUnit.StringHelperTest.testConvert.executor": "Run",
     "JUnit.StringHelperTest.testConvertBoolean.executor": "Run",
@@ -59,14 +126,19 @@
     "JUnit.StringOptionalTest.testIfPresent.executor": "Run",
     "JUnit.StringOptionalTest.testOf.executor": "Run",
     "JUnit.StringOptionalTest.testOfElse.executor": "Run",
+    "Maven.jpa-spring-boot-starter [clean].executor": "Run",
     "Maven.lan-base [clean].executor": "Run",
     "Maven.lan-base [compile].executor": "Run",
+    "Maven.lan-base [deploy,-P,ossrh].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.TestApplication (1).executor": "Run",
     "Spring Boot.TestApplication.executor": "Run",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.id": "CSV-Groovy.csv.groovy",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -77,8 +149,13 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "http.proxy",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -86,91 +163,79 @@
       <recent name="io.github.xiechanglei.lan.rbac" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.xiechanglei.lan.base.test" />
       <recent name="io.github.xiechanglei.lan.utils.string" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn compile" />
       <command value="mvn clean" />
+      <command value="mvn deploy -P ossrh" />
+      <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StringHelperTest.testIsNotSame">
-    <configuration name="StringHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-utils" />
+  <component name="RunManager" selected="Spring Boot.TestApplication (1)">
+    <configuration name="HttpTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.base.test.HttpTest" />
+      <module name="lan-base-test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.base.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringHelperTest.testConvertBoolean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-utils" />
+    <configuration name="SqlBuilder (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.jpa.execute.SqlBuilder" />
+      <module name="lan-jpa-beans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.jpa.execute.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
-      <option name="METHOD_NAME" value="testConvertBoolean" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringHelperTest.testConvertCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-utils" />
+    <configuration name="SqlBuilder (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.jpa.execute.SqlBuilder" />
+      <module name="lan-jpa-beans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.jpa.execute.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
-      <option name="METHOD_NAME" value="testConvertCharacter" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringHelperTest.testConvertEnum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-utils" />
+    <configuration name="SqlBuilder (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.jpa.execute.SqlBuilder" />
+      <module name="lan-jpa-beans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.jpa.execute.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
-      <option name="METHOD_NAME" value="testConvertEnum" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringHelperTest.testIsNotSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-utils" />
+    <configuration name="SqlBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.jpa.execute.SqlBuilder" />
+      <module name="lan-jpa-beans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.utils.string.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.jpa.execute.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.utils.string" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.utils.string.StringHelperTest" />
-      <option name="METHOD_NAME" value="testIsNotSame" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,11 +256,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringHelperTest.testIsNotSame" />
-        <item itemvalue="JUnit.StringHelperTest.testConvertEnum" />
-        <item itemvalue="JUnit.StringHelperTest.testConvertBoolean" />
-        <item itemvalue="JUnit.StringHelperTest.testConvertCharacter" />
-        <item itemvalue="JUnit.StringHelperTest" />
+        <item itemvalue="Application.HttpTest" />
+        <item itemvalue="Application.SqlBuilder" />
+        <item itemvalue="Application.SqlBuilder (4)" />
+        <item itemvalue="Application.SqlBuilder (3)" />
+        <item itemvalue="Application.SqlBuilder (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -218,11 +283,55 @@
       <workItem from="1719455013684" duration="10016000" />
       <workItem from="1719481776961" duration="123000" />
       <workItem from="1719555405889" duration="7714000" />
+      <workItem from="1719570251453" duration="1825000" />
+      <workItem from="1720054985968" duration="21498000" />
+      <workItem from="1720089580229" duration="911000" />
+      <workItem from="1720090692530" duration="708000" />
+      <workItem from="1720140933495" duration="434000" />
+      <workItem from="1720143678873" duration="2643000" />
+      <workItem from="1720149229399" duration="87000" />
+      <workItem from="1720150151958" duration="677000" />
+      <workItem from="1720157570001" duration="699000" />
+      <workItem from="1720162893953" duration="4129000" />
+      <workItem from="1720398703762" duration="15409000" />
+      <workItem from="1720571264033" duration="19850000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.3.36/spring-orm-5.3.36-sources.jar!/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.3.36/spring-orm-5.3.36-sources.jar!/org/springframework/orm/jpa/AbstractEntityManagerFactoryBean.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.3.36/spring-orm-5.3.36-sources.jar!/org/springframework/orm/jpa/AbstractEntityManagerFactoryBean.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

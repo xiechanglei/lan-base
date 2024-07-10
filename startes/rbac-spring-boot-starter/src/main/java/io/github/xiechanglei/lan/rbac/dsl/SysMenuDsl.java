@@ -1,9 +1,9 @@
 package io.github.xiechanglei.lan.rbac.dsl;
 
-import io.github.xiechanglei.lan.rbac.entity.*;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRole;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

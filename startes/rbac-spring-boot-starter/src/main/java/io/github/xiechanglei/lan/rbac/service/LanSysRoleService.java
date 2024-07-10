@@ -1,8 +1,8 @@
 package io.github.xiechanglei.lan.rbac.service;
 
 import io.github.xiechanglei.lan.beans.exception.BusinessException;
-import io.github.xiechanglei.lan.rbac.entity.SysRole;
-import io.github.xiechanglei.lan.rbac.entity.SysRoleAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRole;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRoleAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
 import io.github.xiechanglei.lan.rbac.repo.LanSysResourceCodeRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysRoleAuthRepository;

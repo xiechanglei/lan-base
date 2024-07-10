@@ -4,7 +4,8 @@ package io.github.xiechanglei.lan.rbac.resolver;
 import io.github.xiechanglei.lan.rbac.annotation.CurrentUser;
 import io.github.xiechanglei.lan.rbac.annotation.CurrentUserId;
 import io.github.xiechanglei.lan.rbac.annotation.ParameterUser;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
 import io.github.xiechanglei.lan.rbac.provide.UserContextHolder;
 import io.github.xiechanglei.lan.rbac.service.LanSysUserAuthService;
 import io.github.xiechanglei.lan.utils.string.StringHelper;
@@ -29,8 +30,7 @@ import java.util.Objects;
 @Component
 @RequiredArgsConstructor
 public class LanCurrentUserTypeResolver implements HandlerMethodArgumentResolver {
-    private final LanSysUserAuthService sysUserAuthService;
-    private final UserContextHolder userContextHolder;
+    private final LanJpaEntityManager lanJpaEntityManager;
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
@@ -42,7 +42,7 @@ public class LanCurrentUserTypeResolver implements HandlerMethodArgumentResolver
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, @NonNull NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws InstantiationException, IllegalAccessException {
         if (parameter.hasParameterAnnotation(ParameterUser.class)) {
             //从请求中构建对象
-            Class<? extends SysUserAuth> userEntityClass = sysUserAuthService.getUserEntityClass();
+            Class<? extends SysUserAuth> userEntityClass = lanJpaEntityManager.getUserEntityClass();
             HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
             SysUserAuth user = userEntityClass.newInstance();
             // 获取自己以及父类中的所有字段，直到Object类为止

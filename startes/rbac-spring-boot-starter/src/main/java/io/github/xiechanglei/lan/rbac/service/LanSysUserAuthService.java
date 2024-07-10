@@ -1,18 +1,15 @@
 package io.github.xiechanglei.lan.rbac.service;
 
 
-import io.github.xiechanglei.lan.utils.string.StringOptional;
-import io.github.xiechanglei.lan.rbac.entity.SysUser;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
-import lombok.Getter;
+import io.github.xiechanglei.lan.utils.string.StringOptional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -31,16 +28,6 @@ public class LanSysUserAuthService {
     private final EntityManager entityManager;
 
 
-    @Getter
-    private Class<? extends SysUserAuth> userEntityClass = SysUser.class;
-
-    @PostConstruct
-    @SuppressWarnings("unchecked")
-    public void init() {
-        //如果业务系统有自己的user实现类，这里应该有两个，我们使用业务系统的，否则使用sysUser
-        lanJpaEntityManager.ifHasCustomUserEntity(cls -> userEntityClass = (Class<? extends SysUserAuth>) cls);
-    }
-
     /**
      * 判断用户名是否存在
      *
@@ -49,7 +36,7 @@ public class LanSysUserAuthService {
      * 注：创建的query里参数名(u.userName)必须与实体类属性名一致，否则查询语句无法执行
      */
     public boolean existsByUsername(String userName) {
-        return !entityManager.createQuery("select u.id from " + userEntityClass.getSimpleName() + " u where u.userName=:username").setParameter("username", userName).getResultList().isEmpty();
+        return !entityManager.createQuery("select u.id from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u where u.userName=:username").setParameter("username", userName).getResultList().isEmpty();
     }
 
     /**
@@ -69,7 +56,7 @@ public class LanSysUserAuthService {
      */
     @SuppressWarnings("unchecked")
     public SysUserAuth findByUserNameAndUserPassword(String userName, String userPassword) {
-        String query = "select u from " + userEntityClass.getSimpleName() + " u where u.userName=:username and u.userPassword=:userPassword";
+        String query = "select u from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u where u.userName=:username and u.userPassword=:userPassword";
         List<SysUserAuth> resultList = entityManager.createQuery(query).setParameter("username", userName).setParameter("userPassword", userPassword).getResultList();
         if (resultList.isEmpty()) {
             return null;
@@ -80,13 +67,14 @@ public class LanSysUserAuthService {
     /**
      * 查询用户
      *
-     * @param word    用户名
+     * @param word        用户名
      * @param pageRequest 分页信息
+     *                    TODO 优化查询条件
      */
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<SysUserAuth> criteriaQuery = criteriaBuilder.createQuery(SysUserAuth.class);
-        Root<? extends SysUserAuth> root = criteriaQuery.from(userEntityClass);
+        Root<? extends SysUserAuth> root = criteriaQuery.from(lanJpaEntityManager.getUserEntityClass());
         criteriaQuery.select(root);
         List<Predicate> predicates = new ArrayList<>();
         StringOptional.of(word).ifPresent(w -> {
@@ -106,13 +94,13 @@ public class LanSysUserAuthService {
 
         // 查询总数
         CriteriaQuery<Long> countQuery = criteriaBuilder.createQuery(Long.class);
-        Root<? extends SysUserAuth> countRoot = countQuery.from(userEntityClass);
+        Root<? extends SysUserAuth> countRoot = countQuery.from(lanJpaEntityManager.getUserEntityClass());
         countQuery.select(criteriaBuilder.count(countRoot));
         countQuery.where(predicates.toArray(new Predicate[0]));
 
         Long total = entityManager.createQuery(countQuery).getSingleResult();
 
-        return new PageImpl<>(resultList, PageRequest.of(pageRequest.getPageNumber(), pageRequest.getPageSize()), total);
+        return new PageImpl<>(resultList, pageRequest, total);
     }
 
     /**
@@ -121,7 +109,7 @@ public class LanSysUserAuthService {
      * @param userId 用户id
      */
     public Optional<SysUserAuth> findById(String userId) {
-        return Optional.ofNullable(entityManager.find(userEntityClass, userId));
+        return Optional.ofNullable(entityManager.find(lanJpaEntityManager.getUserEntityClass(), userId));
     }
 
     /**
@@ -137,7 +125,7 @@ public class LanSysUserAuthService {
     @Transactional
     public void updatePassword(SysUserAuth user, String password) {
         user.updateSerial();
-        String hql = "update " + userEntityClass.getSimpleName() + " u set u.userPassword=:password,u.userSerial=:userSerial where u.id=:id";
+        String hql = "update " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u set u.userPassword=:password,u.userSerial=:userSerial where u.id=:id";
         entityManager.createQuery(hql)
                 .setParameter("userSerial", user.getUserSerial())
                 .setParameter("id", user.getId())
@@ -147,7 +135,7 @@ public class LanSysUserAuthService {
 
     @Transactional
     public void disableUser(String userId) {
-        String hql = "update " + userEntityClass.getSimpleName() + " u set u.userStatus=:userStatus where u.id=:id";
+        String hql = "update " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u set u.userStatus=:userStatus where u.id=:id";
         entityManager.createQuery(hql)
                 .setParameter("userStatus", SysUserAuth.UserStatus.DISABLE).setParameter("id", userId)
                 .executeUpdate();
@@ -155,7 +143,7 @@ public class LanSysUserAuthService {
 
     @Transactional
     public void enableUser(String userId) {
-        String hql = "update " + userEntityClass.getSimpleName() + " u set u.userStatus=:userStatus where u.id=:id";
+        String hql = "update " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u set u.userStatus=:userStatus where u.id=:id";
         entityManager.createQuery(hql)
                 .setParameter("userStatus", SysUserAuth.UserStatus.ENABLE).setParameter("id", userId)
                 .executeUpdate();

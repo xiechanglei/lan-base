@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.dsl;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

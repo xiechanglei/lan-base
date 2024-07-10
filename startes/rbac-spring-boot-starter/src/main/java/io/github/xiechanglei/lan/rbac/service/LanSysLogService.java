@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.rbac.service;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.github.xiechanglei.lan.jpa.dsl.JpaQueryHelper;
-import io.github.xiechanglei.lan.rbac.entity.SysLog;
+import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

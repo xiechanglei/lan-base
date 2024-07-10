@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.annotation;
 
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.ElementType;

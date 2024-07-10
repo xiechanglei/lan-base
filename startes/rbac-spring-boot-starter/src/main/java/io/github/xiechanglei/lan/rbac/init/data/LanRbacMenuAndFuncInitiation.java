@@ -3,9 +3,9 @@ package io.github.xiechanglei.lan.rbac.init.data;
 import io.github.xiechanglei.lan.beans.func.ThreeConsumer;
 import io.github.xiechanglei.lan.rbac.annotation.Function;
 import io.github.xiechanglei.lan.rbac.annotation.Menu;
-import io.github.xiechanglei.lan.rbac.entity.SysMenu;
-import io.github.xiechanglei.lan.rbac.entity.SysMenuFc;
-import io.github.xiechanglei.lan.rbac.entity.SysResourceCode;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
+import io.github.xiechanglei.lan.rbac.entity.base.SysMenuFc;
+import io.github.xiechanglei.lan.rbac.entity.base.SysResourceCode;
 import io.github.xiechanglei.lan.rbac.repo.LanSysMenuFcRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysMenuRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysResourceCodeRepository;
@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static io.github.xiechanglei.lan.rbac.entity.SysMenu.MenuType.PAGE;
+import static io.github.xiechanglei.lan.rbac.entity.base.SysMenu.MenuType.PAGE;
 
 
 /**
@@ -50,7 +50,7 @@ import static io.github.xiechanglei.lan.rbac.entity.SysMenu.MenuType.PAGE;
 public class LanRbacMenuAndFuncInitiation {
     private final LanSysMenuRepository lanSysMenuRepository;
     private final LanSysMenuFcRepository lanSysMenuFcRepository;
-    private final LanSysResourceCodeRepository sysResourceCodeRepository;
+    private final LanSysResourceCodeRepository lanSysResourceCodeRepository;
     private final Environment env; //获取配置文件中的值
 
     public List<String> initData(ApplicationContext applicationContext) {
@@ -69,7 +69,7 @@ public class LanRbacMenuAndFuncInitiation {
         //功能、
         DataUpdaterUtil.update(lanSysMenuFcRepository, allMenuFc);
         // 资源权限字符字典
-        DataUpdaterUtil.update(sysResourceCodeRepository, allResourceCode);
+        DataUpdaterUtil.update(lanSysResourceCodeRepository, allResourceCode);
         List<String> allResourceIds = new ArrayList<>();
         allMenus.forEach(m -> allResourceIds.add(m.getMenuCode()));
         allMenuFc.forEach(f -> allResourceIds.add(f.getFcCode()));

@@ -1,7 +1,8 @@
 package io.github.xiechanglei.lan.rbac.init.data;
 
-import io.github.xiechanglei.lan.rbac.entity.SysRole;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysRole;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.rbac.repo.LanSysResourceCodeRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysRoleRepository;
@@ -27,10 +28,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LanRbacRoleInitiation {
     private final LanRbacConfigProperties lanRbacConfigProperties;
-    private final LanSysRoleRepository sysRoleRepository;
-    private final LanSysUserAuthService sysUserAuthService;
+    private final LanSysRoleRepository lanSysRoleRepository;
+    private final LanSysUserAuthService lanSysUserAuthService;
     private final LanSysUserRoleService sysUserRoleService;
     private final LanSysResourceCodeRepository sysResourceCodeRepository;
+    private final LanJpaEntityManager lanJpaEntityManager;
 
     /**
      * 初始化角色与用户的数据
@@ -50,11 +52,11 @@ public class LanRbacRoleInitiation {
      * @return 超级管理员角色
      */
     private SysRole createOrGetAdminRole() {
-        List<SysRole> adminsRoles = sysRoleRepository.findAllAdminRole();
+        List<SysRole> adminsRoles = lanSysRoleRepository.findAllAdminRole();
         if (adminsRoles.isEmpty()) {
             log.info("创建超级管理员角色");
             SysRole superAdminRole = SysRole.createAdmin(lanRbacConfigProperties.getRoleAdminName());
-            sysRoleRepository.save(superAdminRole);
+            lanSysRoleRepository.save(superAdminRole);
             return superAdminRole;
         } else {
             return adminsRoles.get(0);
@@ -69,12 +71,12 @@ public class LanRbacRoleInitiation {
     private void createAdminUser(String adminRoleId) {
         if (lanRbacConfigProperties.isCreateAdmin() && !sysUserRoleService.existsByRoleId(adminRoleId)) {
             try {
-                SysUserAuth supperAdmin = sysUserAuthService.getUserEntityClass().newInstance().buildAdmin();
+                SysUserAuth supperAdmin = lanJpaEntityManager.getUserEntityClass().newInstance().buildAdmin();
                 log.info("创建超级管理员用户");
-                if (sysUserAuthService.existsByUsername(supperAdmin.getUserName())) {
+                if (lanSysUserAuthService.existsByUsername(supperAdmin.getUserName())) {
                     log.info("超级管理员用户名已存在");
                 } else {
-                    sysUserAuthService.add(supperAdmin);
+                    lanSysUserAuthService.add(supperAdmin);
                     // 绑定超级管理员角色
                     sysUserRoleService.bindRole(supperAdmin.getId(), adminRoleId);
                 }

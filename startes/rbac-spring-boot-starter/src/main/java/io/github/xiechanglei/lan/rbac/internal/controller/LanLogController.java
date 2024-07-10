@@ -1,17 +1,15 @@
 package io.github.xiechanglei.lan.rbac.internal.controller;
 
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
-import io.github.xiechanglei.lan.rbac.entity.SysLog;
+import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import io.github.xiechanglei.lan.rbac.internal.permission.InternalLogAuthCodeManager;
 import io.github.xiechanglei.lan.rbac.service.LanSysLogService;
-import io.github.xiechanglei.lan.web.log.ApiLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;

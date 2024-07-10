@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.token;
 
 import io.github.xiechanglei.lan.rbac.custorm.TokenInfo;
-import io.github.xiechanglei.lan.rbac.entity.SysUserAuth;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 

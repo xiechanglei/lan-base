@@ -1,11 +1,7 @@
 package io.github.xiechanglei.lan.rbac.repo;
 
-import io.github.xiechanglei.lan.rbac.entity.SysUser;
-import io.github.xiechanglei.lan.rbac.entity.SysUserRole;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import io.github.xiechanglei.lan.rbac.entity.base.SysUserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface LanSysUserRoleRepository extends JpaRepository<SysUserRole, String> {
@@ -28,12 +24,4 @@ public interface LanSysUserRoleRepository extends JpaRepository<SysUserRole, Str
     @Transactional
     void deleteByUserId(String userId);
 
-    /**
-     * 根据角色id 查询关联下所有用户
-     * @param pageRequest 分页参数
-     * @param roleId 角色id
-     * @return 用户
-     */
-    @Query("select u from SysUser u,SysUserRole ur where u.id = ur.userId and ur.roleId = ?1")
-    Page<SysUser> findByRoleId(PageRequest pageRequest,String roleId);
 }
