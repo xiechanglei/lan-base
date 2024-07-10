@@ -4,6 +4,7 @@ package io.github.xiechanglei.lan.rbac.internal.permission;
 import io.github.xiechanglei.lan.rbac.annotation.Function;
 import io.github.xiechanglei.lan.rbac.annotation.Menu;
 import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 
 /**
@@ -30,7 +31,7 @@ public class InternalMenuSystemManager {
     public static class InternalMenuModelManager {
     }
 
-    @Menu(title = "日志管理", code = "rbac:menu:log:manager", icon = "pro://lan.rbac.icon-sys-manager-log", order = 4)
+    @ConditionalOnProperty(prefix = "lan.rbac", name = "enable-log", havingValue = "true", matchIfMissing = true)
     @Function(code = "rbac:log:select", title = "日志查询", authCode = {InternalLogAuthCodeManager.QUERY, InternalUserAuthCodeManager.QUERY})
     public static class InternalLogModelManager {
     }
