@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.Date;
 
-import static io.github.xiechanglei.lan.rbac.entity.QSysLog.sysLog;
+import static io.github.xiechanglei.lan.rbac.entity.log.QSysLog.sysLog;
 
 @Service
 @RequiredArgsConstructor

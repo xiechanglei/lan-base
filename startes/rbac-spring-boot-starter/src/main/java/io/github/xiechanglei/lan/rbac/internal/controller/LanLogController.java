@@ -20,7 +20,7 @@ import java.util.Date;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@ConditionalOnProperty(prefix = "lan.rbac", name = "internal-api", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "lan.rbac", name = {"internal-api", "enable-log"}, havingValue = "true", matchIfMissing = true)
 public class LanLogController {
     private final LanSysLogService lanSysLogService;
 

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static io.github.xiechanglei.lan.rbac.entity.QSysMenu.sysMenu;
-import static io.github.xiechanglei.lan.rbac.entity.QSysRole.sysRole;
-import static io.github.xiechanglei.lan.rbac.entity.QSysRoleAuth.sysRoleAuth;
-import static io.github.xiechanglei.lan.rbac.entity.QSysUserRole.sysUserRole;
+import static io.github.xiechanglei.lan.rbac.entity.base.QSysMenu.sysMenu;
+import static io.github.xiechanglei.lan.rbac.entity.base.QSysRole.sysRole;
+import static io.github.xiechanglei.lan.rbac.entity.base.QSysRoleAuth.sysRoleAuth;
+import static io.github.xiechanglei.lan.rbac.entity.base.QSysUserRole.sysUserRole;
 
 @Service
 @RequiredArgsConstructor

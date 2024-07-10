@@ -3,7 +3,6 @@ package io.github.xiechanglei.lan.rbac.init;
 import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -15,16 +14,14 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import javax.sql.DataSource;
 
 /**
- * 自定义的LocalContainerEntityManagerFactoryBean
+ * 自定义的LocalContainerEntityManagerFactoryBean,用来创建EntityManagerFactory
  */
-//@Configuration
 @Configuration
 @RequiredArgsConstructor
 public class LanEntityManagerConfiguration {
     private final JpaProperties jpaProperties;
     private final DataSource dataSource;
     private final LanJpaEntityManager lanJpaEntityManager;
-    private final HibernateProperties hibernateProperties;
 
     @Bean
     @ConditionalOnMissingBean
