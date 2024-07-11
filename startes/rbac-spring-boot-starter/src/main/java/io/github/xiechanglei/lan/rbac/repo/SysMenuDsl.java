@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.rbac.dsl;
+package io.github.xiechanglei.lan.rbac.repo;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;

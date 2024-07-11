@@ -42,6 +42,6 @@ public class LanSysLogService {
         if (startTime != null || endTime != null) {
             query.where(sysLog.logTime.between(startTime, endTime));
         }
-        return JpaQueryHelper.fetchPage(query, pageRequest.getPageNumber(), pageRequest.getPageSize());
+        return JpaQueryHelper.fetchPage(query, pageRequest);
     }
 }

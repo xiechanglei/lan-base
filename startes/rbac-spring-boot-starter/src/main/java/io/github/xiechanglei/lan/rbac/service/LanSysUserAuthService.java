@@ -63,7 +63,7 @@ public class LanSysUserAuthService {
      *
      * @param word        用户名
      * @param pageRequest 分页信息
-     *                    TODO 优化查询条件
+     *                    TODO service 中不应该有sqk查询逻辑，
      */
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
         StringBuilder hql = new StringBuilder("select u from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u ");

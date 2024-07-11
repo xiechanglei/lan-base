@@ -10,12 +10,9 @@ import java.util.List;
 public class JpaQueryHelper {
     /**
      * 分页查询
-     *
-     * @param page 分页页码，第一页是0
-     * @param size 分页的大小
      */
-    public static <T> Page<T> fetchPage(JPAQuery<T> query, Integer page, Integer size) {
-        List<T> result = query.limit(size).offset((long) page * size).fetch();
-        return new PageImpl<>(result, PageRequest.of(page, size), query.fetchCount());
+    public static <T> Page<T> fetchPage(JPAQuery<T> query, PageRequest pageRequest) {
+        List<T> result = query.limit(pageRequest.getPageSize()).offset(pageRequest.getOffset()).fetch();
+        return new PageImpl<>(result, pageRequest, query.fetchCount());
     }
 }

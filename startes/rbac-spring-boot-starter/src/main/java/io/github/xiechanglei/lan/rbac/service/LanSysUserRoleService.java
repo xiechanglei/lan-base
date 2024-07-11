@@ -1,6 +1,6 @@
 package io.github.xiechanglei.lan.rbac.service;
 
-import io.github.xiechanglei.lan.rbac.dsl.SysUserRoleDsl;
+import io.github.xiechanglei.lan.rbac.repo.SysUserRoleDsl;
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserRole;
 import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
