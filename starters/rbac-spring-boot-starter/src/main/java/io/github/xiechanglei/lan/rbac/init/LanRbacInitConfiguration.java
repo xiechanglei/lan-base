@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * 数据初始化配置
- * TODO init 流程优化,大部分情况下不需要初始化流程
+ * TODO init 流程优化,系统部署之后大部分情况下不需要初始化权限数据
  */
 @RequiredArgsConstructor
 @Configuration

@@ -3,12 +3,14 @@ package io.github.xiechanglei.lan.rbac.repo;
 import io.github.xiechanglei.lan.rbac.entity.base.SysResourceCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * LanBaseSysResourceCodeRepository  资源权限字符字典表
  */
+@Repository
 public interface LanSysResourceCodeRepository extends JpaRepository<SysResourceCode, String> {
 
     /**

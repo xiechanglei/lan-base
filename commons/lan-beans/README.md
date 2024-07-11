@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/license-Apache2.0-blue) ![](https://img.shields.io/badge/version-2.7.18.2-green)
+![](https://img.shields.io/badge/license-Apache2.0-blue) ![](https://img.shields.io/badge/version-2.7.18.3-green)
 # lan-base-beans
 
 常规的一些bean封装
@@ -8,8 +8,8 @@
 
 <dependency>
     <groupId>io.github.xiechanglei</groupId>
-    <artifactId>lan-base-beans</artifactId>
-    <version>2.7.18.2</version>
+    <artifactId>lan-beans</artifactId>
+    <version>2.7.18.3</version>
 </dependency>
 ```
 

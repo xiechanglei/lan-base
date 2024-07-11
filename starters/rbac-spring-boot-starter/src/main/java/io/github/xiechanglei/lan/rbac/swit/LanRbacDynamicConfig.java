@@ -1,31 +1,41 @@
-package io.github.xiechanglei.lan.rbac.init;
+package io.github.xiechanglei.lan.rbac.swit;
 
+import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
 import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 /**
- * 自定义的LocalContainerEntityManagerFactoryBean,用来创建EntityManagerFactory
+ * 放在一个单独的配置类中，主要是为了当用户不需要rbac功能时，可以通过配置关闭lan.rbac.enable,可以使ComponentScan注解失效，
+ * 这样就不用在所有的类上都加上@ConditionalOnProperty注解了
  */
 @Configuration
+@EnableJpaAuditing
+@EnableScheduling
+@EnableJpaRepositories("io.github.xiechanglei.lan.rbac")
+@ComponentScan("io.github.xiechanglei.lan.rbac")
+@ConditionalOnProperty(prefix = "lan.rbac", name = "enable", havingValue = "true", matchIfMissing = true)
 @RequiredArgsConstructor
-public class LanEntityManagerConfiguration {
-    private final JpaProperties jpaProperties;
+public class LanRbacDynamicConfig {
     private final DataSource dataSource;
     private final LanJpaEntityManager lanJpaEntityManager;
+    private final EntityManagerFactoryBuilder builder;
+    private final LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean;
 
-    @Bean
-    @ConditionalOnMissingBean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
+    @PostConstruct
+    public void initTables() {
         String[] rbacEntityPackages = lanJpaEntityManager.getRbacEntityPackages();
         String[] allEntityScanPackages = ArrayHelper.concat(lanJpaEntityManager.getAllEntityScanPackages(), rbacEntityPackages);
 
@@ -35,12 +45,8 @@ public class LanEntityManagerConfiguration {
             setShowSql(true);
         }});
         tempFactoryBean.destroy();
-
-        // 创建真正的factoryBean
-        return buildFactoryBean(builder, allEntityScanPackages, new HibernateJpaVendorAdapter() {{
-            setGenerateDdl(jpaProperties.isGenerateDdl());
-            setShowSql(jpaProperties.isShowSql());
-        }});
+        localContainerEntityManagerFactoryBean.setPackagesToScan(allEntityScanPackages);
+        localContainerEntityManagerFactoryBean.afterPropertiesSet();
     }
 
     private LocalContainerEntityManagerFactoryBean buildFactoryBean(EntityManagerFactoryBuilder builder, String[] allEntityScanPackages, JpaVendorAdapter jpaVendorAdapter) {
@@ -52,5 +58,4 @@ public class LanEntityManagerConfiguration {
         factoryBean.afterPropertiesSet();
         return factoryBean;
     }
-
 }
