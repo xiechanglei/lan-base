@@ -37,7 +37,7 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 ## 模块介绍
 
 **commons 模块**
-- [x] [lan-beans](./commons/lan-beans/README.md) 通用bean模块
+- [.] [lan-beans](./commons/lan-beans/README.md) 通用bean模块
 - [x] [lan-digest](./commons/lan-digest/README.md) 加密算法模块
 - [x] [lan-http](./commons/lan-http/README.md) http请求模块
 - [x] [lan-jpa-beans](./commons/lan-jpa-beans/README.md) jpa通用bean模块
