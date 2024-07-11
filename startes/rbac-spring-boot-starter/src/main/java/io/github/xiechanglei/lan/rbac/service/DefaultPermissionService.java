@@ -24,7 +24,7 @@ public final class DefaultPermissionService {
         if (sysRoleService.hasAdminRole(tokenInfo.getUserId())) {
             return;
         }
-        hasPermission(userContextHolder.getCurrentUser(), permissions);
+        hasPermission(UserContextHolder.getCurrentUser(), permissions);
     }
 
     /**

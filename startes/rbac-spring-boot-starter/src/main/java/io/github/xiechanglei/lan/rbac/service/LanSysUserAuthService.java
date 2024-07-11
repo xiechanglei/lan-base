@@ -11,13 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,35 +66,19 @@ public class LanSysUserAuthService {
      *                    TODO 优化查询条件
      */
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<SysUserAuth> criteriaQuery = criteriaBuilder.createQuery(SysUserAuth.class);
-        Root<? extends SysUserAuth> root = criteriaQuery.from(lanJpaEntityManager.getUserEntityClass());
-        criteriaQuery.select(root);
-        List<Predicate> predicates = new ArrayList<>();
+        StringBuilder hql = new StringBuilder("select u from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u ");
+        StringBuilder countHql = new StringBuilder("select count(u) from " + lanJpaEntityManager.getUserEntityClass().getSimpleName() + " u ");
         StringOptional.of(word).ifPresent(w -> {
-            predicates.add(criteriaBuilder.or(criteriaBuilder.like(root.get("userName"), "%" + word + "%"), criteriaBuilder.like(root.get("nickName"), "%" + word + "%")));
+            hql.append("where u.userName like :word or u.nickName like :word ");
+            countHql.append("where u.userName like :word or u.nickName like :word ");
         });
-        if (!predicates.isEmpty()) {
-            criteriaQuery.where(predicates.toArray(new Predicate[0]));
-        }
-
-        criteriaQuery.orderBy(criteriaBuilder.desc(root.get("createTime")));//按创建时间倒序排列
-
-        TypedQuery<SysUserAuth> typedQuery = entityManager.createQuery(criteriaQuery);
-        typedQuery.setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize());
-        typedQuery.setMaxResults(pageRequest.getPageSize());
-
-        List<SysUserAuth> resultList = typedQuery.getResultList();
-
-        // 查询总数
-        CriteriaQuery<Long> countQuery = criteriaBuilder.createQuery(Long.class);
-        Root<? extends SysUserAuth> countRoot = countQuery.from(lanJpaEntityManager.getUserEntityClass());
-        countQuery.select(criteriaBuilder.count(countRoot));
-        countQuery.where(predicates.toArray(new Predicate[0]));
-
-        Long total = entityManager.createQuery(countQuery).getSingleResult();
-
-        return new PageImpl<>(resultList, pageRequest, total);
+        List Users = entityManager.createQuery(hql.toString())
+                .setParameter("word", "%" + word + "%")
+                .setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize())
+                .setMaxResults(pageRequest.getPageSize())
+                .getResultList();
+        Long total = (Long) entityManager.createQuery(countHql.toString()).getSingleResult();
+        return new PageImpl<>(Users, pageRequest, total);
     }
 
     /**
