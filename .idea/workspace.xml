@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0306be-604e-4d23-b466-7856d12985fa" name="Changes" comment="rename">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9abeb2d8-ccd4-431b-8187-3a85664b4d33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9abeb2d8-ccd4-431b-8187-3a85664b4d33.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,63 +45,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HttpTest.executor": "Run",
-    "Application.SqlBuilder (1).executor": "Run",
-    "Application.SqlBuilder (2).executor": "Run",
-    "Application.SqlBuilder (3).executor": "Debug",
-    "Application.SqlBuilder (4).executor": "Run",
-    "Application.SqlBuilder.executor": "Run",
-    "JUnit.StringHelperTest.executor": "Run",
-    "JUnit.StringHelperTest.testConvert.executor": "Run",
-    "JUnit.StringHelperTest.testConvertBoolean.executor": "Run",
-    "JUnit.StringHelperTest.testConvertCharacter.executor": "Run",
-    "JUnit.StringHelperTest.testConvertDouble.executor": "Run",
-    "JUnit.StringHelperTest.testConvertEnum.executor": "Run",
-    "JUnit.StringHelperTest.testConvertInteger.executor": "Run",
-    "JUnit.StringHelperTest.testConvertLong.executor": "Run",
-    "JUnit.StringHelperTest.testConvertShort.executor": "Run",
-    "JUnit.StringHelperTest.testIsNotSame.executor": "Run",
-    "JUnit.StringOptionalTest.executor": "Run",
-    "JUnit.StringOptionalTest.testIfNotPresent.executor": "Run",
-    "JUnit.StringOptionalTest.testIfNotPresentThrow.executor": "Run",
-    "JUnit.StringOptionalTest.testIfPresent.executor": "Run",
-    "JUnit.StringOptionalTest.testOf.executor": "Run",
-    "JUnit.StringOptionalTest.testOfElse.executor": "Run",
-    "Maven.jpa-spring-boot-starter [clean].executor": "Run",
-    "Maven.lan-base [clean].executor": "Run",
-    "Maven.lan-base [compile].executor": "Run",
-    "Maven.lan-base [deploy,-P,ossrh].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.TestApplication (1).executor": "Run",
-    "Spring Boot.TestApplication.executor": "Run",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "database.data.extractors.current.id": "CSV-Groovy.csv.groovy",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/xie/code-work-space/java/lan-base/commons/lan-http",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "http.proxy",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HttpTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SqlBuilder (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SqlBuilder (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SqlBuilder (3).executor&quot;: &quot;Debug&quot;,
+    &quot;Application.SqlBuilder (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SqlBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvert.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertBoolean.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertCharacter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertDouble.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertEnum.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertInteger.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertLong.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testConvertShort.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringHelperTest.testIsNotSame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.testIfNotPresent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.testIfNotPresentThrow.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.testIfPresent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.testOf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StringOptionalTest.testOfElse.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.jpa-spring-boot-starter [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lan-base [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lan-base [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lan-base [deploy,-P,ossrh].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TestApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TestApplication.executor&quot;: &quot;Run&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;CSV-Groovy.csv.groovy&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/xie/code-work-space/java/lan-base/commons/lan-http&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/commons/lan-http" />
@@ -242,7 +243,8 @@
       <workItem from="1720162893953" duration="4129000" />
       <workItem from="1720398703762" duration="15409000" />
       <workItem from="1720571264033" duration="20310000" />
-      <workItem from="1720601613540" duration="15120000" />
+      <workItem from="1720601613540" duration="16936000" />
+      <workItem from="1720690395276" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="commit message">
       <option name="closed" value="true" />
