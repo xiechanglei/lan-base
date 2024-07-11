@@ -4,7 +4,7 @@ import io.github.xiechanglei.lan.beans.message.DataFit;
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
 import io.github.xiechanglei.lan.rbac.entity.base.SysMenuFc;
-import io.github.xiechanglei.lan.rbac.internal.permission.InternalMenuAuthCodeManager;
+import io.github.xiechanglei.lan.rbac.internal.permission.InternalMenuAuthCode;
 import io.github.xiechanglei.lan.rbac.service.LanSysMenuFcService;
 import io.github.xiechanglei.lan.rbac.service.LanSysMenuService;
 import io.github.xiechanglei.lan.web.log.ApiLog;
@@ -29,7 +29,7 @@ public class LanMenuController {
      * 获取全权限树形结构
      */
     @ApiLog(value = "获取菜单列表")
-    @NeedAuth(InternalMenuAuthCodeManager.QUERY)
+    @NeedAuth(InternalMenuAuthCode.QUERY)
     @RequestMapping("/rbac/menu/list")
     public DataFit getMenuAll() {
         return DataFit.of("menus", lanSysMenuService.getMenuAll())  //全部菜单
@@ -45,7 +45,7 @@ public class LanMenuController {
      * @param menuIcon  菜单图标
      */
     @ApiLog(value = "编辑菜单", params = {"menuCode", "menuTitle", "menuIcon", "menuOlder"})
-    @NeedAuth(InternalMenuAuthCodeManager.UPDATE)
+    @NeedAuth(InternalMenuAuthCode.UPDATE)
     @RequestMapping("/rbac/menu/update")
     public void updateMenu(@NotBlank(message = "菜单标题不能为空") String menuTitle, String menuCode, String menuIcon, @RequestParam(required = false, defaultValue = "0") Float menuOlder) {
         lanSysMenuService.updateMenu(menuCode, menuTitle, menuIcon, menuOlder);
@@ -56,7 +56,7 @@ public class LanMenuController {
      * 禁用菜单
      */
     @ApiLog(value = "禁用菜单", params = {"menuCode"})
-    @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
+    @NeedAuth(InternalMenuAuthCode.ENABLE)
     @RequestMapping("/rbac/menu/disableMenu")
     public void disableMenu(String menuCode) {
         lanSysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.DISABLE);
@@ -66,7 +66,7 @@ public class LanMenuController {
      * 启用菜单
      */
     @ApiLog(value = "启用菜单", params = {"menuCode"})
-    @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
+    @NeedAuth(InternalMenuAuthCode.ENABLE)
     @RequestMapping("/rbac/menu/enableMenu")
     public void enableMenu(String menuCode) {
         lanSysMenuService.changeMenuStatus(menuCode, SysMenu.MenuStatus.ENABLE);
@@ -76,7 +76,7 @@ public class LanMenuController {
      * 禁用功能
      */
     @ApiLog(value = "禁用功能", params = {"funcCode"})
-    @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
+    @NeedAuth(InternalMenuAuthCode.ENABLE)
     @RequestMapping("/rbac/menu/disableFunc")
     public void disableFunc(String funcCode) {
         lanSysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.DISABLE);
@@ -86,7 +86,7 @@ public class LanMenuController {
      * 启用功能
      */
     @ApiLog(value = "启用功能", params = {"funcCode"})
-    @NeedAuth(InternalMenuAuthCodeManager.ENABLE)
+    @NeedAuth(InternalMenuAuthCode.ENABLE)
     @RequestMapping("/rbac/menu/enableFunc")
     public void enableFunc(String funcCode) {
         lanSysMenuFcService.changeFuncStatus(funcCode, SysMenuFc.FuncStatus.ENABLE);
@@ -96,7 +96,7 @@ public class LanMenuController {
      * 获取菜单的信息
      */
     @ApiLog(value = "获取菜单的信息")
-    @NeedAuth(InternalMenuAuthCodeManager.QUERY)
+    @NeedAuth(InternalMenuAuthCode.QUERY)
     @RequestMapping("/rbac/menu/get")
     public SysMenu getMenuInfo(String menuCode) {
         return lanSysMenuService.getMenuInfo(menuCode);

@@ -8,7 +8,7 @@ import io.github.xiechanglei.lan.rbac.annotation.AuthModule;
  * 用户模块
  */
 @AuthModule("用户模块")
-public class InternalUserAuthCodeManager {
+public class InternalUserAuthCode {
     // title
     @AuthCode("用户创建")
     public static final String CREATE = "rbac:user:create";

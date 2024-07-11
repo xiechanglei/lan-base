@@ -1,6 +1,7 @@
 package io.github.xiechanglei.lan.rbac.annotation;
 
 import io.github.xiechanglei.lan.rbac.entity.base.SysMenu;
+import io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCode;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.ElementType;
@@ -11,7 +12,7 @@ import java.lang.annotation.Target;
 /**
  * 菜单的标记注解，用于程序自动化生成菜单数据使用的，
  *
- * @see io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCodeManager
+ * @see InternalUserAuthCode
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

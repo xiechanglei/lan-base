@@ -9,7 +9,7 @@ import io.github.xiechanglei.lan.rbac.annotation.Password;
 import io.github.xiechanglei.lan.rbac.annotation.User;
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.internal.constans.BusinessError;
-import io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCodeManager;
+import io.github.xiechanglei.lan.rbac.internal.permission.InternalUserAuthCode;
 import io.github.xiechanglei.lan.rbac.service.LanSysRoleService;
 import io.github.xiechanglei.lan.rbac.service.LanSysUserAuthService;
 import io.github.xiechanglei.lan.rbac.service.LanSysUserRoleService;
@@ -35,7 +35,7 @@ public class LanUserController {
      */
     @ApiLog(value = "修改用户密码", params = {"id"})
     @RequestMapping("/rbac/user/changePass")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void changePass(@Password String newPass, @User SysUserAuth user) {
         lanSysUserAuthService.updatePassword(user, newPass);
     }
@@ -46,7 +46,7 @@ public class LanUserController {
      */
     @ApiLog(value = "获取用户信息", params = {"id"})
     @RequestMapping("/rbac/user/get")
-    @NeedAuth(InternalUserAuthCodeManager.QUERY)
+    @NeedAuth(InternalUserAuthCode.QUERY)
     public DataFit getUserInfo(@User SysUserAuth user) {
         return DataFit.of("user", user).fit("roles", lanSysRoleService.findByUserId(user.getId()));
 
@@ -59,7 +59,7 @@ public class LanUserController {
      */
     @ApiLog(value = "更新用户信息", params = {"id"})
     @RequestMapping("/rbac/user/update")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void updateUser(@User SysUserAuth user, @ParameterUser SysUserAuth newUser) {
         BeanUtils.copyProperties(newUser, user, "id", "userName", "userPassword", "userStatus", "userSerial", "createTime", "updateTime");
         lanSysUserAuthService.update(user);
@@ -71,7 +71,7 @@ public class LanUserController {
      */
     @ApiLog(value = "禁用用户", params = {"id"})
     @RequestMapping("/rbac/user/disable")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void disable(String id) {
         // 管理员用户不能禁用
         if (lanSysRoleService.hasAdminRole(id)) {
@@ -85,7 +85,7 @@ public class LanUserController {
      */
     @ApiLog(value = "启用用户", params = {"id"})
     @RequestMapping("/rbac/user/enable")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void enable(String id) {
         lanSysUserAuthService.enableUser(id);
     }
@@ -98,7 +98,7 @@ public class LanUserController {
      */
     @ApiLog(value = "查询用户", params = {"word"})
     @RequestMapping("/rbac/user/query")
-    @NeedAuth({InternalUserAuthCodeManager.QUERY})
+    @NeedAuth({InternalUserAuthCode.QUERY})
     public Page<SysUserAuth> searchUser(String word, PageRequest pageRequest) {
         return lanSysUserAuthService.searchUser(word, pageRequest);
     }
@@ -109,7 +109,7 @@ public class LanUserController {
      */
     @ApiLog(value = "添加用户", params = {"userName"})
     @RequestMapping("/rbac/user/add")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void addUser(@ParameterUser SysUserAuth user, @Password String password) {
         StringOptional.of(user.getUserName()).ifNotPresentThrow(BusinessError.USER.USER_NAME_IS_EMPTY);
         if (lanSysUserAuthService.existsByUsername(user.getUserName())) {
@@ -130,7 +130,7 @@ public class LanUserController {
      */
     @ApiLog(value = "给用户授予角色", params = {"id", "roleIds"})
     @RequestMapping("/rbac/user/grantRole")
-    @NeedAuth(InternalUserAuthCodeManager.UPDATE)
+    @NeedAuth(InternalUserAuthCode.UPDATE)
     public void grantRoleToUser(@User SysUserAuth user, String[] roleIds) {
         lanSysUserRoleService.grantRoles(user.getId(), roleIds);
     }

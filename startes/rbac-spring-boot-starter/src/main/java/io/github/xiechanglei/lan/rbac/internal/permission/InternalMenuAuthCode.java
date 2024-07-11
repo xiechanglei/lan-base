@@ -8,7 +8,7 @@ import io.github.xiechanglei.lan.rbac.annotation.AuthModule;
  * 菜单模块
  */
 @AuthModule("菜单模块")
-public class InternalMenuAuthCodeManager {
+public class InternalMenuAuthCode {
     @AuthCode("菜单查询")
     public static final String QUERY= "rbac:menu:query";
 

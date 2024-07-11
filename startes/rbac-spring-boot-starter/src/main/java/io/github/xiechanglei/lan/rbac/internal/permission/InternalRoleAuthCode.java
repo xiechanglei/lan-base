@@ -9,7 +9,7 @@ import io.github.xiechanglei.lan.rbac.annotation.AuthModule;
  * 角色模块
  */
 @AuthModule("角色模块")
-public class InternalRoleAuthCodeManager {
+public class InternalRoleAuthCode {
     // title
     @AuthCode("角色创建")
     public static final String CREATE = "rbac:role:create";

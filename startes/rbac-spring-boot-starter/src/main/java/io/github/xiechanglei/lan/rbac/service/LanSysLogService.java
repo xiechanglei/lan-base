@@ -5,6 +5,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.github.xiechanglei.lan.jpa.dsl.JpaQueryHelper;
 import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,18 +17,19 @@ import static io.github.xiechanglei.lan.rbac.entity.log.QSysLog.sysLog;
 
 @Service
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "lan.rbac", name = "enable-log", havingValue = "true", matchIfMissing = true)
 public class LanSysLogService {
-
     private final JPAQueryFactory jpaQueryFactory;
 
 
     /**
      * 分页查询日志
+     *
      * @param pageRequest 分页参数pageNo，pageSize
-     * @param ip 用户ip
-     * @param title 日志标题
-     * @param startTime 开始时间
-     * @param endTime 结束时间
+     * @param ip          用户ip
+     * @param title       日志标题
+     * @param startTime   开始时间
+     * @param endTime     结束时间
      */
     public Page<SysLog> searchLog(PageRequest pageRequest, String ip, String title, Date startTime, Date endTime) {
         JPAQuery<SysLog> query = jpaQueryFactory.selectFrom(sysLog).orderBy(sysLog.logTime.desc());
