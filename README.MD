@@ -42,7 +42,7 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 - [x] [lan-http](./commons/lan-http/README.md) http请求模块
 - [x] [lan-jpa-beans](./commons/lan-jpa-beans/README.md) jpa通用bean模块
 - [x] [lan-json](./commons/lan-json/README.md) json工具模块
-- [x] [lan-utils](./commons/lan-utils/README.md) 通用工具模块
+- [x] [lan-lang](./commons/lan-lang/README.md) 通用工具模块
 
 **starter 模块**
 - [x] [web-spring-boot-starter](starters/web-spring-boot-starter/README.md) web模块
@@ -55,4 +55,3 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 
 ## todo
 1. json 模块合并到http模块中，因为通称json工具是为了http请求而存在的
-2. lan-utils 重命名为 lan-lang 或者 lan-common，表示通用工具
