@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @param <T> 消息返回的类型
  */
 public class Async<K, T> implements AsyncMessageProducer<K, T> {
-    private final Map<K, AsyncLock> keyMap = new ConcurrentHashMap<>();
+    private final Map<K, AsyncLock> lockMap = new ConcurrentHashMap<>();
     private final Map<K, T> responseMap = new ConcurrentHashMap<>();
 
     /**
@@ -23,13 +23,13 @@ public class Async<K, T> implements AsyncMessageProducer<K, T> {
      * @return 异步返回的消息
      */
     public T await(K key, long timeout) {
-        if (keyMap.containsKey(key)) {
+        if (lockMap.containsKey(key)) {
             throw AsyncKeyExistsException.INSTANCE;
         }
         AsyncLock lock = AsyncLock.create();
-        keyMap.put(key, lock);
+        lockMap.put(key, lock);
         boolean isTimeOuted = lock.lock(timeout);
-        keyMap.remove(key);
+        lockMap.remove(key);
         T result = responseMap.remove(key);
         if (isTimeOuted) {
             throw AwaitTimeoutException.INSTANCE;
@@ -45,9 +45,9 @@ public class Async<K, T> implements AsyncMessageProducer<K, T> {
      * @param response 消息返回内容
      */
     public void put(K key, T response) {
-        if (keyMap.containsKey(key)) {
+        if (lockMap.containsKey(key)) {
             responseMap.put(key, response);
-            keyMap.remove(key).unlock();
+            lockMap.remove(key).unlock();
         }
     }
 
