@@ -5,10 +5,16 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 异步锁，用于同步等待，异步唤醒
+ */
 public class AsyncLock {
     private final Lock lock = new ReentrantLock();
     private final Condition condition = lock.newCondition();
 
+    /**
+     * 阻塞线程，直到被唤醒
+     */
     public void lock() {
         lock.lock();
         try {
@@ -19,9 +25,9 @@ public class AsyncLock {
     }
 
     /**
-     * 阻塞等待，直到超时
+     * 阻塞线程，直到被唤醒或者超时
      * @param waitTime 等待时间，单位毫秒
-     * @return 是否超时等待
+     * @return 是否属于超时被唤醒
      */
     public boolean lock(long waitTime) {
         lock.lock();
