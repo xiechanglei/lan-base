@@ -1,5 +1,6 @@
 package io.github.xiechanglei.lan.lang.async;
 
+import io.github.xiechanglei.lan.lang.thread.ThreadHelper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,15 +12,7 @@ public class AsyncTest {
      */
     @Test
     public void testAwait() {
-        new Thread(() -> {
-            try {
-                Thread.sleep(1000);
-                GlobalAsync.put("key", "value");
-            } catch (InterruptedException ignored) {
-            }
-        }) {{
-            start();
-        }};
+        ThreadHelper.call(() -> GlobalAsync.put("key", "value"), 1000);
         String key = GlobalAsync.await("key", 3000);
         assertEquals("value", key);
     }
