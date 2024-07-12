@@ -27,7 +27,7 @@ public class AsyncLock {
     /**
      * 阻塞线程，直到被唤醒或者超时
      * @param waitTime 等待时间，单位毫秒
-     * @return 是否属于超时被唤醒
+     * @return 是否是正常唤醒
      */
     public boolean lock(long waitTime) {
         lock.lock();

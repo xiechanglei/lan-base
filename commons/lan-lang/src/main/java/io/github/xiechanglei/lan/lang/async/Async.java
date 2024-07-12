@@ -22,16 +22,16 @@ public class Async<K, T> implements AsyncMessageProducer<K, T> {
      * @param timeout 等待超时的时间
      * @return 异步返回的消息
      */
-    public T await(K key, long timeout) {
+    public T await(K key, long timeout) throws AwaitTimeoutException, AsyncKeyExistsException {
         if (lockMap.containsKey(key)) {
             throw AsyncKeyExistsException.INSTANCE;
         }
         AsyncLock lock = AsyncLock.create();
         lockMap.put(key, lock);
-        boolean isTimeOuted = lock.lock(timeout);
+        boolean success = lock.lock(timeout);
         lockMap.remove(key);
         T result = responseMap.remove(key);
-        if (isTimeOuted) {
+        if (!success) {
             throw AwaitTimeoutException.INSTANCE;
         }
         return result;
