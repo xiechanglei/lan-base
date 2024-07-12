@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.rbac.service;
 
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
-import io.github.xiechanglei.lan.utils.string.StringOptional;
+import io.github.xiechanglei.lan.lang.string.StringOptional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

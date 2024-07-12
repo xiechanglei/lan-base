@@ -4,7 +4,7 @@ import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import io.github.xiechanglei.lan.rbac.entity.user.SysUser;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
-import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.lang.collections.ArrayHelper;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeansException;

@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.aop;
 
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
-import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.lang.collections.ArrayHelper;
 import io.github.xiechanglei.lan.rbac.annotation.NeedAuth;
 import io.github.xiechanglei.lan.rbac.custorm.PermissionService;
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;

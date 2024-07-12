@@ -2,7 +2,7 @@ package io.github.xiechanglei.lan.rbac.resolver;
 
 
 import io.github.xiechanglei.lan.beans.exception.BusinessException;
-import io.github.xiechanglei.lan.utils.string.StringOptional;
+import io.github.xiechanglei.lan.lang.string.StringOptional;
 import io.github.xiechanglei.lan.rbac.annotation.Password;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.rbac.provide.RbacEncodeProcessor;

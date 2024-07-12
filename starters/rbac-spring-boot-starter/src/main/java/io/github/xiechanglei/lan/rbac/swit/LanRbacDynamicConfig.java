@@ -1,7 +1,7 @@
 package io.github.xiechanglei.lan.rbac.swit;
 
 import io.github.xiechanglei.lan.rbac.init.LanJpaEntityManager;
-import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.lang.collections.ArrayHelper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;

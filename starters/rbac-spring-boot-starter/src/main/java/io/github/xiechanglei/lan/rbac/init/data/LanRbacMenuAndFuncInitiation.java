@@ -10,7 +10,7 @@ import io.github.xiechanglei.lan.rbac.repo.LanSysMenuFcRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysMenuRepository;
 import io.github.xiechanglei.lan.rbac.repo.LanSysResourceCodeRepository;
 import io.github.xiechanglei.lan.rbac.util.DataUpdaterUtil;
-import io.github.xiechanglei.lan.utils.collections.ArrayHelper;
+import io.github.xiechanglei.lan.lang.collections.ArrayHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.ApplicationContext;

@@ -3,7 +3,7 @@ package io.github.xiechanglei.lan.rbac.token;
 import io.github.xiechanglei.lan.rbac.custorm.TokenInfo;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.rbac.provide.TokenContextHolder;
-import io.github.xiechanglei.lan.utils.string.StringOptional;
+import io.github.xiechanglei.lan.lang.string.StringOptional;
 import io.github.xiechanglei.lan.web.util.CookieHelper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
