@@ -19,7 +19,7 @@ byte包下的是字节相关的工具类, 包括字节转换, 字节数组转换
 - `toHex` 将字节数组转换为16进制字符串
 - `isSame` 判断两个字节数组是否相等
 - `indexOf` 查找字节数组中的子字
-- `lastIndexOf` 查找字节数组中的子字
+- `lastIndexOf` 查找字节数组中的子字 
 - `toShort` 将字节数组转换为short
 - `toUnsignedShort` 将字节数组转换为无符号short
 - `fromShort` 将short转换为字节数组
@@ -34,3 +34,6 @@ byte包下的是字节相关的工具类, 包括字节转换, 字节数组转换
 - `fromDouble` 将double转换为字节数组
 - `toFloat` 将字节数组转换为float
 - `fromFloat` 将float转换为字节数组
+
+> 测试用例:
+> - [ByteArrayHelperTest.java](../src/test/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelperTest.java)

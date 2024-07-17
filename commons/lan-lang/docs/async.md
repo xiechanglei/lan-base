@@ -61,3 +61,4 @@ public class Receiver {
 
 > 测试用例: 
 > - [AsyncTest.java](../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java)
+> - [AsyncLockTest.java](../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncLockTest.java)

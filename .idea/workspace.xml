@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加单元测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/docs/async.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/docs/async.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/lan-lang/docs/byte.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/docs/byte.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" afterDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +56,7 @@
     "JUnit.ByteArrayHelperTest.testConvertWithUnsignedShort.executor": "Run",
     "JUnit.ByteArrayHelperTest.testFromShort.executor": "Run",
     "JUnit.ByteArrayHelperTest.testIsSame4.executor": "Run",
+    "JUnit.ByteArrayHelperTest.testLastIndexOf.executor": "Run",
     "JUnit.ByteArrayHelperTest.testMerge.executor": "Run",
     "JUnit.ByteArrayHelperTest.testToHexStringWithStartAndEnd3.executor": "Run",
     "JUnit.ByteArrayHelperTest.testToHexStringWithStartAndEnd4.executor": "Run",
@@ -198,7 +199,7 @@
       <workItem from="1721093679826" duration="6978000" />
       <workItem from="1721175725756" duration="556000" />
       <workItem from="1721176287311" duration="46000" />
-      <workItem from="1721176364794" duration="4984000" />
+      <workItem from="1721176364794" duration="5491000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
