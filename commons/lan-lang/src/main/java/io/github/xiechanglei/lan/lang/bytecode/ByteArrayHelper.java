@@ -1,6 +1,7 @@
 package io.github.xiechanglei.lan.lang.bytecode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class ByteArrayHelper {
     /**
      * 将16进制字符串转换为byte数组
      */
-    public static byte[] fromHexString(String hexString) {
+    public static byte[] fromHex(String hexString) {
         if (hexString == null) {
             return new byte[0];
         }
@@ -44,18 +45,44 @@ public class ByteArrayHelper {
 
     /**
      * 将字节数组转换为16进制字符串
+     *
+     * @param bytes 字节数组
      */
-    public static String toHexString(byte[] bytes) {
-        return toHexString(bytes, 0, bytes.length);
+    public static String toHex(byte[] bytes) {
+        return toHex(bytes, 0, bytes.length);
     }
 
-    public static String toHexString(byte[] bytes, int end) {
-        return toHexString(bytes, 0, end);
+    /**
+     * 将字节数组转换为16进制字符串
+     *
+     * @param bytes 字节数组
+     * @param end   结束位置
+     * @return 16进制字符串
+     */
+    public static String toHex(byte[] bytes, int end) {
+        return toHex(bytes, 0, end);
     }
 
-    public static String toHexString(byte[] bytes, int start, int end) {
+    /**
+     * 将字节数组转换为16进制字符串
+     *
+     * @param bytes 字节数组
+     * @param start 开始位置
+     * @param end   结束位置
+     * @return 16进制字符串
+     */
+    public static String toHex(byte[] bytes, int start, int end) {
         if (bytes == null || bytes.length == 0) {
             return "";
+        }
+        if (start < 0 || start >= bytes.length) {
+            throw new IllegalArgumentException("start must be in [0, bytes.length)");
+        }
+        if (end < 0 || end > bytes.length) {
+            throw new IllegalArgumentException("end must be in [0, bytes.length]");
+        }
+        if (start >= end) {
+            throw new IllegalArgumentException("start must be less than end");
         }
         StringBuilder sb = new StringBuilder();
         end = Math.min(end, bytes.length);
@@ -87,15 +114,47 @@ public class ByteArrayHelper {
     }
 
     /**
+     * 从字节数组中查找指定字节
+     *
+     * @param byteArr 源字节数组
+     * @param target  目标字节
+     * @return 位置
+     */
+    public static int indexOf(byte[] byteArr, byte target) {
+        for (int i = 0; i < byteArr.length; i++) {
+            if (byteArr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 从字节数组中查找指定字节
+     *
+     * @param byteArr 源字节数组
+     * @param target  目标字节
+     * @return 位置
+     */
+    public static int lastIndexOf(byte[] byteArr, byte target) {
+        for (int i = byteArr.length - 1; i >= 0; i--) {
+            if (byteArr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * short 转换
      */
     public static short toShort(byte[] bytes) {
         if (bytes == null || bytes.length != 2) {
-            throw new RuntimeException("convert short from bytes length must be 2");
+            throw new IllegalArgumentException("convert short from bytes length must be 2");
         }
         short result = 0;
         for (int i = 0; i < bytes.length; i++) {
-            result += (short) ((short) (bytes[i] & 0xFF) << (8 * (bytes.length - i - 1)));
+            result += (short) ((bytes[i] & 0xFF) << (8 * (bytes.length - i - 1)));
         }
         return result;
     }
@@ -117,7 +176,7 @@ public class ByteArrayHelper {
      */
     public static int toInt(byte[] bytes) {
         if (bytes == null || bytes.length != 4) {
-            throw new RuntimeException("convert int from bytes length must be 4");
+            throw new IllegalArgumentException("convert int from bytes length must be 4");
         }
         int result = 0;
         for (int i = 0; i < bytes.length; i++) {
@@ -144,7 +203,7 @@ public class ByteArrayHelper {
      */
     public static long toLong(byte[] bytes) {
         if (bytes == null || bytes.length != 8) {
-            throw new RuntimeException("convert long from bytes length must be 8");
+            throw new IllegalArgumentException("convert long from bytes length must be 8");
         }
         long result = 0;
         for (int i = 0; i < bytes.length; i++) {
@@ -162,7 +221,7 @@ public class ByteArrayHelper {
      */
     public static float toFloat(byte[] bytes) {
         if (bytes == null || bytes.length != 4) {
-            throw new RuntimeException("convert float from bytes length must be 4");
+            throw new IllegalArgumentException("convert float from bytes length must be 4");
         }
         int result = toInt(bytes);
         return Float.intBitsToFloat(result);
@@ -178,7 +237,7 @@ public class ByteArrayHelper {
      */
     public static double toDouble(byte[] bytes) {
         if (bytes == null || bytes.length != 8) {
-            throw new RuntimeException("convert double from bytes length must be 8");
+            throw new IllegalArgumentException("convert double from bytes length must be 8");
         }
         long result = toLong(bytes);
         return Double.longBitsToDouble(result);
