@@ -59,5 +59,4 @@ public class Receiver {
 }
 ```
 
-详见测试用例: [AsyncTest](../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java)
-> 详见测试用例: [AsyncTest](../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java)
+> 测试用例: [../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java](../src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java)

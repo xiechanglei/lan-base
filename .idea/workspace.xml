@@ -6,19 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加单元测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-lang/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/lan-lang/docs/async.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/docs/async.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteHelper.java" afterDir="false" />
     </list>
-    <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9abeb2d8-ccd4-431b-8187-3a85664b4d33.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9abeb2d8-ccd4-431b-8187-3a85664b4d33/storage_v2/_src_/schema/house.IMftBQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +182,7 @@
       <workItem from="1721093679826" duration="6978000" />
       <workItem from="1721175725756" duration="556000" />
       <workItem from="1721176287311" duration="46000" />
-      <workItem from="1721176364794" duration="1406000" />
+      <workItem from="1721176364794" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
