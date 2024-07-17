@@ -60,7 +60,7 @@ public class ByteArrayHelper {
         StringBuilder sb = new StringBuilder();
         end = Math.min(end, bytes.length);
         for (int i = start; i < end; i++) {
-            sb.append(ByteHelper.toHexString(bytes[i]));
+            sb.append(ByteHelper.toHex(bytes[i]));
         }
         return sb.toString();
     }

@@ -7,7 +7,7 @@ public class ByteHelper {
     /**
      * 将16进制字符串转换为byte
      */
-    public static byte fromHexString(String hexString) {
+    public static byte fromHex(String hexString) {
         if (hexString == null || hexString.length() != 2) {
             throw new IllegalArgumentException("hexString length must be 2");
         }
@@ -17,7 +17,8 @@ public class ByteHelper {
     /**
      * 将byte转换为16进制字符串
      */
-    public static String toHexString(byte b) {
+    public static String toHex(byte b) {
         return String.format("%02X", b);
     }
+
 }
