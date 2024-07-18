@@ -2,6 +2,7 @@ package io.github.xiechanglei.lan.lang.date;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,66 @@ import java.util.List;
  * 时间之间的计算
  */
 public class DateCountInterface extends DateBuilderInterface {
+
+    /**
+     * 计算两个日期之间相隔年数,自然年数,比如2019-01-01和2020-02-22相隔一年
+     */
+    public static int countNatureYears(Date d1, Date d2) {
+        Calendar c1 = Calendar.getInstance();
+        c1.setTime(d1);
+        Calendar c2 = Calendar.getInstance();
+        c2.setTime(d2);
+        return c2.get(Calendar.YEAR) - c1.get(Calendar.YEAR);
+    }
+
+    /**
+     * 获取两个日期之间的所有年份,包括起始日期和结束日期
+     */
+    public static List<Date> getYearsBetween(Date d1, Date d2) {
+        List<Date> dates = new ArrayList<>();
+        Date start = d1, end = d2;
+        if (d1.getTime() > d2.getTime()) {
+            start = d2;
+            end = d1;
+        }
+        for (int i = 0; i <= countNatureYears(start, end); i++) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(start);
+            c.add(Calendar.YEAR, i);
+            dates.add(startOfYear(c.getTime()));
+        }
+        return dates;
+    }
+
+    /**
+     * 计算两个日期之间相隔月数,自然月数,比如2019-01-01和2019-02-22相隔一个月
+     */
+    public static int countNatureMonths(Date d1, Date d2) {
+        Calendar c1 = Calendar.getInstance();
+        c1.setTime(d1);
+        Calendar c2 = Calendar.getInstance();
+        c2.setTime(d2);
+        return (c2.get(Calendar.YEAR) - c1.get(Calendar.YEAR)) * 12 + c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH);
+    }
+
+    /**
+     * 获取两个日期之间的所有月份,包括起始日期和结束日期
+     */
+    public static List<Date> getMonthsBetween(Date d1, Date d2) {
+        List<Date> dates = new ArrayList<>();
+        Date start = d1, end = d2;
+        if (d1.getTime() > d2.getTime()) {
+            start = d2;
+            end = d1;
+        }
+        for (int i = 0; i <= countNatureMonths(start, end); i++) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(start);
+            c.add(Calendar.MONTH, i);
+            dates.add(startOfMonth(c.getTime()));
+        }
+        return dates;
+    }
 
     /**
      * 计算两个日期之间相隔的天数,自然天数,比如2019-01-01 23:59:59和2019-01-02 00:00:00相隔一天
@@ -28,7 +89,7 @@ public class DateCountInterface extends DateBuilderInterface {
             end = d1;
         }
         for (int i = 0; i <= countNatureDays(start, end); i++) {
-            dates.add(afterDays(start, i));
+            dates.add(startOfDay(afterDays(start, i)));
         }
         return dates;
     }
@@ -51,7 +112,7 @@ public class DateCountInterface extends DateBuilderInterface {
             end = d1;
         }
         for (int i = 0; i <= countNatureHours(start, end); i++) {
-            dates.add(afterHours(start, i));
+            dates.add(startOfHour(afterHours(start, i)));
         }
         return dates;
     }
@@ -76,7 +137,7 @@ public class DateCountInterface extends DateBuilderInterface {
             end = d1;
         }
         for (int i = 0; i <= countNatureMinutes(start, end); i++) {
-            dates.add(afterMinutes(start, i));
+            dates.add(startOfMinute(afterMinutes(start, i)));
         }
         return dates;
     }
@@ -99,7 +160,7 @@ public class DateCountInterface extends DateBuilderInterface {
             end = d1;
         }
         for (int i = 0; i <= countNatureSeconds(start, end); i++) {
-            dates.add(afterSeconds(start, i));
+            dates.add(startOfSecond(afterSeconds(start, i)));
         }
         return dates;
     }

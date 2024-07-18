@@ -1,7 +1,6 @@
 package io.github.xiechanglei.lan.lang.bytecode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,6 +11,8 @@ public class ByteArrayHelper {
      * 将int数组转换为byte数组
      * for example:
      * byte[] bytes = ByteArrayHelper.fromNumbers(12, 13);
+     * @param bytes int数组
+     * @return byte数组
      */
     public static byte[] fromNumbers(int... bytes) {
         byte[] result = new byte[bytes.length];
@@ -22,7 +23,11 @@ public class ByteArrayHelper {
     }
 
     /**
-     * 将16进制字符串转换为byte数组
+     * 将16进制字符串转换为byte数组,
+     * for example:
+     * byte[] bytes = ByteArrayHelper.fromHex("0A0B0C");
+     * @param hexString 16进制字符串
+     * @return byte数组
      */
     public static byte[] fromHex(String hexString) {
         if (hexString == null) {
@@ -45,8 +50,10 @@ public class ByteArrayHelper {
 
     /**
      * 将字节数组转换为16进制字符串
-     *
+     *  for example:
+     *  String hex = ByteArrayHelper.toHex(new byte[]{10, 11, 12});
      * @param bytes 字节数组
+     * @return 16进制字符串
      */
     public static String toHex(byte[] bytes) {
         return toHex(bytes, 0, bytes.length);

@@ -21,6 +21,8 @@ public class Async<K, T> implements AsyncMessageProducer<K, T> {
      * @param key     消息key，用于关联一部分返回的消息
      * @param timeout 等待超时的时间
      * @return 异步返回的消息
+     * @throws AwaitTimeoutException   等待超时异常
+     * @throws AsyncKeyExistsException 异步key已经存在异常
      */
     public T await(K key, long timeout) throws AwaitTimeoutException, AsyncKeyExistsException {
         if (lockMap.containsKey(key)) {

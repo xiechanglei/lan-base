@@ -10,13 +10,6 @@ import static java.util.Calendar.*;
  * 日期构建相关的接口
  */
 public class DateBuilderInterface extends DateAfterInterface {
-    public static DateBuilder getDateBuilder() {
-        return new DateBuilder(new Date(), DEFAULT_TIMEZONE);
-    }
-
-    public static DateBuilder getDateBuilder(TimeZone zone) {
-        return new DateBuilder(new Date(), zone);
-    }
 
     public static DateBuilder getDateBuilder(Date date) {
         return new DateBuilder(date, DEFAULT_TIMEZONE);
@@ -163,7 +156,7 @@ public class DateBuilderInterface extends DateAfterInterface {
          */
         public DateBuilder endToWeek() {
             if (this.calendar.get(DAY_OF_WEEK) != SUNDAY) {
-                this.set(DAY_OF_WEEK, 1).add(DATE, 7);
+                this.add(DAY_OF_WEEK, 8 - this.calendar.get(DAY_OF_WEEK));
             }
             return this.endToDay();
         }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -15,36 +16,58 @@ public class DateParseInterface {
     public static final TimeZone DEFAULT_TIMEZONE = TimeZone.getTimeZone(DEFAULT_ZONE);
     public static final ZoneId DEFAULT_ZONE_ID = ZoneId.of(DEFAULT_ZONE);
     // simple Date format
+    public static final DateConverter DEFAULT_DATETIME_MS_PARSER = DateConverter.of("yyyy-MM-dd HH:mm:ss.SSS", DEFAULT_ZONE_ID);
     public static final DateConverter DEFAULT_DATETIME_PARSER = DateConverter.of("yyyy-MM-dd HH:mm:ss", DEFAULT_ZONE_ID);
     public static final DateConverter DEFAULT_DATE_PARSER = DateConverter.of("yyyy-MM-dd", DEFAULT_ZONE_ID);
     // default ZONE
 
     /**
-     * 按照默认的格式解析日期，如果是10位的字符串，则按照yyyy-MM-dd解析，如果是19位的字符串，则按照yyyy-MM-dd HH:mm:ss解析
+     * 按照默认的格式解析日期，支持的格式有 yyyy-MM-dd、yyyy-MM-dd HH:mm:ss、yyyy-MM-dd HH:mm:ss.SSS
+     *
+     * @param dateStr 日期字符串
+     * @return 解析后的日期
+     * @throws IllegalArgumentException dateStr为null或者不是默认的几个格式长度的时候，抛出异常
+     * @throws DateTimeParseException   解析字符串失败
      */
     public static Date parse(String dateStr) {
+        if (dateStr == null) {
+            throw new IllegalArgumentException("dateStr must not be null");
+        }
         if (dateStr.length() == 10) {
             return DEFAULT_DATE_PARSER.parseDate(dateStr);
         } else if (dateStr.length() == 19) {
             return DEFAULT_DATETIME_PARSER.parseDateTime(dateStr);
+        } else if (dateStr.length() == 23) {
+            return DEFAULT_DATETIME_MS_PARSER.parseDateTime(dateStr);
         } else {
-            throw new IllegalArgumentException("dateStr length must be 10 or 19");
+            throw new IllegalArgumentException(" if you want to parse string with default format,the string format must like yyyy-MM-dd or yyyy-MM-dd HH:mm:ss or yyyy-MM-dd HH:mm:ss.SSS");
         }
     }
 
+    /**
+     * 按照yyyy-MM-dd HH:mm:ss的格式来格式化日期，因为常规情况下，这是日期格式化的最常用的格式
+     *
+     * @param date 日期
+     * @return 格式化后的日期字符串
+     */
     public static String format(Date date) {
         return DEFAULT_DATETIME_PARSER.format(date);
     }
 
     /**
-     * 以默认时区构建解析日期的解析器，在比较高使用频率的情况下，可以使用该方法构建解析器，避免重复构建解析器
+     * 以默认时区构建解析日期的解析器，在比较高使用频率的情况下，可以使用该方法构建解析器之后存为全局变量，避免重复构建解析器
+     * @param pattern 时间格式
+     * @return DateConverter解析器，用于解析时间或者格式化时间
      */
     public static DateConverter buildConverter(String pattern) {
         return DateConverter.of(pattern, DEFAULT_ZONE_ID);
     }
 
     /**
-     * 以指定时区构建解析日期的解析器，在比较高使用频率的情况下，可以使用该方法构建解析器，避免重复构建解析器
+     * 以指定时区构建解析日期的解析器，在比较高使用频率的情况下，可以使用该方法构建解析器之后存为全局变量，避免重复构建解析器
+     * @param pattern 时间格式
+     * @param zoneId 时区
+     * @return DateConverter解析器，用于解析时间或者格式化时间
      */
     public static DateConverter buildConverter(String pattern, ZoneId zoneId) {
         return DateConverter.of(pattern, zoneId);
@@ -54,8 +77,11 @@ public class DateParseInterface {
      * 时间解析器
      */
     public static class DateConverter {
+        // 时间格式化器
         private DateTimeFormatter formatter;
+        // 时区
         private ZoneId zoneId;
+        // 是否只有日期
         private boolean onlyDate;
 
         private DateConverter() {
@@ -63,7 +89,7 @@ public class DateParseInterface {
 
         protected static DateConverter of(String pattern, ZoneId zoneId) {
             DateConverter dateConverter = new DateConverter();
-            dateConverter.onlyDate = !(pattern.contains("HH") || pattern.contains("mm") || pattern.contains("ss"));
+            dateConverter.onlyDate = !(pattern.contains("HH") || pattern.contains("mm") || pattern.contains("ss") || pattern.contains("SSS"));
             dateConverter.formatter = DateTimeFormatter.ofPattern(pattern);
             dateConverter.zoneId = zoneId;
             return dateConverter;
