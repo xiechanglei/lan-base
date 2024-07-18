@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.lang.net;
+package io.github.xiechanglei.lan.net;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

@@ -35,6 +35,8 @@
         <spring-framework.version>5.3.36</spring-framework.version>
         <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
         <snakeyaml.version>2.2</snakeyaml.version>
+        <undertow.version>2.3.15.Final</undertow.version>
+        <!--#######################CE FIX END######################-->
         <javax.interceptor.version>1.2.2</javax.interceptor.version>
         <!--        json path-->
         <json-path.version>2.9.0</json-path.version>
@@ -51,6 +53,7 @@
         <module>commons/lan-jpa-beans</module>
         <module>commons/lan-json</module>
         <module>commons/lan-lang</module>
+        <module>commons/lan-net</module>
         <module>starters/jpa-spring-boot-starter</module>
         <module>starters/rbac-spring-boot-starter</module>
         <module>starters/web-spring-boot-starter</module>
@@ -93,6 +96,13 @@
 
             <dependency>
                 <groupId>io.github.xiechanglei</groupId>
+                <artifactId>lan-net</artifactId>
+                <version>2.7.18.3</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.github.xiechanglei</groupId>
                 <artifactId>jpa-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -108,6 +118,7 @@
                 <artifactId>web-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -28,7 +28,7 @@ public class ListFilterHandlerBuilder<T> {
 
     private Function<T, ?> keyFunction = t -> t;
 
-    private BiFunction<T, T, T> updateFunction = (t1, t2) -> t1;
+    private BiFunction<T, T, T> updateFunction = (t1, t2) -> null;
 
     public ListFilterHandlerBuilder<T> keyCompareFunction(Function<T, ?> keyFunction) {
         this.keyFunction = keyFunction;

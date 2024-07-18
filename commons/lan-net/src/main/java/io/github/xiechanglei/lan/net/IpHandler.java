@@ -1,6 +1,4 @@
-package io.github.xiechanglei.lan.lang.net;
-
-import io.github.xiechanglei.lan.lang.net.vo.LocalIpAddressInfo;
+package io.github.xiechanglei.lan.net;
 
 import java.io.IOException;
 import java.net.InetAddress;

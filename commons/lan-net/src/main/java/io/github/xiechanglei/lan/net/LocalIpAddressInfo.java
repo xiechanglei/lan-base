@@ -1,4 +1,4 @@
-package io.github.xiechanglei.lan.lang.net.vo;
+package io.github.xiechanglei.lan.net;
 
 import lombok.Data;
 

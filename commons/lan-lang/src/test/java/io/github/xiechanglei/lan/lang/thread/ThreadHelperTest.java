@@ -17,4 +17,5 @@ public class ThreadHelperTest {
         ThreadHelper.call(() -> assertEquals(stringBuilder.toString(), "foobar"), 3000);
         Thread.sleep(4000);
     }
+
 }
