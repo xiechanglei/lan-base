@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 /**
@@ -24,7 +25,7 @@ public class UUIDIdAndTimeFieldEntity {
      */
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "io.github.xiechanglei.lan.jpa.generator.UUIDGenerator")
+    @GenericGenerator(name = "uuid", type = io.github.xiechanglei.lan.jpa.generator.UUIDGenerator.class)
     @Column(length = 32)
     private String id;
 

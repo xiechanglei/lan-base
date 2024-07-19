@@ -2,11 +2,11 @@ package io.github.xiechanglei.lan.rbac.entity.base;
 
 import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdEntity;
 import io.github.xiechanglei.lan.rbac.util.ComparedEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * 资源权限字符字典表，存储各资源所需要的权限字符
@@ -15,7 +15,8 @@ import jakarta.persistence.*;
 @Table(name = "sys_resource_code", indexes = {
         @Index(name = "src_resource_id", columnList = "resource_id")
 })
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @SuppressWarnings("all")

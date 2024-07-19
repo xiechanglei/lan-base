@@ -1,12 +1,12 @@
 package io.github.xiechanglei.lan.rbac.entity.base;
 
 import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdEntity;
-import lombok.Data;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 角色资源关联表
@@ -15,7 +15,8 @@ import jakarta.persistence.Table;
 @Table(name = "sys_role_auth", indexes = {
         @Index(name = "sra_role_id", columnList = "role_id"),
         @Index(name = "sra_resource_id", columnList = "resource_id")})
-@Data
+@Getter
+@Setter
 @SuppressWarnings("all")
 public class SysRoleAuth extends UUIDIdEntity {
 

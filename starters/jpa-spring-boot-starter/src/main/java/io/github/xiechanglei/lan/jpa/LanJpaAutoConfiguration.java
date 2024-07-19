@@ -5,5 +5,5 @@ import org.springframework.context.annotation.PropertySource;
 
 @ComponentScan("io.github.xiechanglei.lan.jpa")
 @PropertySource("classpath:lan.jpa.properties")
-public class LaneJpaAutoConfiguration {
+public class LanJpaAutoConfiguration {
 }

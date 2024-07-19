@@ -19,7 +19,7 @@ public abstract class SnowFlakeIdEntity {
      * 雪花算法生成ID
      */
     @Id
-    @GenericGenerator(name = "snowFlakeIdGenerator", strategy = "io.github.xiechanglei.lan.jpa.generator.SnowFlakeIdGenerator")
+    @GenericGenerator(name = "snowFlakeIdGenerator", type = io.github.xiechanglei.lan.jpa.generator.SnowFlakeIdGenerator.class)
     @GeneratedValue(generator = "snowFlakeIdGenerator")
     @Column(length = 40)
     public String id;

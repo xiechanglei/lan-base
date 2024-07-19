@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/license-Apache2.0-blue) ![](https://img.shields.io/badge/version-3.2.8.3-green)
 # Lan base
 ## 项目介绍
-java 开发脚手架项目项目主要用于封装一些常用的工具以及功能，方便开发人员快速开发项目。
+一个基于springboot的快速开发框架，提供了一些常用的工具类和starter模块.
 
 ## 项目使用
 
@@ -46,6 +46,7 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 - [x] [lan-lang](./commons/lan-net/README.md) 网络工具模块
 
 **starter 模块**
+- [x] [eureka-spring-boot-starter](starters/eureka-spring-boot-starter/README.md) eureka模块
 - [x] [web-spring-boot-starter](starters/web-spring-boot-starter/README.md) web模块
 - [x] [jpa-spring-boot-starter](starters/jpa-spring-boot-starter/README.md) jpa模块
 - [x] [rbac-spring-boot-starter](starters/rbac-spring-boot-starter/README.md) rbac模块

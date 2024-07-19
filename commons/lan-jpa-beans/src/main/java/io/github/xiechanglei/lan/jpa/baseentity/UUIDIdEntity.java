@@ -21,7 +21,7 @@ public class UUIDIdEntity {
      */
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "io.github.xiechanglei.lan.jpa.generator.UUIDGenerator")
+    @GenericGenerator(name = "uuid", type = io.github.xiechanglei.lan.jpa.generator.UUIDGenerator.class)
     @Column(length = 32)
     private String id;
 }

@@ -10,13 +10,6 @@
         <option value="$PROJECT_DIR$/templates/named-spring-boot-starter/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/commons/lan-spring-util/pom.xml" />
-        <option value="$PROJECT_DIR$/templates/lan-base-named/pom.xml" />
-        <option value="$PROJECT_DIR$/templates/named-spring-boot-starter/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
 </project>

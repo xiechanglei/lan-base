@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 /**
@@ -22,7 +23,7 @@ public abstract class SnowFlakeIdAndTimeFieldEntity {
      * 雪花算法生成ID
      */
     @Id
-    @GenericGenerator(name = "snowFlakeIdGenerator", strategy = "io.github.xiechanglei.lan.jpa.generator.SnowFlakeIdGenerator")
+    @GenericGenerator(name = "snowFlakeIdGenerator", type = io.github.xiechanglei.lan.jpa.generator.SnowFlakeIdGenerator.class)
     @GeneratedValue(generator = "snowFlakeIdGenerator")
     @Column(length = 40)
     public String id;
