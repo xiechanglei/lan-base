@@ -14,7 +14,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 /**
@@ -45,6 +45,7 @@ public class LanRbacDynamicConfig {
             setShowSql(true);
         }});
         tempFactoryBean.destroy();
+        assert allEntityScanPackages != null;
         localContainerEntityManagerFactoryBean.setPackagesToScan(allEntityScanPackages);
         localContainerEntityManagerFactoryBean.afterPropertiesSet();
     }

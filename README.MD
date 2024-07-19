@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/license-Apache2.0-blue) ![](https://img.shields.io/badge/version-2.7.18.3-green)
+![](https://img.shields.io/badge/license-Apache2.0-blue) ![](https://img.shields.io/badge/version-3.2.8.3-green)
 # Lan base
 ## 项目介绍
 java 开发脚手架项目项目主要用于封装一些常用的工具以及功能，方便开发人员快速开发项目。
@@ -10,7 +10,7 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 <dependency>
     <groupId>io.github.xiechanglei</groupId>
     <artifactId>web-spring-boot-starter</artifactId>
-    <version>2.7.18.3</version>
+    <version>3.2.8.3</version>
 </dependency>
 ```
 #### 2.作为父项目引入
@@ -19,7 +19,7 @@ java 开发脚手架项目项目主要用于封装一些常用的工具以及功
 <prent>
     <groupId>io.github.xiechanglei</groupId>
     <artifactId>lan-base</artifactId>
-    <version>2.7.18.3</version>
+    <version>3.2.8.3</version>
 </prent>
 ```
 

@@ -5,7 +5,7 @@ import io.github.xiechanglei.lan.rbac.util.ComparedEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 /**

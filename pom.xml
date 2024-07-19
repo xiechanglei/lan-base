@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.7.18</version>
+        <version>3.2.8</version>
     </parent>
 
     <!--    项目基础信息 -->
@@ -17,32 +17,20 @@
 
     <!--    项目基础参数-->
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 定义一个全局的版本号码，减少维护版本号码的成本,
         版本号的规则为: springboot的版本号 + . + 项目的版本号
-        如:2.7.18.3 表示springboot的版本号为2.7.18, 项目的版本号为1
+        如:3.2.8.3 表示springboot的版本号为3.2.8, 项目的版本号为1
         -->
-        <revision>2.7.18.3</revision>
+        <revision>3.2.8.3</revision>
         <!--#######################CE FIX######################-->
-        <!--spring boot 基础版本更迭之后需要检查一遍-->
-        <!-- fix CE(CVE-2023-6378) -->
-        <logback.version>1.2.13</logback.version>
-        <!-- json path -->
-        <json-path.version>2.9.0</json-path.version>
-        <!-- fix CE(CVE-2024-22233)-->
-        <spring-framework.version>5.3.36</spring-framework.version>
-        <!-- fix CE(CVE-2022-1471,CVE-2022-25857,CVE-2022-38751,CVE-2022-38752) -->
-        <snakeyaml.version>2.2</snakeyaml.version>
         <undertow.version>2.3.15.Final</undertow.version>
         <!--#######################CE FIX END######################-->
         <javax.interceptor.version>1.2.2</javax.interceptor.version>
-        <!--        json path-->
         <json-path.version>2.9.0</json-path.version>
-        <!--        jsonp -->
         <jsoup.version>1.17.2</jsoup.version>
-        <!--        auto service-->
         <auto.service.version>1.1.1</auto.service.version>
     </properties>
 
@@ -97,7 +85,7 @@
             <dependency>
                 <groupId>io.github.xiechanglei</groupId>
                 <artifactId>lan-net</artifactId>
-                <version>2.7.18.3</version>
+                <version>3.2.8.3</version>
             </dependency>
 
 

@@ -18,16 +18,20 @@
             <groupId>io.github.xiechanglei</groupId>
             <artifactId>lan-jpa-beans</artifactId>
         </dependency>
-        <!--dsl-->
+        <!--dsl 因为升级到3.0版本的spring boot，使用jakarta的api-->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
+            <version>${querydsl.version}</version>
+            <classifier>jakarta</classifier>
         </dependency>
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
+            <version>${querydsl.version}</version>
+            <classifier>jakarta</classifier>
         </dependency>
-
+        <!--@Transational 注解的定义上有一个 @InterceptorBinding，需要以下jar包的支持，否则会报错   -->
         <dependency>
             <groupId>javax.interceptor</groupId>
             <artifactId>javax.interceptor-api</artifactId>

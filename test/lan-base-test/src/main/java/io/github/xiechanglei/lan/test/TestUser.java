@@ -1,12 +1,13 @@
 package io.github.xiechanglei.lan.test;
 
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
-import lombok.Data;
-
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class TestUser extends SysUserAuth {
     private String address;
 

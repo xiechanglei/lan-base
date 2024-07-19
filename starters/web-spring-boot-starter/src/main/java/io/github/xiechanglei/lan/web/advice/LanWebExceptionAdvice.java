@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.annotation.PostConstruct;
-import javax.validation.ConstraintViolationException;
+import jakarta.annotation.PostConstruct;
+import jakarta.validation.ConstraintViolationException;
 
 /**
  * <pre>

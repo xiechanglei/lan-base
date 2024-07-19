@@ -3,9 +3,9 @@ package io.github.xiechanglei.lan.rbac.entity.user;
 
 import io.github.xiechanglei.lan.rbac.entity.base.SysUserAuth;
 
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
 
 /**
  * 内置的用户表，业务系统可以自己定义用户表，但是必须继承SysUserAuth

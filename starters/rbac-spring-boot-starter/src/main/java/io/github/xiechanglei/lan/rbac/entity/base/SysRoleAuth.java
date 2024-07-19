@@ -3,10 +3,10 @@ package io.github.xiechanglei.lan.rbac.entity.base;
 import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdEntity;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
 
 /**
  * 角色资源关联表

@@ -15,7 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 import java.util.List;
 import java.util.Set;
 

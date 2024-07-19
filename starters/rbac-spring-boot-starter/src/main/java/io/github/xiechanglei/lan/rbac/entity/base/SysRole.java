@@ -4,7 +4,7 @@ import io.github.xiechanglei.lan.jpa.baseentity.UUIDIdAndTimeFieldEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * 角色表
