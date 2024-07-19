@@ -5,6 +5,7 @@ import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import io.github.xiechanglei.lan.rbac.entity.user.SysUser;
 import io.github.xiechanglei.lan.rbac.properties.LanRbacConfigProperties;
 import io.github.xiechanglei.lan.lang.collections.ArrayHelper;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeansException;
@@ -16,6 +17,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
+
 import java.util.List;
 import java.util.Set;
 
@@ -36,15 +38,17 @@ public class LanJpaEntityManager implements ApplicationContextAware {
     @Getter
     private Class<? extends SysUserAuth> userEntityClass = SysUser.class;
 
+    // rbac自己的包,没有定义到spring boot的扫描包中,需要自动按需添加
     @Getter
     private String[] rbacEntityPackages;
 
+    // spring boot 自动扫描的包
     @Getter
     private String[] allEntityScanPackages;
 
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException {
         initUserEntityClass(applicationContext);
         initRbacEntityPackages();
         initAllEntityScanPackages(applicationContext);
