@@ -7,3 +7,4 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:lan.eureka.properties")
 public class LanEurekaAutoConfiguration {
 }
+

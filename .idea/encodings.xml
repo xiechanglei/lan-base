@@ -16,5 +16,6 @@
     <file url="file://$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/starters/web-spring-boot-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/lan-base-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/lan-euraka-test2/src/main/java" charset="UTF-8" />
   </component>
 </project>

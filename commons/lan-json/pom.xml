@@ -18,5 +18,9 @@
             <artifactId>json-path</artifactId>
             <version>${json-path.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.xiechanglei</groupId>
+            <artifactId>lan-lang</artifactId>
+        </dependency>
     </dependencies>
 </project>

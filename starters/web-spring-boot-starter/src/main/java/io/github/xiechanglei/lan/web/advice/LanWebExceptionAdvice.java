@@ -2,6 +2,7 @@ package io.github.xiechanglei.lan.web.advice;
 
 import io.github.xiechanglei.lan.beans.exception.BusinessException;
 import io.github.xiechanglei.lan.beans.message.WebResult;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.ConstraintViolationException;
+
+import static jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
 
 /**
  * <pre>
@@ -33,18 +36,20 @@ public class LanWebExceptionAdvice {
      * @return WebResult结构化返回结果
      */
     @ExceptionHandler(value = BusinessException.class)
-    public WebResult<?> handleException(BusinessException e) {
+    public WebResult<?> handleException(BusinessException e, HttpServletResponse response) {
+        response.setStatus(SC_INTERNAL_SERVER_ERROR);
         return WebResult.failed(e.getCode(), e.getMessage());
     }
 
 
     /**
      * 处理方法参数校验失败异常（如 @Valid 和 @NotBlank）
+     *
      * @param e 方法参数校验失败异常
      * @return WebResult结构化返回结果
      */
     @ExceptionHandler(value = ConstraintViolationException.class)
-    public WebResult<?> handleValidationExceptions(ConstraintViolationException e) {
+    public WebResult<?> handleValidationExceptions(ConstraintViolationException e, HttpServletResponse response) {
         FieldErrorInfo fieldErrorInfo = new FieldErrorInfo();
         e.getConstraintViolations().forEach(cv -> {
             String filePath = cv.getPropertyPath().toString();
@@ -53,6 +58,7 @@ public class LanWebExceptionAdvice {
             fieldErrorInfo.setErrorMessage(cv.getMessage());
         });
         String msg = "field:" + fieldErrorInfo.getFiledName() + ",msg:" + fieldErrorInfo.getErrorMessage();
+        response.setStatus(SC_INTERNAL_SERVER_ERROR);
         return WebResult.failed(-1, msg);
 
     }
@@ -65,7 +71,8 @@ public class LanWebExceptionAdvice {
      * </pre>
      */
     @ExceptionHandler(value = Exception.class)
-    public WebResult<?> handleException(Exception e) {
+    public WebResult<?> handleException(Exception e, HttpServletResponse response) {
+        response.setStatus(SC_INTERNAL_SERVER_ERROR);
         return WebResult.failed(-1, e.getMessage());
     }
 

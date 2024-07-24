@@ -16,6 +16,35 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.xiechanglei</groupId>
+            <artifactId>lan-beans</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.xiechanglei</groupId>
+            <artifactId>lan-json</artifactId>
+        </dependency>
+
+        <!-- spring data相关Bean支持 -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

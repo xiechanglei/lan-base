@@ -4,29 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="spring 3.0 之后无法动态创建表的问题">
-      <change afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/pom.xml" afterDir="false" />
+    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加eureka">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/SnowFlakeIdAndTimeFieldEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/SnowFlakeIdAndTimeFieldEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/SnowFlakeIdEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/SnowFlakeIdEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/UUIDIdAndTimeFieldEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/UUIDIdAndTimeFieldEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/UUIDIdEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-jpa-beans/src/main/java/io/github/xiechanglei/lan/jpa/baseentity/UUIDIdEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LaneJpaAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LanJpaAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/resources/META-INF/spring.factories" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/resources/META-INF/spring.factories" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysResourceCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysResourceCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysRoleAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/entity/base/SysRoleAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/web-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starters/web-spring-boot-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-http/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-http/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-json/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/eureka/LanEurekaAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/eureka/LanEurekaAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources/lan.eureka.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources/lan.eureka.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/advice/LanWebExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/advice/LanWebExceptionAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/HttpTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestUserRepo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
@@ -53,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -66,6 +59,9 @@
         <option name="userSettingsFile" value="/etc/maven/settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -81,7 +77,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Cal.executor": "Run",
+    "Application.Erjian.executor": "Run",
     "Application.Number.executor": "Run",
+    "Application.SyntheticParameterizedType.executor": "Run",
     "JUnit.ArrayHelperTest.executor": "Run",
     "JUnit.ArrayHelperTest.testConcat.executor": "Run",
     "JUnit.ArrayHelperTest.testConcatWithAllEmpty.executor": "Run",
@@ -108,7 +106,7 @@
     "JUnit.DateAfterInterfaceTest.testAfterHours.executor": "Run",
     "JUnit.DateAfterInterfaceTest.testAfterMilliseconds.executor": "Run",
     "JUnit.DateAfterInterfaceTest.testAfterMinutes.executor": "Run",
-    "JUnit.DateAfterInterfaceTest.testAfterSeconds.executor": "Run",
+    "JUnit.DateAfterInterfaceTest.testAfterSeconds.executor": "Debug",
     "JUnit.DateBuilderInterfaceTest.executor": "Run",
     "JUnit.DateBuilderInterfaceTest.testEndOfSecond.executor": "Run",
     "JUnit.DateBuilderInterfaceTest.testEndOfWeek.executor": "Run",
@@ -144,28 +142,36 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.TestApplication.executor": "Run",
+    "Spring Boot.TestApplication.executor": "Debug",
+    "Spring Boot.TestApplicationB.executor": "Run",
+    "Spring Boot.TestApplicaton.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/xie/code-work-space/java/lan-base/starters/eureka-spring-boot-starter/src/main/resources",
+    "last_opened_file_path": "/home/xie/code-work-space/java/lan-base/test/lan-euraka-test2/src/main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.6170365",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/lan-euraka-test2/src/main" />
       <recent name="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources" />
       <recent name="$PROJECT_DIR$/commons/lan-lang/docs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.xiechanglei.lan.test" />
       <recent name="io.github.xiechanglei.lan.lang.bytecode" />
       <recent name="io.github.xiechanglei.lan.lang.async" />
     </key>
@@ -176,19 +182,38 @@
       <command value="mvn compile" />
     </option>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.TestApplication">
-    <configuration name="DateAfterInterfaceTest.testAfterMinutes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-lang" />
+    <configuration name="Erjian" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.Erjian" />
+      <module name="lan-http" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.date.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.http.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.date" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.date.DateAfterInterfaceTest" />
-      <option name="METHOD_NAME" value="testAfterMinutes" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyntheticParameterizedType" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.reflect.SyntheticParameterizedType" />
+      <module name="lan-lang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.reflect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,38 +229,6 @@
       <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.date" />
       <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.date.DateAfterInterfaceTest" />
       <option name="METHOD_NAME" value="testAfterSeconds" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DateCountInterfaceTest.testGetMonthsBetween" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-lang" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.date.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.date" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.date.DateCountInterfaceTest" />
-      <option name="METHOD_NAME" value="testGetMonthsBetween" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DateCountInterfaceTest.testGetYearsBetween" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-lang" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.date.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.date" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.date.DateCountInterfaceTest" />
-      <option name="METHOD_NAME" value="testGetYearsBetween" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -257,19 +250,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterMinutes" />
+      <item itemvalue="Application.SyntheticParameterizedType" />
+      <item itemvalue="Application.Erjian" />
       <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
-      <item itemvalue="JUnit.DateCountInterfaceTest.testGetMonthsBetween" />
-      <item itemvalue="JUnit.DateCountInterfaceTest.testGetYearsBetween" />
       <item itemvalue="Spring Boot.TestApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.TestApplication" />
         <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
-        <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterMinutes" />
-        <item itemvalue="JUnit.DateCountInterfaceTest.testGetYearsBetween" />
-        <item itemvalue="JUnit.DateCountInterfaceTest.testGetMonthsBetween" />
+        <item itemvalue="Application.SyntheticParameterizedType" />
+        <item itemvalue="Application.Erjian" />
       </list>
     </recent_temporary>
   </component>
@@ -303,7 +294,16 @@
       <workItem from="1721261161469" duration="1034000" />
       <workItem from="1721262235760" duration="3157000" />
       <workItem from="1721265399315" duration="30521000" />
-      <workItem from="1721378175059" duration="3539000" />
+      <workItem from="1721378175059" duration="3583000" />
+      <workItem from="1721606528463" duration="26237000" />
+      <workItem from="1721690328898" duration="585000" />
+      <workItem from="1721690921754" duration="515000" />
+      <workItem from="1721691606869" duration="46000" />
+      <workItem from="1721692135605" duration="665000" />
+      <workItem from="1721692812827" duration="712000" />
+      <workItem from="1721693632145" duration="66000" />
+      <workItem from="1721694420804" duration="1846000" />
+      <workItem from="1721696546522" duration="33969000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
@@ -417,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721356747782</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加eureka">
+      <option name="closed" value="true" />
+      <created>1721381752136</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721381752136</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +441,8 @@
     <MESSAGE value="add test code and doc for date package" />
     <MESSAGE value="update to 3.x" />
     <MESSAGE value="spring 3.0 之后无法动态创建表的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring 3.0 之后无法动态创建表的问题" />
+    <MESSAGE value="添加eureka" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加eureka" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -466,7 +475,9 @@
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="feign.Response" memberName="body" />
         <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+        <PinnedItemInfo parentTag="io.github.xiechanglei.lan.beans.message.WebResult" memberName="data" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
