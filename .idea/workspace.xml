@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加eureka">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加eureka 解码器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-http/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-http/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-json/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonContainerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-json/src/main/java/io/github/xiechanglei/lan/json/JsonHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/eureka/LanEurekaAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/eureka/LanEurekaAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources/lan.eureka.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources/lan.eureka.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/advice/LanWebExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/web-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/web/advice/LanWebExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LanJpaAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LanJpaAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/config/LanJpaConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/config/LanJpaConfigProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestFeignClient.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
@@ -80,6 +76,7 @@
     "Application.Erjian.executor": "Run",
     "Application.Number.executor": "Run",
     "Application.SyntheticParameterizedType.executor": "Run",
+    "Application.TestApplication.executor": "Run",
     "JUnit.ArrayHelperTest.executor": "Run",
     "JUnit.ArrayHelperTest.testConcat.executor": "Run",
     "JUnit.ArrayHelperTest.testConcatWithAllEmpty.executor": "Run",
@@ -142,7 +139,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.TestApplication.executor": "Debug",
+    "Spring Boot.TestApplication.executor": "Run",
     "Spring Boot.TestApplicationB.executor": "Run",
     "Spring Boot.TestApplicaton.executor": "Run",
     "git-widget-placeholder": "master",
@@ -218,6 +215,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.test.TestApplication" />
+      <module name="lan-base-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DateAfterInterfaceTest.testAfterSeconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lan-lang" />
       <extension name="coverage">
@@ -250,6 +260,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestApplication" />
       <item itemvalue="Application.SyntheticParameterizedType" />
       <item itemvalue="Application.Erjian" />
       <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
@@ -258,6 +269,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.TestApplication" />
+        <item itemvalue="Application.TestApplication" />
         <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
         <item itemvalue="Application.SyntheticParameterizedType" />
         <item itemvalue="Application.Erjian" />
@@ -303,7 +315,8 @@
       <workItem from="1721692812827" duration="712000" />
       <workItem from="1721693632145" duration="66000" />
       <workItem from="1721694420804" duration="1846000" />
-      <workItem from="1721696546522" duration="33969000" />
+      <workItem from="1721696546522" duration="34956000" />
+      <workItem from="1721815052456" duration="7490000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
@@ -425,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721381752136</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="添加eureka 解码器">
+      <option name="closed" value="true" />
+      <created>1721806901952</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1721806901952</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +463,8 @@
     <MESSAGE value="update to 3.x" />
     <MESSAGE value="spring 3.0 之后无法动态创建表的问题" />
     <MESSAGE value="添加eureka" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加eureka" />
+    <MESSAGE value="添加eureka 解码器" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加eureka 解码器" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

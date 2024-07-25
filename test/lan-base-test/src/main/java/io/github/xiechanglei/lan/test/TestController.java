@@ -1,36 +1,20 @@
 package io.github.xiechanglei.lan.test;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import io.github.xiechanglei.lan.jpa.dsl.BlazeJPAQueryProvider;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.*;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
-@RestController
 @RequiredArgsConstructor
+@Service
 public class TestController {
-    private final TestFeignClient testFeignClient;
+    private final BlazeJPAQueryProvider blazeJPAQueryProvider;
 
-    @RequestMapping("/test")
-    public List<Animal> test() {
-        return testFeignClient.call(new Date());
-    }
-
-    @RequestMapping("/call")
-    public List<Animal> call(Date date) {
-        return List.of(new Animal("dog", 11));
-    }
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Animal {
-        private String name;
-        private Integer age;
+    @PostConstruct
+    public void test() {
+        List<String> fetch = blazeJPAQueryProvider.build().from(QCat.cat).select(QCat.cat.name).fetch();
+        System.out.println(fetch);
     }
 }

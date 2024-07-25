@@ -1,12 +1,14 @@
 package io.github.xiechanglei.lan.rbac.service;
 
-import com.querydsl.jpa.impl.JPAQuery;
+import com.blazebit.persistence.PagedList;
+import com.blazebit.persistence.querydsl.BlazeJPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import io.github.xiechanglei.lan.jpa.dsl.JpaQueryHelper;
+import io.github.xiechanglei.lan.jpa.dsl.BlazeJPAQueryProvider;
 import io.github.xiechanglei.lan.rbac.entity.log.SysLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -20,6 +22,7 @@ import static io.github.xiechanglei.lan.rbac.entity.log.QSysLog.sysLog;
 @ConditionalOnProperty(prefix = "lan.rbac", name = "enable-log", havingValue = "true", matchIfMissing = true)
 public class LanSysLogService {
     private final JPAQueryFactory jpaQueryFactory;
+    private final BlazeJPAQueryProvider blazeJPAQueryProvider;
 
 
     /**
@@ -32,7 +35,8 @@ public class LanSysLogService {
      * @param endTime     结束时间
      */
     public Page<SysLog> searchLog(PageRequest pageRequest, String ip, String title, Date startTime, Date endTime) {
-        JPAQuery<SysLog> query = jpaQueryFactory.selectFrom(sysLog).orderBy(sysLog.logTime.desc());
+        BlazeJPAQuery<SysLog> query = blazeJPAQueryProvider.build().select(sysLog).from(sysLog).orderBy(sysLog.logTime.desc());
+
         if (StringUtils.hasText(ip)) {
             query.where(sysLog.logAddress.eq(ip));
         }
@@ -42,6 +46,7 @@ public class LanSysLogService {
         if (startTime != null || endTime != null) {
             query.where(sysLog.logTime.between(startTime, endTime));
         }
-        return JpaQueryHelper.fetchPage(query, pageRequest);
+        PagedList<SysLog> sysLogs = query.fetchPage((int) pageRequest.getOffset(), pageRequest.getPageSize());
+        return new PageImpl<>(sysLogs, pageRequest, sysLogs.getTotalSize());
     }
 }

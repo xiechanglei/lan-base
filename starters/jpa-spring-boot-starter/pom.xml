@@ -44,6 +44,20 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!--blaze-persistence-->
+        <dependency>
+            <groupId>com.blazebit</groupId>
+            <artifactId>blaze-persistence-integration-querydsl-expressions-jakarta</artifactId>
+            <version>${blaze-persistence.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.blazebit</groupId>
+            <artifactId>blaze-persistence-integration-hibernate-6.2</artifactId>
+            <version>${blaze-persistence.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
