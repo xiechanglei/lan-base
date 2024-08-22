@@ -17,9 +17,9 @@
 
     <!--    项目基础参数-->
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <java.version>17</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <blaze-persistence.version>1.6.11</blaze-persistence.version>
         <!-- 定义一个全局的版本号码，减少维护版本号码的成本,版本号的规则为: springboot的版本号 + . + 项目的版本号 -->
@@ -43,6 +43,7 @@
         <module>commons/lan-json</module>
         <module>commons/lan-lang</module>
         <module>commons/lan-net</module>
+        <module>commons/lan-nginx</module>
         <module>starters/eureka-spring-boot-starter</module>
         <module>starters/jpa-spring-boot-starter</module>
         <module>starters/rbac-spring-boot-starter</module>
@@ -99,6 +100,12 @@
                 <groupId>io.github.xiechanglei</groupId>
                 <artifactId>lan-net</artifactId>
                 <version>3.2.8.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.xiechanglei</groupId>
+                <artifactId>lan-nginx</artifactId>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>

@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="添加eureka 解码器">
+    <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="blaze support">
+      <change afterPath="$PROJECT_DIR$/commons/lan-nginx/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LanJpaAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/LanJpaAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/config/LanJpaConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/jpa-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/jpa/config/LanJpaConfigProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starters/rbac-spring-boot-starter/src/main/java/io/github/xiechanglei/lan/rbac/service/LanSysLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestFeignClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -74,6 +70,10 @@
   "keyToString": {
     "Application.Cal.executor": "Run",
     "Application.Erjian.executor": "Run",
+    "Application.HttpHelper.executor": "Run",
+    "Application.HttpResponse.executor": "Run",
+    "Application.MediaTypeFactory.executor": "Run",
+    "Application.NginxServerTest.executor": "Run",
     "Application.Number.executor": "Run",
     "Application.SyntheticParameterizedType.executor": "Run",
     "Application.TestApplication.executor": "Run",
@@ -144,17 +144,17 @@
     "Spring Boot.TestApplicaton.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/xie/code-work-space/java/lan-base/test/lan-euraka-test2/src/main",
+    "last_opened_file_path": "/home/xie/code-work-space/java/lan-base/commons/lan-nginx/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.6170365",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "editor.preferences.import",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -163,6 +163,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/commons/lan-nginx/src/main/resources" />
       <recent name="$PROJECT_DIR$/test/lan-euraka-test2/src/main" />
       <recent name="$PROJECT_DIR$/starters/eureka-spring-boot-starter/src/main/resources" />
       <recent name="$PROJECT_DIR$/commons/lan-lang/docs" />
@@ -188,9 +189,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestApplication">
-    <configuration name="Erjian" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.Erjian" />
+  <component name="RunManager" selected="Application.MediaTypeFactory">
+    <configuration name="HttpHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.HttpHelper" />
       <module name="lan-http" />
       <extension name="coverage">
         <pattern>
@@ -202,12 +203,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SyntheticParameterizedType" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.reflect.SyntheticParameterizedType" />
-      <module name="lan-lang" />
+    <configuration name="HttpResponse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.HttpResponse" />
+      <module name="lan-http" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.reflect.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.http.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -215,12 +216,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.test.TestApplication" />
-      <module name="lan-base-test" />
+    <configuration name="MediaTypeFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.nginx.common.MediaTypeFactory" />
+      <module name="lan-nginx" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.test.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.nginx.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -228,18 +229,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateAfterInterfaceTest.testAfterSeconds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lan-lang" />
+    <configuration name="NginxServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.nginx.NginxServerTest" />
+      <module name="lan-nginx" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.date.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.nginx.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.date" />
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.date.DateAfterInterfaceTest" />
-      <option name="METHOD_NAME" value="testAfterSeconds" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,19 +258,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TestApplication" />
-      <item itemvalue="Application.SyntheticParameterizedType" />
-      <item itemvalue="Application.Erjian" />
-      <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
+      <item itemvalue="Application.MediaTypeFactory" />
+      <item itemvalue="Application.NginxServerTest" />
+      <item itemvalue="Application.HttpHelper" />
+      <item itemvalue="Application.HttpResponse" />
       <item itemvalue="Spring Boot.TestApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MediaTypeFactory" />
+        <item itemvalue="Application.NginxServerTest" />
+        <item itemvalue="Application.HttpHelper" />
+        <item itemvalue="Application.HttpResponse" />
         <item itemvalue="Spring Boot.TestApplication" />
-        <item itemvalue="Application.TestApplication" />
-        <item itemvalue="JUnit.DateAfterInterfaceTest.testAfterSeconds" />
-        <item itemvalue="Application.SyntheticParameterizedType" />
-        <item itemvalue="Application.Erjian" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +314,17 @@
       <workItem from="1721693632145" duration="66000" />
       <workItem from="1721694420804" duration="1846000" />
       <workItem from="1721696546522" duration="34956000" />
-      <workItem from="1721815052456" duration="7490000" />
+      <workItem from="1721815052456" duration="18422000" />
+      <workItem from="1722219772296" duration="2715000" />
+      <workItem from="1722301687077" duration="6924000" />
+      <workItem from="1722333992793" duration="4718000" />
+      <workItem from="1722390254604" duration="18967000" />
+      <workItem from="1722597892739" duration="273000" />
+      <workItem from="1722934192861" duration="5428000" />
+      <workItem from="1723793235714" duration="1265000" />
+      <workItem from="1724031267776" duration="606000" />
+      <workItem from="1724203588673" duration="828000" />
+      <workItem from="1724237350316" duration="33147000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
@@ -446,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721806901952</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="blaze support">
+      <option name="closed" value="true" />
+      <created>1721875108113</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1721875108113</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +480,8 @@
     <MESSAGE value="spring 3.0 之后无法动态创建表的问题" />
     <MESSAGE value="添加eureka" />
     <MESSAGE value="添加eureka 解码器" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加eureka 解码器" />
+    <MESSAGE value="blaze support" />
+    <option name="LAST_COMMIT_MESSAGE" value="blaze support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

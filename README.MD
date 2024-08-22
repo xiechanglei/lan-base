@@ -56,4 +56,7 @@
 
 
 ## todo
-1. json 模块合并到http模块中，因为通称json工具是为了http请求而存在的
+1. json 模块合并到http模块中，因为通常json工具是为了http请求而存在的
+2. 短信 邮件 starter
+3. 文件服务器 starter
+4. 
