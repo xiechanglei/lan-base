@@ -1,5 +1,6 @@
 package io.github.xiechanglei.lan.nginx.netty;
 
+import io.github.xiechanglei.lan.nginx.DefaultConfig;
 import io.github.xiechanglei.lan.nginx.config.NginxConfig;
 import io.github.xiechanglei.lan.nginx.config.NginxLocation;
 import io.netty.channel.ChannelFuture;
@@ -23,7 +24,7 @@ public class WrappedNettyContext {
     private final NginxConfig nginxConfig;
     private NginxLocation nginxLocation;
 
-    public void process() {
+    public void process() throws Exception {
         log.info("收到请求:{}", request.uri());
         this.nginxLocation = nginxConfig.matchLocation(request.uri());
         if (nginxLocation == null) {
@@ -69,33 +70,56 @@ public class WrappedNettyContext {
         }
     }
 
+    /**
+     * 判断当前请求是否支持长连接
+     */
     public boolean isKeepAlive() {
         return "keep-alive".equalsIgnoreCase(request.headers().get("Connection"));
     }
 
     /**
-     * 创建WrappedNettyContext ，并处理请求
+     * 获取编码配置
+     */
+    public String getCharset() {
+        if (nginxLocation.getCharset() != null) {
+            return nginxLocation.getCharset();
+        }
+        if (nginxConfig.getCharset() != null) {
+            return nginxConfig.getCharset();
+        }
+        return DefaultConfig.DEFAULT_CHARSET;
+    }
+
+    /**
+     * 获取是否开启gzip
+     */
+    public boolean getGzipEnable() {
+        // 如果请求不支持gzip，直接返回false
+        if (!request.headers().contains("Accept-Encoding") && request.headers().get("Accept-Encoding").contains("gzip")) {
+            return false;
+        }
+        // 如果location配置了gzip，优先使用location配置
+        if (nginxLocation.getGzip() != null) {
+            return nginxLocation.getGzip();
+        }
+
+        // 如果全局配置了gzip，使用全局配置
+        if (nginxConfig.getGzip() != null) {
+            return nginxConfig.getGzip();
+        }
+        // 否则使用默认配置
+        return DefaultConfig.DEFAULT_GZIP;
+    }
+
+    /**
+     * 创建WrappedNettyContext
      *
      * @param ctx         netty上下文
      * @param request     请求
      * @param nginxConfig nginx配置
+     * @return WrappedNettyContext 对象
      */
-    public static void of(ChannelHandlerContext ctx, HttpRequest request, NginxConfig nginxConfig) {
-        new WrappedNettyContext(ctx, request, nginxConfig).process();
+    public static WrappedNettyContext of(ChannelHandlerContext ctx, HttpRequest request, NginxConfig nginxConfig) {
+        return new WrappedNettyContext(ctx, request, nginxConfig);
     }
-
-//    /**
-//     * todo
-//     *
-//     * @param data
-//     * @return
-//     * @throws IOException
-//     */
-//    public static byte[] gzip(byte[] data) throws IOException {
-//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//        try (GZIPOutputStream gzipOutputStream = new GZIPOutputStream(byteArrayOutputStream)) {
-//            gzipOutputStream.write(data);
-//        }
-//        return byteArrayOutputStream.toByteArray();
-//    }
 }

@@ -9,18 +9,18 @@ import java.util.regex.Pattern;
  */
 public enum NginxLocationRule {
     EQUAL("=", 1),
-    // 前缀匹配
-    PREFIX("^~", 2),
     // 区分大小写的正则匹配 优化算法，正则提前编译
-    REGEX("~", 3),
+    REGEX("~", 2),
     // 不区分大小写的正则匹配
-    REGEX_IGNORE_CASE("~*", 4),
+    REGEX_IGNORE_CASE("~*", 3),
     // 区分大小写的正则不匹配
-    NOT_REGEX("!~", 5),
+    NOT_REGEX("!~", 4),
     // 不区分大小写的正则不匹配
-    NOT_REGEX_IGNORE_CASE("!~*", 6),
-    // 通用匹配
-    COMMON("/", 7);
+    NOT_REGEX_IGNORE_CASE("!~*", 5),
+    // 前缀匹配
+    PREFIX("^~", 6),
+    // 通用匹配,优先级别最低，匹配所有请求
+    COMMON("", 7);
 
     // 规则的字符串表示
     @Getter

@@ -1,5 +1,6 @@
 package io.github.xiechanglei.lan.nginx.netty;
 
+import io.github.xiechanglei.lan.nginx.common.StaticsInfo;
 import io.github.xiechanglei.lan.nginx.config.NginxConfig;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -16,14 +17,18 @@ public class NettyNginxServerInitializer extends ChannelInitializer<SocketChanne
     // Http消息处理器
     private final NettyNginxServerHttpMessageProcessor httpMessageProcessor;
 
-    public NettyNginxServerInitializer(NginxConfig nginxConfig) {
-        this.httpMessageProcessor = new NettyNginxServerHttpMessageProcessor(nginxConfig);
+    // 自定义response编码器
+    private final NettyServerHttpResponseEncoder nettyServerHttpResponseEncoder = new NettyServerHttpResponseEncoder();
+
+    public NettyNginxServerInitializer(NginxConfig nginxConfig, StaticsInfo staticsInfo) {
+        this.httpMessageProcessor = new NettyNginxServerHttpMessageProcessor(nginxConfig, staticsInfo);
     }
 
     @Override
     protected void initChannel(SocketChannel ch) {
         ChannelPipeline p = ch.pipeline();
         p.addLast(new HttpServerCodec());
+        p.addLast(nettyServerHttpResponseEncoder);
         p.addLast(httpMessageProcessor);
     }
 }

@@ -13,16 +13,25 @@
     <artifactId>lan-nginx</artifactId>
 
     <dependencies>
-        <!--        log4j -->
+        <!--                log4j -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
+
+        <!--        Lan-lang-->
+        <dependency>
+            <groupId>io.github.xiechanglei</groupId>
+            <artifactId>lan-lang</artifactId>
+        </dependency>
+
         <!--        netty-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
         </dependency>
+
         <!--        netty http codec-->
         <dependency>
             <groupId>io.netty</groupId>

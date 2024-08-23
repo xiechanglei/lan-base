@@ -14,20 +14,33 @@ import java.util.Optional;
 @Builder
 @Getter
 public class NginxConfig {
-    // worker进程数
+    /**
+     * worker进程数，按照netty的设计，默认为cpu核数的2倍
+     */
     private int workerGroup;
 
-    // 服务端口
+    /**
+     * 服务的端口
+     */
     private int port;
 
-    // location配置
+    /**
+     * location配置，配置多个location
+     */
     @Builder.Default
     private List<NginxLocation> locations = Collections.emptyList();
 
 
-    //gzip todo
-    @Builder.Default
-    private boolean gzip = true;
+    /**
+     * 全局gzip
+     */
+    private Boolean gzip;
+
+    /**
+     * 全局charset
+     */
+
+    private String charset;
 
     /**
      * 对配置进行初始化
@@ -42,7 +55,7 @@ public class NginxConfig {
 
 
     /**
-     * 匹配location
+     * 匹配uri对应的location
      */
     public NginxLocation matchLocation(String uri) {
         NginxLocation matchLocation = null;
