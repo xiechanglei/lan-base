@@ -6,6 +6,11 @@ import io.github.xiechanglei.lan.nginx.config.NginxLocationRule;
 public class DefaultConfig {
 
     /**
+     * 服务的默认名称,显示response的header 当中 todo,做到
+     */
+    public static final String DEFAULT_SERVER_NAME = "lan-server";
+
+    /**
      * 默认是否GZIP todo 未实现
      */
     public static final boolean DEFAULT_GZIP = true;

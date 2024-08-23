@@ -6,22 +6,21 @@ import io.github.xiechanglei.lan.nginx.config.NginxLocation;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.http.DefaultFullHttpResponse;
-import io.netty.handler.codec.http.FullHttpResponse;
-import io.netty.handler.codec.http.HttpRequest;
-import io.netty.handler.codec.http.HttpResponseStatus;
+import io.netty.handler.codec.http.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 
-@Getter
 @Log4j2
 @RequiredArgsConstructor
 public class WrappedNettyContext {
     private final ChannelHandlerContext ctx;
+    @Getter
     private final HttpRequest request;
+    @Getter
     private final NginxConfig nginxConfig;
+    @Getter
     private NginxLocation nginxLocation;
 
     public void process() throws Exception {
@@ -61,13 +60,24 @@ public class WrappedNettyContext {
     public void writeFullHttpResponse(FullHttpResponse response) {
         // 长度
         response.headers().set("Content-Length", response.content().readableBytes());
-        // close 根据request的header决定是否关闭连接
-        response.headers().set("Connection", isKeepAlive() ? "keep-alive" : "close");
 
-        ChannelFuture channelFuture = ctx.writeAndFlush(response);
+        ChannelFuture channelFuture = writeHttpResponse(response);
         if (!isKeepAlive()) {
             channelFuture.addListener(ChannelFutureListener.CLOSE);
         }
+    }
+
+    /**
+     * 写入http response
+     * 并且做统一的header处理
+     */
+    public ChannelFuture writeHttpResponse(HttpResponse response) {
+        // close 根据request的header决定是否关闭连接
+        response.headers().set("Connection", isKeepAlive() ? "keep-alive" : "close");
+        // server
+        response.headers().set("Server", nginxConfig.getServerName());
+        // date
+        return ctx.writeAndFlush(response);
     }
 
     /**

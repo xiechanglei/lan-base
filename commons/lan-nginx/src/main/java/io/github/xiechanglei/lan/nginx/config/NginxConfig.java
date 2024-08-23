@@ -1,5 +1,6 @@
 package io.github.xiechanglei.lan.nginx.config;
 
+import io.github.xiechanglei.lan.nginx.DefaultConfig;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -14,6 +15,10 @@ import java.util.Optional;
 @Builder
 @Getter
 public class NginxConfig {
+
+    @Builder.Default
+    private String serverName = DefaultConfig.DEFAULT_SERVER_NAME;
+
     /**
      * worker进程数，按照netty的设计，默认为cpu核数的2倍
      */
