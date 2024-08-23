@@ -17,9 +17,6 @@ public class NettyNginxServerInitializer extends ChannelInitializer<SocketChanne
     // Http消息处理器
     private final NettyNginxServerHttpMessageProcessor httpMessageProcessor;
 
-    // 自定义response编码器
-    private final NettyServerHttpResponseEncoder nettyServerHttpResponseEncoder = new NettyServerHttpResponseEncoder();
-
     public NettyNginxServerInitializer(NginxConfig nginxConfig, StaticsInfo staticsInfo) {
         this.httpMessageProcessor = new NettyNginxServerHttpMessageProcessor(nginxConfig, staticsInfo);
     }
@@ -28,7 +25,6 @@ public class NettyNginxServerInitializer extends ChannelInitializer<SocketChanne
     protected void initChannel(SocketChannel ch) {
         ChannelPipeline p = ch.pipeline();
         p.addLast(new HttpServerCodec());
-        p.addLast(nettyServerHttpResponseEncoder);
         p.addLast(httpMessageProcessor);
     }
 }

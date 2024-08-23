@@ -6,24 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="blaze support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/string/StringHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/string/StringHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/NginxServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/NginxServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/common/MediaTypeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/common/MediaTypeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocationRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocationRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerHttpMessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerHttpMessageProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/WrappedNettyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/WrappedNettyContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationPageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationPageProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/test/java/io/github/xiechanglei/lan/nginx/NginxServerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/lan-base-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/Cat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lan-base-test/src/main/java/io/github/xiechanglei/lan/test/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyServerHttpResponseEncoder.java" beforeDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -341,7 +325,7 @@
       <workItem from="1724203588673" duration="828000" />
       <workItem from="1724237350316" duration="33147000" />
       <workItem from="1724370684884" duration="10489000" />
-      <workItem from="1724385451890" duration="11186000" />
+      <workItem from="1724385451890" duration="11955000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />
