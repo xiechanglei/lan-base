@@ -107,7 +107,7 @@ public class M3U8Downloader {
                 if (file.exists()) {
                     continue;
                 }
-                log.info("下载ts文件[{}/{}]: {},", i, m3U8Info.getTsList().size(), tsUrl);
+                log.info("下载ts文件[{}/{}]: {}", i, m3U8Info.getTsList().size(), tsUrl);
                 threadPool.execute(() -> {
                     try {
                         downloadTsToFile(tsUrl, file, m3U8Info.isHasKey(), m3U8Info.getKey(), m3U8Info.getIv());
