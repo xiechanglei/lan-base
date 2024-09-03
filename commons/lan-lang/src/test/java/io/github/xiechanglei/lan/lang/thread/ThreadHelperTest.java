@@ -12,9 +12,9 @@ public class ThreadHelperTest {
     @Test
     public void testCall() throws InterruptedException {
         StringBuilder stringBuilder = new StringBuilder("foo");
-        ThreadHelper.call(() -> stringBuilder.append("bar"), 1000);
+        ThreadHelper.callAfter(() -> stringBuilder.append("bar"), 1000);
         assert stringBuilder.toString().equals("foo");
-        ThreadHelper.call(() -> assertEquals(stringBuilder.toString(), "foobar"), 3000);
+        ThreadHelper.callAfter(() -> assertEquals(stringBuilder.toString(), "foobar"), 3000);
         Thread.sleep(4000);
     }
 

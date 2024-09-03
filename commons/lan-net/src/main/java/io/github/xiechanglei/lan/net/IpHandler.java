@@ -1,10 +1,7 @@
 package io.github.xiechanglei.lan.net;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.net.UnknownHostException;
+import java.net.*;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -41,23 +38,35 @@ public class IpHandler {
             int currentIndex = 0;
             while (inetAddresses.hasMoreElements()) {
                 InetAddress inetAddress = inetAddresses.nextElement();
-                if (!inetAddress.isLoopbackAddress() && inetAddress.isSiteLocalAddress()) {
-                    localIpAddressInfo.setIp(inetAddress.getHostAddress());
-                    localIpAddressInfo.setName(networkInterface.getDisplayName());
-                    localIpAddressInfo.setMtu(networkInterface.getMTU());
-                    byte[] hardwareAddress = networkInterface.getHardwareAddress();
-                    if (hardwareAddress != null) {
-                        String[] hexadecimal = new String[hardwareAddress.length];
-                        for (int i = 0; i < hardwareAddress.length; i++) {
-                            hexadecimal[i] = String.format("%02X", hardwareAddress[i]);
+                if (!inetAddress.isLoopbackAddress()) {
+                    if (inetAddress instanceof Inet6Address) {
+                        String hostAddress = inetAddress.getHostAddress();
+                        if (hostAddress.contains("%")) {
+                            hostAddress = hostAddress.substring(0, hostAddress.indexOf("%"));
                         }
-                        localIpAddressInfo.setMac(String.join(":", hexadecimal));
+                        localIpAddressInfo.setIpv6(hostAddress);
+                    } else if (inetAddress.isSiteLocalAddress()) {
+                        localIpAddressInfo.setIp(inetAddress.getHostAddress());
+                        localIpAddressInfo.setName(networkInterface.getDisplayName());
+                        localIpAddressInfo.setMtu(networkInterface.getMTU());
+                        byte[] hardwareAddress = networkInterface.getHardwareAddress();
+                        if (hardwareAddress != null) {
+                            String[] hexadecimal = new String[hardwareAddress.length];
+                            for (int i = 0; i < hardwareAddress.length; i++) {
+                                hexadecimal[i] = String.format("%02X", hardwareAddress[i]);
+                            }
+                            localIpAddressInfo.setMac(String.join(":", hexadecimal));
+                        }
+                        InterfaceAddress interfaceAddress = networkInterface.getInterfaceAddresses().get(currentIndex);
+                        localIpAddressInfo.setNetmask(formatNetMask(interfaceAddress.getNetworkPrefixLength()));
+                        localIpAddressInfo.setBroadcast(interfaceAddress.getBroadcast().getHostAddress());
                     }
-                    localIpAddressInfo.setNetmask(formatNetMask(networkInterface.getInterfaceAddresses().get(currentIndex).getNetworkPrefixLength()));
-                    localIpAddressInfo.setBroadcast(networkInterface.getInterfaceAddresses().get(currentIndex).getBroadcast().getHostAddress());
-                    list.add(localIpAddressInfo);
+
                 }
                 currentIndex++;
+            }
+            if (localIpAddressInfo.getIp() != null || localIpAddressInfo.getIpv6() != null) {
+                list.add(localIpAddressInfo);
             }
         }
 
@@ -80,5 +89,4 @@ public class IpHandler {
         InetAddress netAddr = InetAddress.getByAddress(bytes);
         return netAddr.getHostAddress();
     }
-
 }

@@ -1,7 +1,10 @@
 package io.github.xiechanglei.lan.lang.bytecode;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 /**
  * 字节数组工具类
@@ -11,6 +14,7 @@ public class ByteArrayHelper {
      * 将int数组转换为byte数组
      * for example:
      * byte[] bytes = ByteArrayHelper.fromNumbers(12, 13);
+     *
      * @param bytes int数组
      * @return byte数组
      */
@@ -26,6 +30,7 @@ public class ByteArrayHelper {
      * 将16进制字符串转换为byte数组,
      * for example:
      * byte[] bytes = ByteArrayHelper.fromHex("0A0B0C");
+     *
      * @param hexString 16进制字符串
      * @return byte数组
      */
@@ -50,8 +55,9 @@ public class ByteArrayHelper {
 
     /**
      * 将字节数组转换为16进制字符串
-     *  for example:
-     *  String hex = ByteArrayHelper.toHex(new byte[]{10, 11, 12});
+     * for example:
+     * String hex = ByteArrayHelper.toHex(new byte[]{10, 11, 12});
+     *
      * @param bytes 字节数组
      * @return 16进制字符串
      */
@@ -287,4 +293,15 @@ public class ByteArrayHelper {
         return toList(bytes, 0, bytes.length);
     }
 
+
+    /**
+     * gzip
+     */
+    public static byte[] gzip(byte[] data) throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        try (GZIPOutputStream gzipOutputStream = new GZIPOutputStream(byteArrayOutputStream)) {
+            gzipOutputStream.write(data);
+        }
+        return byteArrayOutputStream.toByteArray();
+    }
 }

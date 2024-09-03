@@ -7,7 +7,6 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -15,25 +14,24 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class WrappedNettyContext {
-    private final ChannelHandlerContext ctx;
-    @Getter
-    private final HttpRequest request;
-    @Getter
-    private final NginxConfig nginxConfig;
-    @Getter
-    private NginxLocation nginxLocation;
+    public final ChannelHandlerContext ctx;
+    public final HttpRequest request;
+    public final NginxConfig nginxConfig;
+    public NginxLocation nginxLocation;
 
+    /**
+     * 处理请求，根据请求的url去匹配location，然后根据location的处理模式进行处理
+     */
     public void process() throws Exception {
-        log.info("收到请求:{}", request.uri());
-        this.nginxLocation = nginxConfig.matchLocation(request.uri());
+        String pureUri = getPureUri();
+        this.nginxLocation = nginxConfig.matchLocation(pureUri);
         if (nginxLocation == null) {
-            log.error("未匹配到location:{}", request.uri());
+            log.error("unmatched location:{}", pureUri);
             // 返回404
             NettyNginxServerHttpResponseWriter.writerError(ctx, request, HttpResponseStatus.NOT_FOUND);
         } else {
             // 处理http请求
-            log.info("匹配到location:{}", nginxLocation.getRule().getRule() + " " + nginxLocation.getRuleValue());
-            nginxLocation.process(this);
+            nginxLocation.process(pureUri, this);
         }
     }
 
@@ -43,9 +41,19 @@ public class WrappedNettyContext {
      * @param status 状态
      */
     public void writeErrorResponse(HttpResponseStatus status) {
+        writeErrorResponse(status, "text/plain; charset=UTF-8");
+    }
+
+    /**
+     * 根据http状态码写入错误响应
+     *
+     * @param status      状态
+     * @param contentType 响应类型
+     */
+    public void writeErrorResponse(HttpResponseStatus status, String contentType) {
         DefaultFullHttpResponse response = new DefaultFullHttpResponse(request.protocolVersion(), status);
         // 设置响应头 text plain
-        response.headers().set("Content-Type", "text/plain; charset=UTF-8");
+        response.headers().set("Content-Type", contentType);
         // 设置响应体
         response.content().writeBytes(status.reasonPhrase().getBytes());
         // 写入完整的响应
@@ -61,23 +69,24 @@ public class WrappedNettyContext {
         // 长度
         response.headers().set("Content-Length", response.content().readableBytes());
 
-        ChannelFuture channelFuture = writeHttpResponse(response);
-        if (!isKeepAlive()) {
-            channelFuture.addListener(ChannelFutureListener.CLOSE);
-        }
+        writeHttpResponse(response);
+
     }
 
     /**
      * 写入http response
      * 并且做统一的header处理
      */
-    public ChannelFuture writeHttpResponse(HttpResponse response) {
+    public void writeHttpResponse(HttpResponse response) {
         // close 根据request的header决定是否关闭连接
         response.headers().set("Connection", isKeepAlive() ? "keep-alive" : "close");
         // server
         response.headers().set("Server", nginxConfig.getServerName());
         // date
-        return ctx.writeAndFlush(response);
+        ChannelFuture channelFuture = ctx.writeAndFlush(response);
+        if (!isKeepAlive()) {
+            channelFuture.addListener(ChannelFutureListener.CLOSE);
+        }
     }
 
     /**
@@ -85,6 +94,13 @@ public class WrappedNettyContext {
      */
     public boolean isKeepAlive() {
         return "keep-alive".equalsIgnoreCase(request.headers().get("Connection"));
+    }
+
+    /**
+     * 获取纯净的uri
+     */
+    public String getPureUri() {
+        return request.uri().split("\\?")[0];
     }
 
     /**
@@ -97,6 +113,8 @@ public class WrappedNettyContext {
         if (nginxConfig.getCharset() != null) {
             return nginxConfig.getCharset();
         }
+        // 写入到location中
+        nginxLocation.setCharset(DefaultConfig.DEFAULT_CHARSET);
         return DefaultConfig.DEFAULT_CHARSET;
     }
 
@@ -117,8 +135,18 @@ public class WrappedNettyContext {
         if (nginxConfig.getGzip() != null) {
             return nginxConfig.getGzip();
         }
-        // 否则使用默认配置
+        // 否则使用默认配置,并且将gzip的配置写入到location中
+        nginxLocation.setGzip(DefaultConfig.DEFAULT_GZIP);
         return DefaultConfig.DEFAULT_GZIP;
+    }
+
+    /**
+     * 判读是否开启缓存
+     *
+     * @return 是否开启缓存
+     */
+    public boolean getCacheEnable() {
+        return nginxLocation.isUseCache();
     }
 
     /**
@@ -132,4 +160,5 @@ public class WrappedNettyContext {
     public static WrappedNettyContext of(ChannelHandlerContext ctx, HttpRequest request, NginxConfig nginxConfig) {
         return new WrappedNettyContext(ctx, request, nginxConfig);
     }
+
 }

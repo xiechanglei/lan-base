@@ -5,10 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b0270e9-9d1b-48e0-b2d2-2be965d79459" name="Changes" comment="blaze support">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-digest/src/main/java/io/github/xiechanglei/lan/digest/aes/AESHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-digest/src/main/java/io/github/xiechanglei/lan/digest/aes/AESHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-http/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-http/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-http/src/main/java/io/github/xiechanglei/lan/http/HttpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-http/src/main/java/io/github/xiechanglei/lan/http/HttpResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-http/src/test/java/io/github/xiechanglei/lan/http/Erjian.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/bytecode/ByteArrayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/string/StringHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/string/StringHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/thread/ThreadHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/main/java/io/github/xiechanglei/lan/lang/thread/ThreadHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/async/AsyncLockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/async/AsyncLockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/async/AsyncTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/thread/ThreadHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-lang/src/test/java/io/github/xiechanglei/lan/lang/thread/ThreadHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-net/src/main/java/io/github/xiechanglei/lan/net/IpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-net/src/main/java/io/github/xiechanglei/lan/net/IpHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-net/src/main/java/io/github/xiechanglei/lan/net/LocalIpAddressInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-net/src/main/java/io/github/xiechanglei/lan/net/LocalIpAddressInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/DefaultConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/NginxServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/NginxServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/common/MediaTypeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/common/MediaTypeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/config/NginxLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerHttpMessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/NettyNginxServerHttpMessageProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/WrappedNettyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/WrappedNettyContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationPageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationPageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/lan-nginx/src/main/java/io/github/xiechanglei/lan/nginx/netty/processor/NettyNginxServerLocationProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="0361038a-d5cd-41f7-9f53-b721a7cd4f82" name="not-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,11 +93,16 @@
     "Application.Erjian.executor": "Run",
     "Application.HttpHelper.executor": "Run",
     "Application.HttpResponse.executor": "Run",
+    "Application.IpHandler.executor": "Debug",
+    "Application.M3U8Downloader.executor": "Run",
+    "Application.M3U8DownloaderTest.executor": "Run",
     "Application.MediaTypeFactory.executor": "Run",
     "Application.NginxServerTest.executor": "Run",
     "Application.Number.executor": "Run",
     "Application.SyntheticParameterizedType.executor": "Run",
     "Application.TestApplication.executor": "Run",
+    "Application.ThreadHelper.executor": "Run",
+    "Application.ThreadPoolHelper.executor": "Run",
     "JUnit.ArrayHelperTest.executor": "Run",
     "JUnit.ArrayHelperTest.testConcat.executor": "Run",
     "JUnit.ArrayHelperTest.testConcatWithAllEmpty.executor": "Run",
@@ -130,6 +158,7 @@
     "JUnit.ListFilterHandlerTest.testFilter2.executor": "Run",
     "JUnit.ThreadHelperTest.testCall.executor": "Run",
     "JUnit.ThreadHelperTest.testCall2.executor": "Run",
+    "JUnit.ThreadPoolHelperTest.testCreateFixedBlockingVirtualThreadPool.executor": "Run",
     "Maven.lan-base [clean].executor": "Run",
     "Maven.lan-base [compile].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -171,6 +200,7 @@
       <recent name="io.github.xiechanglei.lan.nginx" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.xiechanglei.lan.lang.thread" />
       <recent name="io.github.xiechanglei.lan.test" />
       <recent name="io.github.xiechanglei.lan.lang.bytecode" />
       <recent name="io.github.xiechanglei.lan.lang.async" />
@@ -191,9 +221,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestApplication">
-    <configuration name="HttpHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.HttpHelper" />
+  <component name="RunManager" selected="Application.IpHandler">
+    <configuration name="IpHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.net.IpHandler" />
+      <module name="lan-net" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.xiechanglei.lan.net.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="M3U8Downloader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.M3U8Downloader" />
       <module name="lan-http" />
       <extension name="coverage">
         <pattern>
@@ -205,8 +248,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpResponse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.HttpResponse" />
+    <configuration name="M3U8DownloaderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.http.M3U8DownloaderTest" />
       <module name="lan-http" />
       <extension name="coverage">
         <pattern>
@@ -218,12 +261,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MediaTypeFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.nginx.common.MediaTypeFactory" />
-      <module name="lan-nginx" />
+    <configuration name="ThreadPoolHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.thread.ThreadPoolHelper" />
+      <module name="lan-lang" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.nginx.common.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.thread.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,46 +274,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NginxServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.nginx.NginxServerTest" />
-      <module name="lan-nginx" />
+    <configuration name="ThreadPoolHelperTest.testCreateFixedBlockingVirtualThreadPool" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lan-lang" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.nginx.*" />
+          <option name="PATTERN" value="io.github.xiechanglei.lan.lang.thread.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.test.TestApplication" />
-      <module name="lan-base-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.xiechanglei.lan.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="io.github.xiechanglei.lan.lang.thread" />
+      <option name="MAIN_CLASS_NAME" value="io.github.xiechanglei.lan.lang.thread.ThreadPoolHelperTest" />
+      <option name="METHOD_NAME" value="testCreateFixedBlockingVirtualThreadPool" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TestApplication" />
-      <item itemvalue="Application.MediaTypeFactory" />
-      <item itemvalue="Application.NginxServerTest" />
-      <item itemvalue="Application.HttpHelper" />
-      <item itemvalue="Application.HttpResponse" />
+      <item itemvalue="Application.IpHandler" />
+      <item itemvalue="Application.M3U8Downloader" />
+      <item itemvalue="Application.M3U8DownloaderTest" />
+      <item itemvalue="Application.ThreadPoolHelper" />
+      <item itemvalue="JUnit.ThreadPoolHelperTest.testCreateFixedBlockingVirtualThreadPool" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestApplication" />
-        <item itemvalue="Application.NginxServerTest" />
-        <item itemvalue="Application.MediaTypeFactory" />
-        <item itemvalue="Application.HttpHelper" />
-        <item itemvalue="Application.HttpResponse" />
+        <item itemvalue="Application.IpHandler" />
+        <item itemvalue="Application.M3U8DownloaderTest" />
+        <item itemvalue="Application.M3U8Downloader" />
+        <item itemvalue="JUnit.ThreadPoolHelperTest.testCreateFixedBlockingVirtualThreadPool" />
+        <item itemvalue="Application.ThreadPoolHelper" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +359,16 @@
       <workItem from="1724203588673" duration="828000" />
       <workItem from="1724237350316" duration="33147000" />
       <workItem from="1724370684884" duration="10489000" />
-      <workItem from="1724385451890" duration="12799000" />
+      <workItem from="1724385451890" duration="13070000" />
+      <workItem from="1724633144580" duration="1542000" />
+      <workItem from="1724721530251" duration="12089000" />
+      <workItem from="1724747070582" duration="4000" />
+      <workItem from="1724747659557" duration="1478000" />
+      <workItem from="1724810793854" duration="471000" />
+      <workItem from="1724829898054" duration="2558000" />
+      <workItem from="1724893069280" duration="6932000" />
+      <workItem from="1725233249395" duration="17354000" />
+      <workItem from="1725334489821" duration="2235000" />
     </task>
     <task id="LOCAL-00001" summary="调整结构名称">
       <option name="closed" value="true" />

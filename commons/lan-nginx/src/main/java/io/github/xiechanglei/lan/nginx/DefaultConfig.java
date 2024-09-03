@@ -3,15 +3,19 @@ package io.github.xiechanglei.lan.nginx;
 import io.github.xiechanglei.lan.nginx.config.NginxLocationModel;
 import io.github.xiechanglei.lan.nginx.config.NginxLocationRule;
 
+/**
+ * 一些默认的配置参数
+ */
+
 public class DefaultConfig {
 
     /**
-     * 服务的默认名称,显示response的header 当中 todo,做到
+     * 服务的默认名称,显示response的header当中
      */
     public static final String DEFAULT_SERVER_NAME = "lan-server";
 
     /**
-     * 默认是否GZIP todo 未实现
+     * 是否开启GZIP，默认为true，可以通过配置类修改
      */
     public static final boolean DEFAULT_GZIP = true;
 
@@ -33,7 +37,7 @@ public class DefaultConfig {
     /**
      * 默认提供的mime类型文件路径
      */
-    public static final String MIME_RESOURCE_PATH = "/lan-nginx-mime.types";
+    public static final String DEFAULT_MIME_RESOURCE_PATH = "/lan-nginx-mime.types";
 
     /**
      * 默认的location匹配规则
@@ -46,13 +50,23 @@ public class DefaultConfig {
     public static final NginxLocationModel DEFAULT_LOCATION_MODEL = NginxLocationModel.PAGE;
 
     /**
-     * 超过此大小的文件，将会被分块传输
+     * 静态资源服务器中，超过此大小的文件，将会被分块传输
      */
-    public static final int CHUNK_FILE_LIMIT = 1024 * 1024;
+    public static final int DEFAULT_CHUNK_FILE_LIMIT = 10 * 1024 * 1024;
 
     /**
      * chunk size
      */
-    public static final int CHUNK_SIZE = 10 * 1024;
+    public static final int DEFAULT_CHUNK_SIZE = 100 * 1024;
+
+    /**
+     * cache enable
+     */
+    public static final boolean DEFAULT_CACHE_ENABLE = true;
+
+    /**
+     * cache control time
+     */
+    public static final int DEFAULT_CACHE_CONTROL_TIME = 3600;
 }
 

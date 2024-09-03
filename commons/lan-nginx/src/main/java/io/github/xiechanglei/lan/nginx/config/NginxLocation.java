@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import static io.github.xiechanglei.lan.nginx.DefaultConfig.*;
+
 /**
  * 模拟配置Nginx的location，location支持以下配置：
  */
@@ -29,7 +31,7 @@ public class NginxLocation {
      * }
      */
     @Builder.Default
-    private String ruleValue = "";
+    private String ruleValue = "/";
 
     /**
      * location处理模式
@@ -55,7 +57,20 @@ public class NginxLocation {
     /**
      * 页面模式的参数，表示默认页面
      */
-    private String index;
+    @Builder.Default
+    private String index = DEFAULT_INDEX_FILE;
+
+    /**
+     * 页面模式下的参数，表示是否使用缓存机制
+     */
+    @Builder.Default
+    private boolean useCache = DEFAULT_CACHE_ENABLE;
+
+    /**
+     * 页面模式下的参数，表示缓存时间
+     */
+    @Builder.Default
+    private int cacheControlTime = DEFAULT_CACHE_CONTROL_TIME;
 
     /**
      * 匹配uri
@@ -70,10 +85,11 @@ public class NginxLocation {
     /**
      * 根据model获取响应结果
      *
+     * @param pureUri             纯净的uri,去除了参数
      * @param wrappedNettyContext 上下文
      */
-    public void process(WrappedNettyContext wrappedNettyContext) throws Exception {
-        model.getLocationProcessor().process(wrappedNettyContext);
+    public void process(String pureUri, WrappedNettyContext wrappedNettyContext) throws Exception {
+        model.getLocationProcessor().process(pureUri, wrappedNettyContext);
     }
 
     /**

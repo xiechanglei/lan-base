@@ -13,13 +13,6 @@
     <artifactId>lan-nginx</artifactId>
 
     <dependencies>
-        <!--                log4j -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
         <!--        Lan-lang-->
         <dependency>
             <groupId>io.github.xiechanglei</groupId>

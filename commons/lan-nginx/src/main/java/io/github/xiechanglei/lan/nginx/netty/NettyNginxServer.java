@@ -31,7 +31,8 @@ public class NettyNginxServer implements NginxServer {
 
     @Override
     public void start() throws InterruptedException {
-        log.info("启动Nginx服务器,port:{}", nginxConfig.getPort());
+        nginxConfig.init();
+        log.info("start Nginx server,port:{}", nginxConfig.getPort());
         // 创建bossGroup boosGroup表示
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         // 创建workerGroup,workerGroup的大小由配置文件决定
@@ -45,14 +46,14 @@ public class NettyNginxServer implements NginxServer {
                 .option(ChannelOption.SO_BACKLOG, 128)
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 .bind(nginxConfig.getPort()).sync();
-        log.info("Nginx服务器启动成功");
+        log.info("Nginx server start success!");
         this.bossGroup = bossGroup;
         this.workerGroup = workerGroup;
     }
 
 
     public void stop() {
-        log.info("关闭Nginx服务器");
+        log.info("close Nginx server");
         if (bossGroup != null && !bossGroup.isShutdown()) {
             bossGroup.shutdownGracefully();
         }

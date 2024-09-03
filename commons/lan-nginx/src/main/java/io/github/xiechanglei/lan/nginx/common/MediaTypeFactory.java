@@ -28,7 +28,7 @@ public class MediaTypeFactory {
      * 第一个字符串表示mime的类型，后面的表示文件的后缀名，一个mime类型可以对应多个文件后缀名
      */
     private static Map<String, String> parseMimeTypes() {
-        try (InputStream is = MediaTypeFactory.class.getResourceAsStream(DefaultConfig.MIME_RESOURCE_PATH);
+        try (InputStream is = MediaTypeFactory.class.getResourceAsStream(DefaultConfig.DEFAULT_MIME_RESOURCE_PATH);
              BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.US_ASCII))) {
             Map<String, String> result = new HashMap<>();
             String line;
@@ -40,7 +40,7 @@ public class MediaTypeFactory {
             }
             return result;
         } catch (IOException ex) {
-            throw new IllegalStateException("Could not read " + DefaultConfig.MIME_RESOURCE_PATH);
+            throw new IllegalStateException("Could not read " + DefaultConfig.DEFAULT_MIME_RESOURCE_PATH);
         }
     }
 

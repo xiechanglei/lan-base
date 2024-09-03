@@ -10,7 +10,7 @@ public class AsyncLockTest {
     @Test
     public void testLock() {
         AsyncLock lock = new AsyncLock();
-        ThreadHelper.call(lock::unlock, 1000);
+        ThreadHelper.callAfter(lock::unlock, 1000);
         lock.lock();
     }
 }

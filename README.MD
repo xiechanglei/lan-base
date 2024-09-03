@@ -43,7 +43,8 @@
 - [x] [lan-jpa-beans](./commons/lan-jpa-beans/README.md) jpa通用bean模块
 - [x] [lan-json](./commons/lan-json/README.md) json工具模块
 - [x] [lan-lang](./commons/lan-lang/README.md) 通用工具模块
-- [x] [lan-lang](./commons/lan-net/README.md) 网络工具模块
+- [x] [lan-net](./commons/lan-net/README.md) 网络工具模块
+- [x] [lan-nginx](./commons/lan-nginx/readme.md) nginx配置生成模块
 
 **starter 模块**
 - [x] [eureka-spring-boot-starter](starters/eureka-spring-boot-starter/README.md) eureka模块

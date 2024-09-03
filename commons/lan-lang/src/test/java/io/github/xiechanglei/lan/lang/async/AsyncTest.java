@@ -12,7 +12,7 @@ public class AsyncTest {
      */
     @Test
     public void testAwait() {
-        ThreadHelper.call(() -> GlobalAsync.put("key", "value"), 1000);
+        ThreadHelper.callAfter(() -> GlobalAsync.put("key", "value"), 1000);
         String key = GlobalAsync.await("key", 3000);
         assertEquals("value", key);
     }

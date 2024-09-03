@@ -30,23 +30,22 @@ public class NettyNginxServerHttpMessageProcessor extends SimpleChannelInboundHa
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) {
         if (msg instanceof HttpRequest httpRequest) {
             // 处理正常的http请求
-            log.info("收到请求:{}", httpRequest.uri());
+            log.info("received request: {}", httpRequest.uri());
             staticsInfo.addCurrentRequest();
             WrappedNettyContext wrappedNettyContext = WrappedNettyContext.of(ctx, httpRequest, nginxConfig);
             try {
                 wrappedNettyContext.process();
             } catch (Exception e) {
-                log.error("处理请求失败:{}", e.getMessage());
+                log.error("process request failed:{}", e.getMessage());
                 wrappedNettyContext.writeErrorResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR);
             }
             staticsInfo.subCurrentRequest();
         } else if (msg instanceof LastHttpContent lastContent) {
             // 处理请求结束的消息
-            log.info("收到请求结束");
             lastContent.release();
         } else {
             // 不支持的消息类型
-            log.error("不支持的消息类型:{}", msg.getClass().getName());
+            log.error("unsupported request type :{}", msg.getClass().getName());
             ctx.close();
         }
     }
@@ -54,18 +53,18 @@ public class NettyNginxServerHttpMessageProcessor extends SimpleChannelInboundHa
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         staticsInfo.addCurrentConnection();
-        log.info("连接建立:{}", ctx.channel().remoteAddress());
+        log.info("connection connected:{}", ctx.channel().remoteAddress());
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) {
         staticsInfo.subCurrentConnection();
-        log.info("连接关闭:{}", ctx.channel().remoteAddress());
+        log.info("connection closed:{}", ctx.channel().remoteAddress());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        log.error("发生异常:{}", cause.getMessage());
+        log.error("exception caught:{}", cause.getMessage());
         ctx.close();
     }
 }

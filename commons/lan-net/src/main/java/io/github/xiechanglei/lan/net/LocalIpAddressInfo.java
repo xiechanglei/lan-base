@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class LocalIpAddressInfo {
     private String ip; // ip地址
+    private String ipv6; // ipv6地址
     private String netmask; // 子网掩码
     private String broadcast; // 广播地址
     private String mac; // mac地址

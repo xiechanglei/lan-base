@@ -78,11 +78,19 @@ public class HttpResponse extends JsonContainerAdapter {
         return response.bodyAsBytes();
     }
 
+
     public File save(String path) throws IOException {
-        File file = new File(path);
+        return save(new File(path));
+    }
+
+    public File save(File file) throws IOException {
         if (!file.exists()) {
-            file.getParentFile().mkdirs();
-            file.createNewFile();
+            if (!file.getParentFile().mkdirs()) {
+                throw new IOException("创建文件夹失败");
+            }
+            if (!file.createNewFile()) {
+                throw new IOException("创建文件失败");
+            }
         }
         if (hasRead) {
             Files.write(file.toPath(), response.bodyAsBytes());

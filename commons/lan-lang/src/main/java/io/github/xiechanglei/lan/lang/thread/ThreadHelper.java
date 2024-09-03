@@ -15,10 +15,11 @@ public class ThreadHelper {
 
     /**
      * 在新线程中阻塞指定的时间之后，执行任务
+     *
      * @param runnable 任务
-     * @param timeout 阻塞时间，单位毫秒
+     * @param timeout  阻塞时间，单位毫秒
      */
-    public static void call(Runnable runnable, long timeout) {
+    public static void callAfter(Runnable runnable, long timeout) {
         new Thread(() -> {
             try {
                 Thread.sleep(timeout);

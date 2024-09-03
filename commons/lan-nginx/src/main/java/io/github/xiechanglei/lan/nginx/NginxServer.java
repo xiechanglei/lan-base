@@ -19,7 +19,7 @@ public interface NginxServer {
      * @return nginx服务器
      */
     static NginxServer create(@NonNull NginxConfig nginxConfig) {
-        return new NettyNginxServer(nginxConfig.init());
+        return new NettyNginxServer(nginxConfig);
     }
 
 
